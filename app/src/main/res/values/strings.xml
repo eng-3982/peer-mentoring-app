@@ -8,4 +8,5 @@
     <string name="title_activity_find">FindActivity</string>
     <string name="title_activity_mentee_manage_profile">MenteeManageProfileActivity</string>
     <string name="title_activity_mentee_your_connections">MenteeYourConnectionsActivity</string>
+    <string name="title_activity_mentee_search_results">MenteeSearchResultsActivity</string>
 </resources>

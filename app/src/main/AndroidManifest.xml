@@ -27,6 +27,10 @@
             android:name=".MenteeYourConnectionsActivity"
             android:label="@string/title_activity_mentee_your_connections" >
         </activity>
+        <activity
+            android:name=".MenteeSearchResultsActivity"
+            android:label="@string/title_activity_mentee_search_results" >
+        </activity>
     </application>
 
 </manifest>
