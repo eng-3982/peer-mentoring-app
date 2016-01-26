@@ -1,22 +1,31 @@
-package com.example.emiliedoyle.peer_mentoring_app_frontend;
+package com.example.emiliedoyle.peer_mentoring_app;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.app.Activity;
+import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
 
-public class MenteeSearchResultsActivity extends AppCompatActivity {
+public class FindActivity extends AppCompatActivity implements View.OnClickListener{
+
+    Button button04;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mentee_search_results);
+        setContentView(R.layout.activity_find);
+        button04=(Button)findViewById(R.id.SearchResultsButton);
+        button04.setOnClickListener(this);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_mentee_search_results, menu);
+        getMenuInflater().inflate(R.menu.menu_find, menu);
         return true;
     }
 
@@ -33,5 +42,18 @@ public class MenteeSearchResultsActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void button04Click() {
+        startActivity(new Intent(FindActivity.this, MenteeSearchResultsActivity.class));}
+
+
+    @Override
+    public void onClick(View v){
+        switch (v.getId()){
+            case R.id.SearchResultsButton:
+                    button04Click();
+                    break;
+        }
     }
 }
