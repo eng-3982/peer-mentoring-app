@@ -1,4 +1,4 @@
-package com.example.emiliedoyle.peer_mentoring_app_frontend;
+package com.example.emiliedoyle.peer_mentoring_app;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
