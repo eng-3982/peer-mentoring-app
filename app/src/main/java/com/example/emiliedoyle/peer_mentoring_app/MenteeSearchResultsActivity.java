@@ -1,22 +1,22 @@
-package com.example.emiliedoyle.peer_mentoring_app_frontend;
+package com.example.emiliedoyle.peer_mentoring_app;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MenteeManageProfileActivity extends AppCompatActivity {
+public class MenteeSearchResultsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mentee_manage_profile);
+        setContentView(R.layout.activity_mentee_search_results);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_mentee_manage_profile, menu);
+        getMenuInflater().inflate(R.menu.menu_mentee_search_results, menu);
         return true;
     }
 

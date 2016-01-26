@@ -7,7 +7,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="30dp"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.example.emiliedoyle.peer_mentoring_app_frontend.StudentMainActivity">
+    tools:context="com.example.emiliedoyle.peer_mentoring_app.StudentMainActivity">
 
     <TextView
         android:text="Hello Student! Welome to the \n Peer Mentor Matching App!"
