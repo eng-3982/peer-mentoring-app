@@ -44,7 +44,9 @@ public class FindActivity extends AppCompatActivity implements View.OnClickListe
         return super.onOptionsItemSelected(item);
     }
 
-    private void button04Click(){startActivity(new Intent(".MenteeSearchResultsActivity"));}
+    private void button04Click() {
+        startActivity(new Intent(FindActivity.this, MenteeSearchResultsActivity.class));}
+
 
     @Override
     public void onClick(View v){

@@ -2,32 +2,32 @@
 <items version="2" >
 
     <item
-        jar="/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
-        <dex dex="/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/pre-dexed/debug/classes-c46543b30c82cabbf7b9ec7ffa0c7b5f76dea588.jar" />
-    </item>
-    <item
-        jar="/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
-        <dex dex="/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/pre-dexed/debug/classes-8324119fa30805216df5088cd6cc9245bba5fb57.jar" />
-    </item>
-    <item
-        jar="/Users/emiliedoyle/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
-        <dex dex="/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1-d1ba95971e7455224992e443d8171d8f686ea8c1.jar" />
-    </item>
-    <item
-        jar="/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jar="C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
-        <dex dex="/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1-1b5b7522d07f6b2feb4a8fb87a03491a3de32833.jar" />
+        <dex dex="C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1-4faa8d069afb6821df4db86f7a93154d8f9f19aa.jar" />
+    </item>
+    <item
+        jar="C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\build\intermediates\pre-dexed\debug\classes-3f9cc347f2f0c1070ed55a1b821dbc3a7c8f013c.jar" />
+    </item>
+    <item
+        jar="C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\build\intermediates\pre-dexed\debug\classes-17daed76e04d417b6b19fdf94f009a4a28a2ec05.jar" />
+    </item>
+    <item
+        jar="C:\Users\Rachel.DESKTOP-TIK572D\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1-c56ff14b09db190229008da37eb0fe8c88fe92bf.jar" />
     </item>
 
 </items>

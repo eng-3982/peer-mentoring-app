@@ -46,7 +46,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void button00Click(){
-        startActivity(new Intent(".StudentMainActivity"));
+        startActivity(new Intent(LoginActivity.this, StudentMainActivity.class));
     }
 
     @Override

@@ -52,9 +52,9 @@ public class StudentMainActivity extends AppCompatActivity implements View.OnCli
     }
 
 
-    private void button01Click(){startActivity(new Intent(".FindActivity"));}
-    private void button02Click(){startActivity(new Intent(".MenteeManageProfileActivity"));}
-    private void button03Click(){startActivity(new Intent(".MenteeYourConnectionsActivity"));}
+    private void button01Click(){startActivity(new Intent(StudentMainActivity.this, FindActivity.class));}
+    private void button02Click(){startActivity(new Intent(StudentMainActivity.this, MenteeManageProfileActivity.class));}
+    private void button03Click(){startActivity(new Intent(StudentMainActivity.this, MenteeYourConnectionsActivity.class));}
 
     @Override
     public void onClick(View v){
