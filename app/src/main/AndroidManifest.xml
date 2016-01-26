@@ -9,16 +9,19 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login">
+            android:label="@string/title_activity_login" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".StudentMainActivity"
             android:label="@string/title_activity_student_main" >
-            <!-- <intent-filter>
+
+            <!--
+            <intent-filter>
                 <action android:name="com.example.emiliedoyle.peer_mentoring_app.StudentMainActivity" />
                     <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -39,6 +42,10 @@
         <activity
             android:name=".MenteeSearchResultsActivity"
             android:label="@string/title_activity_mentee_search_results" >
+        </activity>
+        <activity
+            android:name=".MenteeRegisterActivity"
+            android:label="@string/title_activity_mentee_register" >
         </activity>
     </application>
 
