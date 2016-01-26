@@ -10,26 +10,22 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener
-{
+public class MenteeRegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button button00;
-    Button button000;
+    Button button05;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        button00=(Button)findViewById(R.id.email_sign_in_button);
-        button00.setOnClickListener(this);
-        button000=(Button)findViewById(R.id.email_register_button);
-        button000.setOnClickListener(this);
+        setContentView(R.layout.activity_mentee_register);
+        button05=(Button)findViewById(R.id.menteeRegisterButton);
+        button05.setOnClickListener(this);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_login, menu);
+        getMenuInflater().inflate(R.menu.menu_mentee_register, menu);
         return true;
     }
 
@@ -48,22 +44,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         return super.onOptionsItemSelected(item);
     }
 
-    private void button00Click(){
-        startActivity(new Intent(LoginActivity.this, StudentMainActivity.class));
-    }
-
-    private void button000Click(){
-        startActivity(new Intent(LoginActivity.this, MenteeRegisterActivity.class));
-    }
+    private void button05Click(){startActivity(new Intent(MenteeRegisterActivity.this, StudentMainActivity.class));}
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.email_sign_in_button:
-                button00Click();
-                break;
-            case R.id.email_register_button:
-                button000Click();
+            case R.id.menteeRegisterButton:
+                button05Click();
                 break;
         }
     }
