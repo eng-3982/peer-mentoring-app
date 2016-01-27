@@ -47,7 +47,6 @@ public class FindActivity extends AppCompatActivity implements View.OnClickListe
     private void button04Click() {
         startActivity(new Intent(FindActivity.this, MenteeSearchResultsActivity.class));}
 
-
     @Override
     public void onClick(View v){
         switch (v.getId()){
