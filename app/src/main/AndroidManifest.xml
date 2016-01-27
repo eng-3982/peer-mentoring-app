@@ -12,6 +12,7 @@
             android:label="@string/title_activity_login" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -45,6 +46,22 @@
         <activity
             android:name=".MenteeRegisterActivity"
             android:label="@string/title_activity_mentee_register" >
+        </activity>
+        <activity
+            android:name=".MentorProfileActivity"
+            android:label="@string/title_activity_mentor_profile" >
+        </activity>
+        <activity
+            android:name=".MenteeRequestMentorNotificationActivity"
+            android:label="@string/title_activity_mentee_request_mentor_notification" >
+        </activity>
+        <activity
+            android:name=".MenteeFindOptionsActivity"
+            android:label="@string/title_activity_mentee_find_options" >
+        </activity>
+        <activity
+            android:name=".MenteeYourMatchesActivity"
+            android:label="@string/title_activity_mentee_your_matches" >
         </activity>
     </application>
 

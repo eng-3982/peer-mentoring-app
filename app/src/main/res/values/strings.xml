@@ -10,4 +10,10 @@
     <string name="title_activity_mentee_your_connections">MenteeYourConnectionsActivity</string>
     <string name="title_activity_mentee_search_results">MenteeSearchResultsActivity</string>
     <string name="title_activity_mentee_register">MenteeRegisterActivity</string>
+    <string name="title_activity_mentor_profile">MentorProfileActivity</string>
+    <string name="title_activity_mentee_request_mentor_notification">
+        MenteeRequestMentorNotificationActivity
+    </string>
+    <string name="title_activity_mentee_find_options">MenteeFindOptionsActivity</string>
+    <string name="title_activity_mentee_your_matches">MenteeYourMatchesActivity</string>
 </resources>

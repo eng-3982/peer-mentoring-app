@@ -10,9 +10,25 @@
     tools:context="com.example.emiliedoyle.peer_mentoring_app.MenteeSearchResultsActivity">
 
     <TextView
+        android:text="Search Results"
+        android:textColor="#9e64d8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchResults"
+        android:textStyle="bold"
+        android:textSize="25dp"/>
+    <TextView
         android:text="MENTEE SEARCH RESULTS HERE(needs volley)"
         android:id="@+id/results"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/searchResults"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/HomeButton"
+        android:text="Return to Main Menu"
+        android:layout_below="@+id/results"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

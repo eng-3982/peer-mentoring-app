@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -27,7 +28,7 @@ import com.android.volley.toolbox.Volley;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MenteeSearchResultsActivity extends AppCompatActivity {
+public class MenteeSearchResultsActivity extends AppCompatActivity implements View.OnClickListener {
 
 
     // Instantiate the RequestQueue.
@@ -35,6 +36,8 @@ public class MenteeSearchResultsActivity extends AppCompatActivity {
     private String url;
 
     EditText txtInput;
+
+    Button button10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +47,10 @@ public class MenteeSearchResultsActivity extends AppCompatActivity {
         //run cluirrr's functions
         //postDBItem();
         queue = Volley.newRequestQueue(this);
-        url ="http://159.203.68.208:5000/data";
+        url = "http://159.203.68.208:5000/data";
         getDBItems();
+        button10 = (Button) findViewById(R.id.HomeButton);
+        button10.setOnClickListener(this);
     }
 
     @Override
@@ -106,7 +111,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity {
 
     }
 */
-    public void getDBItems(){
+    public void getDBItems() {
         // This is from the Volley tutorial
 
         final TextView mTextView = (TextView) findViewById(R.id.results);
@@ -117,7 +122,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         // Display the response string (items of the DB)
-                        mTextView.setText("Response is: "+ response);
+                        mTextView.setText("Response is: " + response);
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -132,5 +137,16 @@ public class MenteeSearchResultsActivity extends AppCompatActivity {
 
     }
 
+    private void button10Click() {
+        startActivity(new Intent(MenteeSearchResultsActivity.this, StudentMainActivity.class));
+    }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.HomeButton:
+                button10Click();
+                break;
+        }
+    }
 }
