@@ -1,5 +1,7 @@
 package com.example.emiliedoyle.peer_mentoring_app;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,13 +10,19 @@ import android.view.MenuItem;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener
 {
 
     Button button00;
     Button button000;
+    EditText Password;
+    AutoCompleteTextView Email;
+    String dbpassword= "password";
+    String dbemail="email";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +32,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         button00.setOnClickListener(this);
         button000=(Button)findViewById(R.id.email_register_button);
         button000.setOnClickListener(this);
+        Password = (EditText)findViewById(R.id.password);
+        Email=(AutoCompleteTextView)findViewById(R.id.email);
+
     }
 
     @Override
@@ -49,7 +60,28 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void button00Click(){
-        startActivity(new Intent(LoginActivity.this, StudentMainActivity.class));
+        if(((Password.getText().toString()).equals(dbpassword)) && (((Email.getText().toString()).equals(dbemail)))){
+            // go to menu
+            startActivity(new Intent(LoginActivity.this, StudentMainActivity.class));
+        }
+        else {
+            // show error message
+            AlertDialog.Builder dlgAlert = new AlertDialog.Builder(this);
+
+            dlgAlert.setMessage("Incorrect email or password");
+            dlgAlert.setTitle("Error Message...");
+            dlgAlert.setPositiveButton("OK", null);
+            dlgAlert.setCancelable(true);
+            dlgAlert.create().show();
+
+            dlgAlert.setPositiveButton("Ok",
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    });
+        }
     }
 
     private void button000Click(){
