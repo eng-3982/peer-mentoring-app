@@ -1,5 +1,6 @@
 package com.example.emiliedoyle.peer_mentoring_app;
 
+// import necessary items for design, menu and connection between views
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -36,7 +37,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
     private String url;
 
     EditText txtInput;
-
+    // declare button
     Button button10;
 
     @Override

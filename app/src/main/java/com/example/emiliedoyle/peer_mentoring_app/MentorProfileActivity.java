@@ -1,5 +1,6 @@
 package com.example.emiliedoyle.peer_mentoring_app;
 
+// import necessary items for design, menu and connection between views
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,11 +11,13 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
+// declare class, need to implement on click listener in order to switch views/activities
 public class MentorProfileActivity extends AppCompatActivity implements View.OnClickListener {
 
-
+    // declare button 06
     Button button06;
 
+    // standard onCreate, with added button linking and setting onClickListener
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +26,7 @@ public class MentorProfileActivity extends AppCompatActivity implements View.OnC
         button06.setOnClickListener(this);
     }
 
+    // standard
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -30,6 +34,7 @@ public class MentorProfileActivity extends AppCompatActivity implements View.OnC
         return true;
     }
 
+    // standard
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -45,8 +50,12 @@ public class MentorProfileActivity extends AppCompatActivity implements View.OnC
         return super.onOptionsItemSelected(item);
     }
 
-    private void button06Click(){startActivity(new Intent(MentorProfileActivity.this,MenteeRequestMentorNotificationActivity.class));}
+    // specifically for when button06 is clicked to change from mentor profile activity
+    // to the mentee request mentor activity
+    private void button06Click(){
+        startActivity(new Intent(MentorProfileActivity.this,MenteeRequestMentorNotificationActivity.class));}
 
+    // uses switch case to determine which method to implement when click occurs
     @Override
     public void onClick(View v){
         switch(v.getId()){
