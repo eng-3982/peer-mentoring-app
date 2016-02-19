@@ -1,6 +1,7 @@
 package com.example.emiliedoyle.peer_mentoring_app;
 
 // import necessary items for design, menu and connection between views
+import android.database.DataSetObserver;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -15,8 +16,14 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.GridView;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -45,6 +52,8 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mentee_search_results);
 
+        // test string array
+        String[] mobileArray={"Android","iPhone", "Windows lol"};
         //run cluirrr's functions
         //postDBItem();
         queue = Volley.newRequestQueue(this);
@@ -52,7 +61,13 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
         getDBItems();
         button10 = (Button) findViewById(R.id.HomeButton);
         button10.setOnClickListener(this);
+
+        //create ListView where find results will be displayed
+        ArrayAdapter adapter = new ArrayAdapter<String>(this,R.layout.activity_mentee_search_results,mobileArray );
+        ListView listView= (ListView) findViewById(R.id.listview);
+        listView.setAdapter(adapter);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
