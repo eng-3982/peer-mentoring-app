@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.emiliedoyle.peer_mentoring_app"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="23" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.emiliedoyle.peer_mentoring_app.LoginActivity"
+            android:label="@string/title_activity_login" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.emiliedoyle.peer_mentoring_app.StudentMainActivity"
+            android:label="@string/title_activity_student_main" >
+
+            <!--
+            <intent-filter>
+                <action android:name="com.example.emiliedoyle.peer_mentoring_app.StudentMainActivity" />
+                    <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity
+            android:name="com.example.emiliedoyle.peer_mentoring_app.FindActivity"
+            android:label="@string/title_activity_find" >
+        </activity>
+        <activity
+            android:name="com.example.emiliedoyle.peer_mentoring_app.MenteeManageProfileActivity"
+            android:label="@string/title_activity_mentee_manage_profile" >
+        </activity>
+        <activity
+            android:name="com.example.emiliedoyle.peer_mentoring_app.MenteeYourConnectionsActivity"
+            android:label="@string/title_activity_mentee_your_connections" >
+        </activity>
+        <activity
+            android:name="com.example.emiliedoyle.peer_mentoring_app.MenteeSearchResultsActivity"
+            android:label="@string/title_activity_mentee_search_results" >
+        </activity>
+        <activity
+            android:name="com.example.emiliedoyle.peer_mentoring_app.MenteeRegisterActivity"
+            android:label="@string/title_activity_mentee_register" >
+        </activity>
+        <activity
+            android:name="com.example.emiliedoyle.peer_mentoring_app.MentorProfileActivity"
+            android:label="@string/title_activity_mentor_profile" >
+        </activity>
+        <activity
+            android:name="com.example.emiliedoyle.peer_mentoring_app.MenteeRequestMentorNotificationActivity"
+            android:label="@string/title_activity_mentee_request_mentor_notification" >
+        </activity>
+        <activity
+            android:name="com.example.emiliedoyle.peer_mentoring_app.MenteeFindOptionsActivity"
+            android:label="@string/title_activity_mentee_find_options" >
+        </activity>
+        <activity
+            android:name="com.example.emiliedoyle.peer_mentoring_app.MenteeYourMatchesActivity"
+            android:label="@string/title_activity_mentee_your_matches" >
+        </activity>
+    </application>
+
+</manifest>
