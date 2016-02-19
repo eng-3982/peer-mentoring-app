@@ -1,10 +1,12 @@
 package com.example.emiliedoyle.peer_mentoring_app;
 
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.Menu;
 import android.view.MenuItem;
-
+import android.util.Log;
 //package com.realco.claire.practice;
 
 import android.content.Intent;
@@ -18,14 +20,35 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.HurlStack;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+/*import com.mongodb.BasicDBObject;
+import com.mongodb.BulkWriteOperation;
+import com.mongodb.BulkWriteResult;
+import com.mongodb.Cursor;
+import com.mongodb.DB;
+import com.mongodb.DBCollection;
+import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
+import com.mongodb.MongoClient;
+import com.mongodb.ParallelScanOptions;
+import com.mongodb.ServerAddress;*/
 
+
+import org.json.JSONObject;
+
+import java.net.URL;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 public class MenteeSearchResultsActivity extends AppCompatActivity implements View.OnClickListener {
@@ -47,8 +70,9 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
         //run cluirrr's functions
         //postDBItem();
         queue = Volley.newRequestQueue(this);
-        url = "http://159.203.68.208:5000/data";
+        //url = "https://pma.piconepress.com/data";
         getDBItems();
+        //getDBandAuthenticate();
         button10 = (Button) findViewById(R.id.HomeButton);
         button10.setOnClickListener(this);
     }
@@ -75,68 +99,61 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
         return super.onOptionsItemSelected(item);
     }
 
-    /*public void postDBItem(){
-
-        // This is from the Volley tutorial
-        final TextView mTextView = (TextView) findViewById(R.id.text_view2);
-
-        // Get the string from the input edit text box
-        txtInput = (EditText) findViewById(R.id.edit_message);
-        String inName = txtInput.getText().toString();
-
-        StringRequest postRequest = new StringRequest(Request.Method.POST, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        //Log.d("GETTING", "onResponse for getDBItems happening");
-                        getDBItems();
-                    }
-
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                // Do nothing
-            }
-        }){
-            @Override
-            protected Map<String, String> getParams(){
-                Map<String,String> params = new HashMap<String, String>();
-                params.put("major", txtInput.getText().toString());
-
-                return params;
-            }
-        };
-
-        queue.add(postRequest);
-
-    }
-*/
-    public void getDBItems() {
-        // This is from the Volley tutorial
-
+    public void getDBNewUgh() {
         final TextView mTextView = (TextView) findViewById(R.id.results);
 
-        // Request a string response from the provided URL.
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>() {
+    }
+    public void getDBItems() {
+
+        //create new TextView to display data
+        final TextView mTextView = (TextView) findViewById(R.id.results);
+
+        //define our url
+        Uri.Builder uri = new Uri.Builder();
+        uri.scheme("https");
+        uri.authority("pma.piconepress.com");
+        uri.path("data");
+        final String url = uri.build().toString();
+
+        // Request a json response from the provided URL.
+        JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONObject>() {
                     @Override
-                    public void onResponse(String response) {
+                    public void onResponse(JSONObject response) {
                         // Display the response string (items of the DB)
                         mTextView.setText("Response is: " + response);
                     }
                 }, new Response.ErrorListener() {
             @Override
+            //if there is an error, print it!
             public void onErrorResponse(VolleyError error) {
-                mTextView.setText("That didn't work!");
+                mTextView.setText(error.toString());
             }
-        });
-        // End of tutorial from Volley
+        }) {
+            @Override
+            //OH LOOK AT ME, I'M VOLLEY AND MY HEADER IS WRONG
+            //modifies the header to contain the encoded username and password info. authenticates
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<String, String>();
+                String creds = "eng-3982:isipjuice";
+                String auth = "Basic " + Base64.encodeToString(creds.getBytes(), Base64.NO_WRAP);
+                //headers.put("Content-Type: application/json");
+                headers.put("Authorization", auth);
+                return headers;
+            }
 
+        };
         // Add the request to the RequestQueue.
-        queue.add(stringRequest);
+        queue.add(jsonRequest);
+
+        //something I needed to do so that there wouldn't be time-outs
+        //we may not need this? who on earth knows.
+        jsonRequest.setRetryPolicy(new DefaultRetryPolicy(
+                27000,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
     }
-
     private void button10Click() {
         startActivity(new Intent(MenteeSearchResultsActivity.this, StudentMainActivity.class));
     }

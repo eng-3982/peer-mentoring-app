@@ -18,7 +18,6 @@
         android:textStyle="bold"
         android:textSize="25dp"/>
     <TextView
-        android:text="MENTEE SEARCH RESULTS HERE(needs volley)"
         android:id="@+id/results"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
