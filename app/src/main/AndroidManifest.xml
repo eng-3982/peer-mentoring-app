@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.emiliedoyle.peer_mentoring_app" >
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".StudentMainActivity"
+            android:label="@string/title_activity_student_main" >
+
+            <!--
+            <intent-filter>
+                <action android:name="com.example.emiliedoyle.peer_mentoring_app.StudentMainActivity" />
+                    <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity
+            android:name=".FindActivity"
+            android:label="@string/title_activity_find" >
+        </activity>
+        <activity
+            android:name=".MenteeManageProfileActivity"
+            android:label="@string/title_activity_mentee_manage_profile" >
+        </activity>
+        <activity
+            android:name=".MenteeYourConnectionsActivity"
+            android:label="@string/title_activity_mentee_your_connections" >
+        </activity>
+        <activity
+            android:name=".MenteeSearchResultsActivity"
+            android:label="@string/title_activity_mentee_search_results" >
+        </activity>
+        <activity
+            android:name=".MenteeRegisterActivity"
+            android:label="@string/title_activity_mentee_register" >
+        </activity>
+        <activity
+            android:name=".MentorProfileActivity"
+            android:label="@string/title_activity_mentor_profile" >
+        </activity>
+        <activity
+            android:name=".MenteeRequestMentorNotificationActivity"
+            android:label="@string/title_activity_mentee_request_mentor_notification" >
+        </activity>
+        <activity
+            android:name=".MenteeFindOptionsActivity"
+            android:label="@string/title_activity_mentee_find_options" >
+        </activity>
+        <activity
+            android:name=".MenteeYourMatchesActivity"
+            android:label="@string/title_activity_mentee_your_matches" >
+        </activity>
+    </application>
+
+</manifest>
