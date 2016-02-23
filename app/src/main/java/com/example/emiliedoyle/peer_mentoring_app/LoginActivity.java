@@ -23,8 +23,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
+//import com.google.android.gms.appindexing.Action;
+//import com.google.android.gms.appindexing.AppIndex;
 import android.net.Uri;
 import android.content.ContentUris;
 import android.widget.Toast;
@@ -39,11 +39,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     // which are user input in the XML view (once linked), additionally 2
     // strings which will be the email and password from the database
     // when that is up and running. RN it is hard coded
+
     //define our url
-
-
-    Button button00;
-    Button button000;
     private EditText editTextUsername;
     private EditText editTextPassword;
     //String dbpassword = "password";
@@ -54,6 +51,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private String username;
     private String password;
 
+    Button email_sign_in_button;
+    Button email_register_button;
+
     // standard onCreate, need to add the buttons to link it to the XML button via ID, and
     // to set the on click listener for changing activities/views. Additionally, we read in
     // the user inputted email and password, but finidng the content of the XML
@@ -62,10 +62,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        button00 = (Button) findViewById(R.id.email_sign_in_button);
-        button00.setOnClickListener(this);
-        button000 = (Button) findViewById(R.id.email_register_button);
-        button000.setOnClickListener(this);
+        email_sign_in_button=(Button)findViewById(R.id.email_sign_in_button);
+        email_sign_in_button.setOnClickListener(this);
+        email_register_button=(Button)findViewById(R.id.email_register_button);
+        email_register_button.setOnClickListener(this);
+
 
         //MEH commented this out to get rid of error, probs going to need to bring back
        // Password = (EditText) findViewById(R.id.password);
@@ -149,14 +150,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     // in the current activity, and then the one you wish to go to. If the email
     // and password do not match, then an error message should appear. The error
     // message code was found online and fit to our needs
-    private void button00Click() {
 
+    private void email_sign_in_buttonClick(){
         startActivity(new Intent(LoginActivity.this, StudentMainActivity.class));
     }
 
     // specifically for when the button000(register/sign up) is clicked
     // this will change the activity through the use of a new Intent.
-    private void button000Click() {
+
+    private void email_register_buttonClick(){
         startActivity(new Intent(LoginActivity.this, MenteeRegisterActivity.class));
     }
 
@@ -168,11 +170,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.email_sign_in_button:
-                //button00Click();
+                email_sign_in_buttonClick();
                 break;
             case R.id.email_register_button:
-                //button000Click();
-                userLogin();
+                email_register_buttonClick();
                 break;
         }
     }

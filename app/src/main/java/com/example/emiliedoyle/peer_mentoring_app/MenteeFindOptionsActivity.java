@@ -15,8 +15,8 @@ import android.widget.Button;
 public class MenteeFindOptionsActivity extends AppCompatActivity implements View.OnClickListener {
 
     // declare buttons (by attribute or already matched)
-    Button button07;
-    Button button08;
+    Button YourMatchesButton;
+    Button SearchButton;
 
     // standard onCreate, with added button functionality, which links
     // the buttons in the java code to that of the XML. it also sets
@@ -25,10 +25,10 @@ public class MenteeFindOptionsActivity extends AppCompatActivity implements View
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mentee_find_options);
-        button07=(Button)findViewById(R.id.YourMatchesButton);
-        button07.setOnClickListener(this);
-        button08=(Button)findViewById(R.id.SearchButton);
-        button08.setOnClickListener(this);
+        YourMatchesButton=(Button)findViewById(R.id.YourMatchesButton);
+        YourMatchesButton.setOnClickListener(this);
+        SearchButton=(Button)findViewById(R.id.SearchButton);
+        SearchButton.setOnClickListener(this);
     }
 
     // standard
@@ -57,12 +57,12 @@ public class MenteeFindOptionsActivity extends AppCompatActivity implements View
 
     // specifically for the button07 click, which will use a new Intent
     // in order to switch to the 'your matches' activity
-    private void button07Click() {
+    private void YourMatchesButtonClick() {
         startActivity(new Intent(MenteeFindOptionsActivity.this, MenteeYourMatchesActivity.class));}
 
     // specifically for button08 click, which will use a new Intent
     // in order to switch to the 'Search' activity
-    private void button08Click() {
+    private void SearchButtonClick() {
         startActivity(new Intent(MenteeFindOptionsActivity.this, MenteeSearchResultsActivity.class));}
 
     // when click occurs, uses switch case to take ID of item clicked
@@ -71,10 +71,10 @@ public class MenteeFindOptionsActivity extends AppCompatActivity implements View
     public void onClick(View v){
         switch (v.getId()){
             case R.id.YourMatchesButton:
-                button07Click();
+                YourMatchesButtonClick();
                 break;
             case R.id.SearchButton:
-                button08Click();
+                SearchButtonClick();
                 break;
         }
     }

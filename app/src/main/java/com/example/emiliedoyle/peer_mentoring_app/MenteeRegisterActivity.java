@@ -29,15 +29,15 @@ import java.util.HashMap;
 public class MenteeRegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
     // declare (register) button
-    Button button05;
+    Button menteeRegisterButton;
 
     // standard onCreate, with button linked to XML content and onClickListener set
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mentee_register);
-        button05=(Button)findViewById(R.id.menteeRegisterButton);
-        button05.setOnClickListener(this);
+        menteeRegisterButton=(Button)findViewById(R.id.menteeRegisterButton);
+        menteeRegisterButton.setOnClickListener(this);
     }
 
     // standard
@@ -65,7 +65,7 @@ public class MenteeRegisterActivity extends AppCompatActivity implements View.On
     }
 
     // method for switching activities from register to the main activity on click
-    private void button05Click(){
+    private void menteeRegisterButtonClick(){
         startActivity(new Intent(MenteeRegisterActivity.this, StudentMainActivity.class));}
 
     // when click occurs, uses switch case to determine which method should be
@@ -74,7 +74,7 @@ public class MenteeRegisterActivity extends AppCompatActivity implements View.On
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.menteeRegisterButton:
-                button05Click();
+                menteeRegisterButtonClick();
                 break;
         }
     }

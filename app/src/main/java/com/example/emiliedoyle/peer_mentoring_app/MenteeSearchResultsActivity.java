@@ -69,7 +69,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
 
     EditText txtInput;
     // declare button
-    Button button10;
+    Button HomeButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,8 +84,8 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
         //url = "https://pma.piconepress.com/data";
         getDBItems();
         //getDBandAuthenticate();
-        button10 = (Button) findViewById(R.id.HomeButton);
-        button10.setOnClickListener(this);
+        HomeButton = (Button) findViewById(R.id.HomeButton);
+        HomeButton.setOnClickListener(this);
 
         //create ListView where find results will be displayed
         ArrayAdapter adapter = new ArrayAdapter<String>(this,R.layout.activity_mentee_search_results,mobileArray );
@@ -117,13 +117,13 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
     }
 
     public void getDBNewUgh() {
-        final TextView mTextView = (TextView) findViewById(R.id.searchResults);
+        final ListView mTextView = (ListView) findViewById(R.id.listview);
 
     }
     public void getDBItems() {
 
-        //create new TextView to display data
-        final TextView mTextView = (TextView) findViewById(R.id.searchResults);
+        //create new ListView to display data
+        final ListView mListView = (ListView) findViewById(R.id.listview);
 
         //define our url
         Uri.Builder uri = new Uri.Builder();
@@ -138,13 +138,13 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
                     @Override
                     public void onResponse(JSONObject response) {
                         // Display the response string (items of the DB)
-                        mTextView.setText("Response is: " + response);
+                        mListView.setText("Response is: " + response);
                     }
                 }, new Response.ErrorListener() {
             @Override
             //if there is an error, print it!
             public void onErrorResponse(VolleyError error) {
-                mTextView.setText(error.toString());
+                mListView.setText(error.toString());
             }
         }) {
             @Override
@@ -172,8 +172,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
 
     }
 
-
-    private void button10Click() {
+    private void HomeButtonClick() {
         startActivity(new Intent(MenteeSearchResultsActivity.this, StudentMainActivity.class));
     }
 
@@ -181,7 +180,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.HomeButton:
-                button10Click();
+                HomeButtonClick();
                 break;
         }
     }

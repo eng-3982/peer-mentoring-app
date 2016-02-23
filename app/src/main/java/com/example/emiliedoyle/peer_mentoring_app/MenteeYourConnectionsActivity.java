@@ -15,7 +15,7 @@ import android.widget.Button;
 public class MenteeYourConnectionsActivity extends AppCompatActivity implements View.OnClickListener {
 
     // declare button to return to main menu
-    Button button11;
+    Button HomeButton;
 
     // standard onCreate,with added linking of buttons from xml and java
     // and setting the on click listener to change activities/views
@@ -23,8 +23,8 @@ public class MenteeYourConnectionsActivity extends AppCompatActivity implements 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mentee_your_connections);
-        button11=(Button)findViewById(R.id.HomeButton);
-        button11.setOnClickListener(this);
+        HomeButton=(Button)findViewById(R.id.HomeButton);
+        HomeButton.setOnClickListener(this);
     }
 
     // standard
@@ -53,7 +53,7 @@ public class MenteeYourConnectionsActivity extends AppCompatActivity implements 
 
     // specifically for when button11 is clicked to change from the your connections
     // activity to the main menu activity
-    private void button11Click(){
+    private void HomeButtonClick(){
         startActivity(new Intent(MenteeYourConnectionsActivity.this, StudentMainActivity.class));}
 
     // when click occurs, uses switch case which takes the ID to determine
@@ -62,7 +62,7 @@ public class MenteeYourConnectionsActivity extends AppCompatActivity implements 
     public void onClick(View v){
         switch(v.getId()){
             case R.id.HomeButton:
-                button11Click();
+                HomeButtonClick();
                 break;
         }
     }
