@@ -15,18 +15,18 @@ import android.widget.Button;
 public class MenteeRequestMentorNotificationActivity extends AppCompatActivity implements View.OnClickListener{
 
     // declare button07 (to see your connections) and button08(to return to main menu)
-    Button button07;
-    Button button08;
+    Button ViewConnectionsButton;
+    Button HomeButton;
 
     // standard onCreate, with buttons linked from XML to java and onclick listener set
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mentee_request_mentor_notification);
-        button07=(Button)findViewById(R.id.ViewConnectionsButton);
-        button07.setOnClickListener(this);
-        button08=(Button)findViewById(R.id.HomeButton);
-        button08.setOnClickListener(this);
+        ViewConnectionsButton=(Button)findViewById(R.id.ViewConnectionsButton);
+        ViewConnectionsButton.setOnClickListener(this);
+        HomeButton=(Button)findViewById(R.id.HomeButton);
+        HomeButton.setOnClickListener(this);
     }
 
     // standard
@@ -56,12 +56,12 @@ public class MenteeRequestMentorNotificationActivity extends AppCompatActivity i
     // specifically for when button07 is clicked to start new intent to switch
     // activitiy frm the mentee request mentor notification to the your connections
     // activity
-    private void button07Click(){
+    private void ViewConnectionsButtonClick(){
         startActivity(new Intent(MenteeRequestMentorNotificationActivity.this,MenteeYourConnectionsActivity.class));}
 
     // specifically for when button08 is clicked to start new intent to switch
     // activitiy from the mentee request mentor notification to the main menu page
-    private void button08Click(){
+    private void HomeButtonClick(){
         startActivity(new Intent(MenteeRequestMentorNotificationActivity.this,StudentMainActivity.class));}
 
     // when click occurs, uses switch statement to determine which method should
@@ -70,10 +70,10 @@ public class MenteeRequestMentorNotificationActivity extends AppCompatActivity i
     public void onClick(View v){
         switch(v.getId()){
             case R.id.ViewConnectionsButton:
-                button07Click();
+                ViewConnectionsButtonClick();
                 break;
             case R.id.HomeButton:
-                button08Click();
+                HomeButtonClick();
                 break;
         }
     }

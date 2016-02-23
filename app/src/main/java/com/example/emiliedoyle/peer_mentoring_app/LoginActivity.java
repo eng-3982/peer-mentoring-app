@@ -22,8 +22,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     // which are user input in the XML view (once linked), additionally 2
     // strings which will be the email and password from the database
     // when that is up and running. RN it is hard coded
-    Button button00;
-    Button button000;
+    Button email_sign_in_button;
+    Button email_register_button;
     EditText Password;
     AutoCompleteTextView Email;
     String dbpassword= "password";
@@ -37,10 +37,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        button00=(Button)findViewById(R.id.email_sign_in_button);
-        button00.setOnClickListener(this);
-        button000=(Button)findViewById(R.id.email_register_button);
-        button000.setOnClickListener(this);
+        email_sign_in_button=(Button)findViewById(R.id.email_sign_in_button);
+        email_sign_in_button.setOnClickListener(this);
+        email_register_button=(Button)findViewById(R.id.email_register_button);
+        email_register_button.setOnClickListener(this);
         Password = (EditText)findViewById(R.id.password);
         Email=(AutoCompleteTextView)findViewById(R.id.email);
 
@@ -77,7 +77,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     // in the current activity, and then the one you wish to go to. If the email
     // and password do not match, then an error message should appear. The error
     // message code was found online and fit to our needs
-    private void button00Click(){
+    private void email_sign_in_buttonClick(){
         if(((Password.getText().toString()).equals(dbpassword)) && (((Email.getText().toString()).equals(dbemail)))){
             // go to menu
             startActivity(new Intent(LoginActivity.this, StudentMainActivity.class));
@@ -104,7 +104,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     // specifically for when the button000(register/sign up) is clicked
     // this will change the activity through the use of a new Intent.
-    private void button000Click(){
+    private void email_register_buttonClick(){
         startActivity(new Intent(LoginActivity.this, MenteeRegisterActivity.class));
     }
 
@@ -116,10 +116,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.email_sign_in_button:
-                button00Click();
+                email_sign_in_buttonClick();
                 break;
             case R.id.email_register_button:
-                button000Click();
+                email_register_buttonClick();
                 break;
         }
     }
