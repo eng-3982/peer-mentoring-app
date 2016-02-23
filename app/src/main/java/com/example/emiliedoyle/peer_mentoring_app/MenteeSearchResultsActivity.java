@@ -117,13 +117,13 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
     }
 
     public void getDBNewUgh() {
-        final TextView mTextView = (TextView) findViewById(R.id.results);
+        final TextView mTextView = (TextView) findViewById(R.id.searchResults);
 
     }
     public void getDBItems() {
 
         //create new TextView to display data
-        final TextView mTextView = (TextView) findViewById(R.id.results);
+        final TextView mTextView = (TextView) findViewById(R.id.searchResults);
 
         //define our url
         Uri.Builder uri = new Uri.Builder();
@@ -171,6 +171,8 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
     }
+
+
     private void button10Click() {
         startActivity(new Intent(MenteeSearchResultsActivity.this, StudentMainActivity.class));
     }
