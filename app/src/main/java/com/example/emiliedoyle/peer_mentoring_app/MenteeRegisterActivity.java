@@ -34,7 +34,7 @@ import java.util.Map;
 public class MenteeRegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
     // declare (register) button
-    Button button05;
+    Button menteeRegisterButton;
 
     public static final String KEY_USERNAME="username";
     public static final String KEY_EMAIL="email";
@@ -57,8 +57,8 @@ public class MenteeRegisterActivity extends AppCompatActivity implements View.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mentee_register);
-        button05=(Button)findViewById(R.id.menteeRegisterButton);
-        button05.setOnClickListener(this);
+        menteeRegisterButton=(Button)findViewById(R.id.menteeRegisterButton);
+        menteeRegisterButton.setOnClickListener(this);
     }
 
     // standard
@@ -175,11 +175,16 @@ public class MenteeRegisterActivity extends AppCompatActivity implements View.On
     }
 
     // method for switching activities from register to the main activity on click
+<<<<<<< HEAD
     private void button05Click(){
         //startActivity(new Intent(MenteeRegisterActivity.this, StudentMainActivity.class));
         addUser();
     }
 
+=======
+    private void menteeRegisterButtonClick(){
+        startActivity(new Intent(MenteeRegisterActivity.this, StudentMainActivity.class));}
+>>>>>>> 1a50cf55038dad32dfdab71550e17d94e5c08377
 
     // when click occurs, uses switch case to determine which method should be
     // implemented. ADD DEFAULT
@@ -187,7 +192,7 @@ public class MenteeRegisterActivity extends AppCompatActivity implements View.On
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.menteeRegisterButton:
-                button05Click();
+                menteeRegisterButtonClick();
                 break;
         }
     }

@@ -15,15 +15,15 @@ import android.widget.Button;
 public class MentorProfileActivity extends AppCompatActivity implements View.OnClickListener {
 
     // declare button 06
-    Button button06;
+    Button requestMentorButton;
 
     // standard onCreate, with added button linking and setting onClickListener
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mentor_profile);
-        button06=(Button)findViewById(R.id.requestMentor);
-        button06.setOnClickListener(this);
+        requestMentorButton=(Button)findViewById(R.id.requestMentor);
+        requestMentorButton.setOnClickListener(this);
     }
 
     // standard
@@ -52,7 +52,7 @@ public class MentorProfileActivity extends AppCompatActivity implements View.OnC
 
     // specifically for when button06 is clicked to change from mentor profile activity
     // to the mentee request mentor activity
-    private void button06Click(){
+    private void requestMentorButtonClick(){
         startActivity(new Intent(MentorProfileActivity.this,MenteeRequestMentorNotificationActivity.class));}
 
     // uses switch case to determine which method to implement when click occurs
@@ -60,7 +60,7 @@ public class MentorProfileActivity extends AppCompatActivity implements View.OnC
     public void onClick(View v){
         switch(v.getId()){
             case R.id.requestMentor:
-                button06Click();
+                requestMentorButtonClick();
                 break;
         }
     }

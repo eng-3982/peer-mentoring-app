@@ -15,7 +15,7 @@ import android.widget.Button;
 public class MenteeYourMatchesActivity extends AppCompatActivity implements View.OnClickListener {
 
     // declare button to return to main menu
-    Button button09;
+    Button HomeButton;
 
     // standard onCreate, with added button linking between java and XML
     // and the setting of the onClickListener
@@ -23,8 +23,8 @@ public class MenteeYourMatchesActivity extends AppCompatActivity implements View
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mentee_your_matches);
-        button09 = (Button) findViewById(R.id.HomeButton);
-        button09.setOnClickListener(this);
+        HomeButton = (Button) findViewById(R.id.HomeButton);
+        HomeButton.setOnClickListener(this);
     }
 
     // standard
@@ -53,7 +53,7 @@ public class MenteeYourMatchesActivity extends AppCompatActivity implements View
 
     // specifically for when button 9 is clicked, to change from
     // your matches activity, back to the main menu
-    private void button09Click() {
+    private void HomeButtonClick() {
         startActivity(new Intent(MenteeYourMatchesActivity.this, StudentMainActivity.class));
     }
 
@@ -63,7 +63,7 @@ public class MenteeYourMatchesActivity extends AppCompatActivity implements View
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.HomeButton:
-                button09Click();
+                HomeButtonClick();
                 break;
         }
 

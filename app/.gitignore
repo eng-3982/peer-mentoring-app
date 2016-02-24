@@ -16,5 +16,9 @@ local.properties
 .idea/misc.xml
 .idea/modules.xml
 .idea/vcs.xml
+<<<<<<< HEAD
 *.iml
 
+=======
+*.iml
+>>>>>>> emDev

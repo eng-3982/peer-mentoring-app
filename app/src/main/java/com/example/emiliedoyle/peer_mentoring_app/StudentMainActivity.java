@@ -15,9 +15,9 @@ import android.widget.Button;
 public class StudentMainActivity extends AppCompatActivity implements View.OnClickListener {
 
     // declares buttons in java
-    Button button01;
-    Button button02;
-    Button button03;
+    Button FindButton;
+    Button ManageProfileButton;
+    Button YourConnectionsButton;
 
     // basic onCreate with added linking of buttons frm XML to java
     // as well as setting onClickListeners for said buttons
@@ -25,12 +25,12 @@ public class StudentMainActivity extends AppCompatActivity implements View.OnCli
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_main);
-        button01=(Button)findViewById(R.id.FindButton);
-        button01.setOnClickListener(this);
-        button02=(Button)findViewById(R.id.ManageProfileButton);
-        button02.setOnClickListener(this);
-        button03=(Button)findViewById(R.id.YourConnectionsButton);
-        button03.setOnClickListener(this);
+        FindButton=(Button)findViewById(R.id.FindButton);
+        FindButton.setOnClickListener(this);
+        ManageProfileButton=(Button)findViewById(R.id.ManageProfileButton);
+        ManageProfileButton.setOnClickListener(this);
+        YourConnectionsButton=(Button)findViewById(R.id.YourConnectionsButton);
+        YourConnectionsButton.setOnClickListener(this);
 
     }
 
@@ -60,17 +60,17 @@ public class StudentMainActivity extends AppCompatActivity implements View.OnCli
 
     // specifically for when button01 is clicked to switch activity from
     // main activity to the find option activity
-    private void button01Click(){
+    private void FindButtonClick(){
         startActivity(new Intent(StudentMainActivity.this, MenteeFindOptionsActivity.class));}
 
     // specifically for when button02 is clicked to switch activty from
     // main activity to the manage profile activity
-    private void button02Click(){
+    private void ManageProfileButtonClick(){
         startActivity(new Intent(StudentMainActivity.this, MenteeManageProfileActivity.class));}
 
     // specifically for when button03 is clicked to switch activity from
     // main activity for your connections
-    private void button03Click(){
+    private void YourConnectionsButtonClick(){
         startActivity(new Intent(StudentMainActivity.this, MenteeYourConnectionsActivity.class));}
 
     // when click occurs, uses a switch statement that takes the ID to determine
@@ -79,13 +79,13 @@ public class StudentMainActivity extends AppCompatActivity implements View.OnCli
     public void onClick(View v){
         switch(v.getId()){
             case R.id.FindButton:
-                button01Click();
+                FindButtonClick();
                 break;
             case R.id.ManageProfileButton:
-                button02Click();
+                ManageProfileButtonClick();
                 break;
             case R.id.YourConnectionsButton:
-                button03Click();
+                YourConnectionsButtonClick();
                 break;
         }
     }

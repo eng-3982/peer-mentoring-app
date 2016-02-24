@@ -15,7 +15,7 @@ import android.widget.Button;
 public class FindActivity extends AppCompatActivity implements View.OnClickListener{
 
     // declare find button
-    Button button04;
+    Button SearchResultsButton;
 
     // standard onCreate, needed to add the buttons to link it to the XML button via ID, and
     // to set the on click listener for changing activities/views
@@ -23,8 +23,8 @@ public class FindActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find);
-        button04=(Button)findViewById(R.id.SearchResultsButton);
-        button04.setOnClickListener(this);
+        SearchResultsButton=(Button)findViewById(R.id.SearchResultsButton);
+        SearchResultsButton.setOnClickListener(this);
     }
 
     // standard
@@ -54,7 +54,7 @@ public class FindActivity extends AppCompatActivity implements View.OnClickListe
     // specifically for when the button04 (find) is clicked, this will enable that
     // a new activity is started through the use of an intent. the intent takes
     // the current activity and the activity that you wish to change to
-    private void button04Click() {
+    private void SearchResultsButtonClick() {
         startActivity(new Intent(FindActivity.this, MenteeSearchResultsActivity.class));}
 
     // when click occurs, uses switch case which takes the ID to determine which
@@ -63,7 +63,7 @@ public class FindActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v){
         switch (v.getId()){
             case R.id.SearchResultsButton:
-                    button04Click();
+                    SearchResultsButtonClick();
                     break;
         }
     }
