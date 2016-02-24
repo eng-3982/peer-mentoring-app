@@ -20,6 +20,7 @@ import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.ServerError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
@@ -27,6 +28,7 @@ import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import android.net.Uri;
 import android.content.ContentUris;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.util.Base64;
 
@@ -51,9 +53,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public static final String KEY_USERNAME="username";
     public static final String KEY_PASSWORD="password";
 
-    private String username;
+    public String username;
     private String password;
 
+   //final TextView mTextView = (TextView) findViewById(R.id.debug);
     // standard onCreate, need to add the buttons to link it to the XML button via ID, and
     // to set the on click listener for changing activities/views. Additionally, we read in
     // the user inputted email and password, but finidng the content of the XML
@@ -71,16 +74,27 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
        // Password = (EditText) findViewById(R.id.password);
         //Email = (AutoCompleteTextView) findViewById(R.id.email);
     }
+
+    /************
+    POST request function to verify user-given login information
+     - takes username and password from the EditText fields and encodes them in the volley header
+     - listens for response string from server to verify valid credentials
+        - if correct ("success"), user is taken to the main page
+        - if incorrect, a pop-up message informs the user of invalid credentials
+    *************/
     private void userLogin() {
         //define our url
         Uri.Builder uri = new Uri.Builder();
         uri.scheme("https");
         uri.authority("pma.piconepress.com");
-        uri.path("private");
+        uri.path("private/");
         final String url = uri.build().toString();
 
-        username = editTextUsername.getText().toString().trim();
-        password = editTextPassword.getText().toString().trim();
+        EditText un = (EditText)findViewById(R.id.editTextUsername);
+        username = un.getText().toString();
+
+        EditText pw = (EditText)findViewById(R.id.editTextPassword);
+        password = pw.getText().toString();
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
@@ -88,34 +102,53 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     public void onResponse(String response) {
                         if(response.trim().equals("success")){
                             openProfile();
+                            Toast.makeText(LoginActivity.this, "Welcome", Toast.LENGTH_LONG).show();
                             //do something
                         }else{
                             Toast.makeText(LoginActivity.this, response, Toast.LENGTH_LONG).show();
+
                         }
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(LoginActivity.this,error.toString(),Toast.LENGTH_LONG ).show();
+                        Toast.makeText(LoginActivity.this,error.toString(),Toast.LENGTH_LONG).show();
+                        //mTextView.setText(error.networkResponse.statusCode);
                     }
                 }){
             @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
+            public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String,String> headers = new HashMap<String,String>();
+                //encode server authorization
                 String creds = "eng-3982:isipjuice";
                 String auth = "Basic " + Base64.encodeToString(creds.getBytes(), Base64.NO_WRAP);
                 headers.put("Authorization", auth);
+                //encode username and password credentials
+                headers.put(KEY_USERNAME,username);
+                headers.put(KEY_PASSWORD,password);
                 return headers;
             }
+
+           // @Override
+            /*protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> map = new HashMap<String, String>();
+                map.put(KEY_USERNAME, username);
+                map.put(KEY_PASSWORD, password);
+                return map;
+            }*/
         };
 
+        //create a new request queue
         RequestQueue requestQueue = Volley.newRequestQueue(this);
+        //do not save volley responses in Cache
+        stringRequest.setShouldCache(false);
+        //add the string response to the queue
         requestQueue.add(stringRequest);
     }
     private void openProfile(){
         Intent intent = new Intent(this, StudentMainActivity.class);
-        intent.putExtra(KEY_USERNAME, username);
+        //intent.putExtra(KEY_USERNAME, username);
         startActivity(intent);
     }
     // standard
@@ -169,10 +202,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         switch (v.getId()) {
             case R.id.email_sign_in_button:
                 //button00Click();
+                userLogin();
                 break;
             case R.id.email_register_button:
-                //button000Click();
-                userLogin();
+                button000Click();
+                //
                 break;
         }
     }
