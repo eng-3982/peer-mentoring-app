@@ -53,13 +53,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public String username;
     private String password;
 
-<<<<<<< HEAD
    //final TextView mTextView = (TextView) findViewById(R.id.debug);
-=======
     Button email_sign_in_button;
     Button email_register_button;
 
->>>>>>> 1a50cf55038dad32dfdab71550e17d94e5c08377
     // standard onCreate, need to add the buttons to link it to the XML button via ID, and
     // to set the on click listener for changing activities/views. Additionally, we read in
     // the user inputted email and password, but finidng the content of the XML
@@ -206,62 +203,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.email_sign_in_button:
-<<<<<<< HEAD
                 //button00Click();
                 userLogin();
                 break;
             case R.id.email_register_button:
-                button000Click();
-                //
-=======
+                //button000Click();
                 email_sign_in_buttonClick();
                 break;
-            case R.id.email_register_button:
-                email_register_buttonClick();
->>>>>>> 1a50cf55038dad32dfdab71550e17d94e5c08377
-                break;
+
         }
     }
-
-   /* @Override
-   public void onStart() {
-        super.onStart();
-
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client.connect();
-        Action viewAction = Action.newAction(
-                Action.TYPE_VIEW, // TODO: choose an action type.
-                "Login Page", // TODO: Define a title for the content shown.
-                // TODO: If you have web page content that matches this app activity's content,
-                // make sure this auto-generated web page URL is correct.
-                // Otherwise, set the URL to null.
-                Uri.parse("http://host/path"),
-                // TODO: Make sure this auto-generated app deep link URI is correct.
-                Uri.parse("android-app://com.example.emiliedoyle.peer_mentoring_app/http/host/path")
-        );
-        AppIndex.AppIndexApi.start(client, viewAction);
-    }
-*/
-    /*
-    @Override
-    public void onStop() {
-        super.onStop();
-
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        Action viewAction = Action.newAction(
-                Action.TYPE_VIEW, // TODO: choose an action type.
-                "Login Page", // TODO: Define a title for the content shown.
-                // TODO: If you have web page content that matches this app activity's content,
-                // make sure this auto-generated web page URL is correct.
-                // Otherwise, set the URL to null.
-                Uri.parse("http://host/path"),
-                // TODO: Make sure this auto-generated app deep link URI is correct.
-                Uri.parse("android-app://com.example.emiliedoyle.peer_mentoring_app/http/host/path")
-        );
-        AppIndex.AppIndexApi.end(client, viewAction);
-        client.disconnect();
-    }
-    */
 }

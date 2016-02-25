@@ -117,13 +117,13 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
     }
 
     public void getDBNewUgh() {
-        final ListView mTextView = (ListView) findViewById(R.id.listview);
+        final TextView mTextView = (TextView) findViewById(R.id.enterName);
 
     }
     public void getDBItems() {
 
         //create new ListView to display data
-        final ListView mListView = (ListView) findViewById(R.id.listview);
+        final ListView mListView = (ListView) findViewById(R.id.enterName);
 
         //define our url
         Uri.Builder uri = new Uri.Builder();
@@ -138,7 +138,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
                     @Override
                     public void onResponse(JSONObject response) {
                         // Display the response string (items of the DB)
-                        mListView.setText("Response is: " + response);
+                        mTextView.setText("Response is: " + response);
                     }
                 }, new Response.ErrorListener() {
             @Override

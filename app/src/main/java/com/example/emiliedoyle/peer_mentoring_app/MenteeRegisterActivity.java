@@ -2,17 +2,21 @@ package com.example.emiliedoyle.peer_mentoring_app;
 
 // import necessary items for design, menu and connection between views
 import android.content.Intent;
+import android.app.Activity;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.util.Base64;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Button;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
@@ -175,16 +179,15 @@ public class MenteeRegisterActivity extends AppCompatActivity implements View.On
     }
 
     // method for switching activities from register to the main activity on click
-<<<<<<< HEAD
     private void button05Click(){
         //startActivity(new Intent(MenteeRegisterActivity.this, StudentMainActivity.class));
         addUser();
     }
 
-=======
+
     private void menteeRegisterButtonClick(){
         startActivity(new Intent(MenteeRegisterActivity.this, StudentMainActivity.class));}
->>>>>>> 1a50cf55038dad32dfdab71550e17d94e5c08377
+
 
     // when click occurs, uses switch case to determine which method should be
     // implemented. ADD DEFAULT
