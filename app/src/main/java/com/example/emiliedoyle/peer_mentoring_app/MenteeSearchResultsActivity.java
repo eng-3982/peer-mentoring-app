@@ -20,6 +20,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
@@ -28,6 +29,7 @@ import android.widget.GridView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.android.volley.AuthFailureError;
@@ -67,6 +69,9 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
     private RequestQueue queue;
     private String url;
 
+    //declare listview
+    ListView listView;
+
     EditText txtInput;
     // declare button
     Button HomeButton;
@@ -77,7 +82,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
         setContentView(R.layout.activity_mentee_search_results);
 
         // test string array
-        String[] mobileArray={"Android","iPhone", "Windows lol"};
+        //String[] mobileArray = {"Android", "iPhone", "Windows lol"};
         //run cluirrr's functions
         //postDBItem();
         queue = Volley.newRequestQueue(this);
@@ -87,10 +92,40 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
         HomeButton = (Button) findViewById(R.id.HomeButton);
         HomeButton.setOnClickListener(this);
 
-        //create ListView where find results will be displayed
-        ArrayAdapter adapter = new ArrayAdapter<String>(this,R.layout.activity_mentee_search_results,mobileArray );
-        ListView listView= (ListView) findViewById(R.id.listview);
+        //ListView resource: http://androidexample.com/Create_A_Simple_Listview_-_Android_Example/index.php?view=article_discription&aid=65&aaid=90
+        //get list view from XML file
+        listView = (ListView) findViewById(R.id.listview);
+
+        //define array values to show in ListView, fill with request results that hae been parsed
+        String[] values = new String[]{"Android List View", "Adapter Implementation", "Simple List View in Android",
+                "Create List View in Android", "Android Example", "List View soURCE cODE", "List View array adapter",
+                "Android Example List View"};
+
+        //define new adapter. First Parameter: Context, Second Parameter: Layout for the row, Third Parameter: ID of the
+        //TextView to which the data is written(ex android.R.id.text1), Fouth Parameter:the array of data
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1,
+                (TextView) findViewById(R.id.name), values);
+
+
+        //Assign adapter to ListView
         listView.setAdapter(adapter);
+
+        //ListView Item Click Listener
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //ListView Clicked item index
+                int itemPosition = position;
+
+                //ListView Clicked item value
+                String itemValue = (String) listView.getItemAtPosition(position);
+
+                //show alert
+                Toast.makeText(getApplicationContext(), "Position :" + itemPosition + " ListItem : " + itemValue, Toast.LENGTH_LONG).show();
+
+            }
+        });
     }
 
 
@@ -117,7 +152,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
     }
 
     public void getDBNewUgh() {
-        final ListView mTextView = (ListView) findViewById(R.id.listview);
+        final TextView mTextView = (TextView) findViewById(R.id.name);
 
     }
     public void getDBItems() {
@@ -138,13 +173,13 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
                     @Override
                     public void onResponse(JSONObject response) {
                         // Display the response string (items of the DB)
-                        mListView.setText("Response is: " + response);
+                        mTextView.setText("Response is: " + response);
                     }
                 }, new Response.ErrorListener() {
             @Override
             //if there is an error, print it!
             public void onErrorResponse(VolleyError error) {
-                mListView.setText(error.toString());
+                mTextView.setText(error.toString());
             }
         }) {
             @Override
