@@ -102,24 +102,9 @@ public class MenteeRegisterActivity extends AppCompatActivity implements View.On
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        if(response.trim().equals("super admin")){
-                            startActivity(new Intent(MenteeRegisterActivity.this, StudentMainActivity.class));
-                            //do something
-                        }
 
-                        else if(response.trim().equals("admin"))
-                        {
-                            startActivity(new Intent(MenteeRegisterActivity.this, StudentMainActivity.class));
-                        }
-
-                        else if (response.trim().equals("mentor") || response.trim().equals("mentee"))
-                        {
-                            startActivity(new Intent(MenteeRegisterActivity.this, StudentMainActivity.class));
-                        }
-                        else{
                             Toast.makeText(MenteeRegisterActivity.this, response, Toast.LENGTH_LONG).show();
-
-                        }
+                            //menteeRegisterButtonClick();
                     }
                 },
                 new Response.ErrorListener() {
@@ -195,7 +180,8 @@ public class MenteeRegisterActivity extends AppCompatActivity implements View.On
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.menteeRegisterButton:
-                menteeRegisterButtonClick();
+                //menteeRegisterButtonClick();
+                addUser();
                 break;
         }
     }

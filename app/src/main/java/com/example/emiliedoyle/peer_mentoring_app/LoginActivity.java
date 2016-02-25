@@ -208,7 +208,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.email_register_button:
                 //button000Click();
-                email_sign_in_buttonClick();
+                email_register_buttonClick();
                 break;
 
         }

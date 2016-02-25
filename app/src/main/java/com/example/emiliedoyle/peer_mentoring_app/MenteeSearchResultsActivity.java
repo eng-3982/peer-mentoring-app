@@ -77,20 +77,20 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
         setContentView(R.layout.activity_mentee_search_results);
 
         // test string array
-        String[] mobileArray={"Android","iPhone", "Windows lol"};
+        //String[] mobileArray={"Android","iPhone", "Windows lol"};
         //run cluirrr's functions
         //postDBItem();
         queue = Volley.newRequestQueue(this);
         //url = "https://pma.piconepress.com/data";
         getDBItems();
         //getDBandAuthenticate();
-        HomeButton = (Button) findViewById(R.id.HomeButton);
+        /*HomeButton = (Button) findViewById(R.id.HomeButton);
         HomeButton.setOnClickListener(this);
 
         //create ListView where find results will be displayed
         ArrayAdapter adapter = new ArrayAdapter<String>(this,R.layout.activity_mentee_search_results,mobileArray );
         ListView listView= (ListView) findViewById(R.id.listview);
-        listView.setAdapter(adapter);
+        listView.setAdapter(adapter);*/
     }
 
 
@@ -117,19 +117,19 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
     }
 
     public void getDBNewUgh() {
-        final TextView mTextView = (TextView) findViewById(R.id.enterName);
+        final TextView mTextView = (TextView) findViewById(R.id.searchResults);
 
     }
     public void getDBItems() {
 
         //create new ListView to display data
-        final TextView mTextView = (TextView) findViewById(R.id.enterName);
+        final TextView mTextView = (TextView) findViewById(R.id.searchResults);
 
         //define our url
         Uri.Builder uri = new Uri.Builder();
         uri.scheme("https");
         uri.authority("pma.piconepress.com");
-        uri.path("data");
+        uri.path("data/");
         final String url = uri.build().toString();
 
         // Request a json response from the provided URL.
@@ -145,6 +145,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
             //if there is an error, print it!
             public void onErrorResponse(VolleyError error) {
                 mTextView.setText(error.toString());
+
             }
         }) {
             @Override
