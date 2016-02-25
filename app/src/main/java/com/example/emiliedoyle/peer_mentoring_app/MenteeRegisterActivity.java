@@ -80,7 +80,7 @@ public class MenteeRegisterActivity extends AppCompatActivity implements View.On
         uri.path("data/");
         final String url = uri.build().toString();
 
-        EditText n = (EditText)findViewById(R.id.enterUserName);
+        EditText n = (EditText)findViewById(R.id.enterName);
         username = n.getText().toString();
 
         EditText e = (EditText)findViewById(R.id.enterEmail);

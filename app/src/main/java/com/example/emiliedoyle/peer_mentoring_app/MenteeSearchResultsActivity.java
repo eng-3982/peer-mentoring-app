@@ -123,7 +123,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
     public void getDBItems() {
 
         //create new ListView to display data
-        final ListView mListView = (ListView) findViewById(R.id.enterName);
+        final TextView mTextView = (TextView) findViewById(R.id.enterName);
 
         //define our url
         Uri.Builder uri = new Uri.Builder();
@@ -144,7 +144,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
             @Override
             //if there is an error, print it!
             public void onErrorResponse(VolleyError error) {
-                mListView.setText(error.toString());
+                mTextView.setText(error.toString());
             }
         }) {
             @Override

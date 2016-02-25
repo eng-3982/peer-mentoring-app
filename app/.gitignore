@@ -18,7 +18,3 @@ local.properties
 .idea/vcs.xml
 <<<<<<< HEAD
 *.iml
-
-=======
-*.iml
->>>>>>> emDev
