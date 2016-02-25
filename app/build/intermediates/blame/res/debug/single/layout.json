@@ -20,12 +20,12 @@
         "source": "C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_action_mode_bar.xml"
     },
     {
-        "merged": "C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_login.xml",
-        "source": "C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\src\\main\\res\\layout\\activity_login.xml"
-    },
-    {
         "merged": "C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media.xml",
         "source": "C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\notification_template_big_media.xml"
+    },
+    {
+        "merged": "C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_login.xml",
+        "source": "C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\src\\main\\res\\layout\\activity_login.xml"
     },
     {
         "merged": "C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
@@ -176,12 +176,12 @@
         "source": "C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\src\\main\\res\\layout\\activity_student_main.xml"
     },
     {
-        "merged": "C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_view_adapter.xml",
-        "source": "C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\src\\main\\res\\layout\\list_view_adapter.xml"
-    },
-    {
         "merged": "C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
         "source": "C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_view_adapter.xml",
+        "source": "C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\src\\main\\res\\layout\\list_view_adapter.xml"
     },
     {
         "merged": "C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_mentee_register.xml",
