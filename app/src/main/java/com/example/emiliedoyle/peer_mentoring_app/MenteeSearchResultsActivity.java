@@ -55,7 +55,11 @@ import com.mongodb.ParallelScanOptions;
 import com.mongodb.ServerAddress;*/
 
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 
 import java.net.URL;
 import java.util.HashMap;
@@ -177,7 +181,17 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
                     @Override
                     public void onResponse(JSONObject response) {
                         // Display the response string (items of the DB)
-                        mTextView.setText("Response is: " + response);
+                        //mTextView.setText("Response is: " + response);
+                        try {
+                        String result = response.getString("name");
+                            mTextView.setText("Response is: " + result);
+                        }
+
+                        catch (JSONException e) {
+
+                        }
+
+
                     }
                 }, new Response.ErrorListener() {
             @Override

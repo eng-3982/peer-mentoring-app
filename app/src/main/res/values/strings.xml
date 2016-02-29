@@ -16,4 +16,9 @@
     </string>
     <string name="title_activity_mentee_find_options">MenteeFindOptionsActivity</string>
     <string name="title_activity_mentee_your_matches">MenteeYourMatchesActivity</string>
+    <string name="title_activity_admin_main">AdminMainActivity</string>
+    <string name="title_activity_admin_add_mentor">AdminAddMentorActivity</string>
+    <string name="title_activity_admin_add_mentor_confirmation">AdminAddMentorConfirmationActivity
+    </string>
+    <string name="title_activity_admin_manage_connections">AdminManageConnectionsActivity</string>
 </resources>
