@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:2:1-75:12
+ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:2:1-78:12
 	package
 		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:3:5-57
 		INJECTED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml
@@ -18,7 +18,7 @@ ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\pe
 	android:name
 		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:5:22-64
 application
-ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:7:5-73:19
+ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:7:5-76:19
 MERGED from [com.android.support:appcompat-v7:23.0.1] C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.0.1] C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\AndroidManifest.xml:22:5-20
 MERGED from [com.mcxiaoke.volley:library-aar:1.0.0] C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\build\intermediates\exploded-aar\com.mcxiaoke.volley\library-aar\1.0.0\AndroidManifest.xml:5:5-19
@@ -26,96 +26,96 @@ MERGED from [com.google.android.gms:play-services-appindexing:8.1.0] C:\Users\Ra
 MERGED from [com.google.android.gms:play-services-basement:8.1.0] C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:20:5-24:19
 MERGED from [com.android.support:support-v4:23.0.1] C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\AndroidManifest.xml:22:5-20
 	android:label
-		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:10:9-41
+		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:11:9-41
 	android:allowBackup
-		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:8:9-35
+		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:9:9-35
 	android:icon
-		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:9:9-43
+		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:10:9-43
 	android:theme
-		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:11:9-40
+		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:12:9-40
 activity#com.example.emiliedoyle.peer_mentoring_app.LoginActivity
-ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:12:9-20:20
+ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:13:9-21:20
 	android:label
-		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:14:13-57
+		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:15:13-57
 	android:name
-		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:13:13-42
+		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:14:13-42
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:15:13-19:29
+ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:16:13-20:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:16:17-69
+ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:17:17-69
 	android:name
-		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:16:25-66
+		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:17:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:18:17-77
+ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:19:17-77
 	android:name
-		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:18:27-74
+		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:19:27-74
 activity#com.example.emiliedoyle.peer_mentoring_app.StudentMainActivity
-ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:21:9-31:20
+ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:24:9-34:20
 	android:label
-		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:23:13-64
+		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:26:13-64
 	android:name
-		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:22:13-48
+		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:25:13-48
 activity#com.example.emiliedoyle.peer_mentoring_app.FindActivity
-ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:32:9-35:20
+ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:35:9-38:20
 	android:label
-		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:34:13-56
-	android:name
-		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:33:13-41
-activity#com.example.emiliedoyle.peer_mentoring_app.MenteeManageProfileActivity
-ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:36:9-39:20
-	android:label
-		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:38:13-73
-	android:name
 		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:37:13-56
+	android:name
+		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:36:13-41
+activity#com.example.emiliedoyle.peer_mentoring_app.MenteeManageProfileActivity
+ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:39:9-42:20
+	android:label
+		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:41:13-73
+	android:name
+		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:40:13-56
 activity#com.example.emiliedoyle.peer_mentoring_app.MenteeYourConnectionsActivity
-ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:40:9-43:20
+ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:43:9-46:20
 	android:label
-		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:42:13-75
+		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:45:13-75
 	android:name
-		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:41:13-58
+		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:44:13-58
 activity#com.example.emiliedoyle.peer_mentoring_app.MenteeSearchResultsActivity
-ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:44:9-47:20
+ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:47:9-50:20
 	android:label
-		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:46:13-73
+		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:49:13-73
 	android:name
-		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:45:13-56
+		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:48:13-56
 activity#com.example.emiliedoyle.peer_mentoring_app.MenteeRegisterActivity
-ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:48:9-51:20
+ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:51:9-54:20
 	android:label
-		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:50:13-67
+		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:53:13-67
 	android:name
-		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:49:13-51
+		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:52:13-51
 activity#com.example.emiliedoyle.peer_mentoring_app.MentorProfileActivity
-ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:52:9-55:20
+ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:55:9-58:20
 	android:label
-		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:54:13-66
+		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:57:13-66
 	android:name
-		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:53:13-50
+		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:56:13-50
 activity#com.example.emiliedoyle.peer_mentoring_app.MenteeRequestMentorNotificationActivity
-ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:56:9-59:20
+ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:59:9-62:20
 	android:label
-		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:58:13-86
+		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:61:13-86
 	android:name
-		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:57:13-68
+		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:60:13-68
 activity#com.example.emiliedoyle.peer_mentoring_app.MenteeFindOptionsActivity
-ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:60:9-63:20
+ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:63:9-66:20
 	android:label
-		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:62:13-71
+		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:65:13-71
 	android:name
-		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:61:13-54
+		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:64:13-54
 activity#com.example.emiliedoyle.peer_mentoring_app.MenteeYourMatchesActivity
-ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:64:9-67:20
+ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:67:9-70:20
 	android:label
-		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:66:13-71
+		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:69:13-71
 	android:name
-		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:65:13-54
+		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:68:13-54
 meta-data#com.google.android.gms.version
-ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:70:9-72:69
+ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:73:9-75:69
 MERGED from [com.google.android.gms:play-services-basement:8.1.0] C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
 	android:value
-		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:72:13-66
+		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:75:13-66
 	android:name
-		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:71:13-58
+		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:74:13-58
 uses-sdk
 INJECTED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:23.0.1] C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\AndroidManifest.xml:20:5-43

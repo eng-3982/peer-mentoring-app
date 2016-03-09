@@ -55,8 +55,12 @@ import com.mongodb.ParallelScanOptions;
 import com.mongodb.ServerAddress;*/
 
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -79,61 +83,16 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //HomeButton = (Button) findViewById(R.id.HomeButton);
+        //HomeButton.setOnClickListener(this);
+
         setContentView(R.layout.activity_mentee_search_results);
-
-        // test string array
-
-        //String[] mobileArray={"Android","iPhone", "Windows lol"};
-
-        //String[] mobileArray = {"Android", "iPhone", "Windows lol"};
-        //run cluirrr's functions
-        //postDBItem();
         queue = Volley.newRequestQueue(this);
-        //url = "https://pma.piconepress.com/data";
+
+
         getDBItems();
-        //getDBandAuthenticate();
-        /*HomeButton = (Button) findViewById(R.id.HomeButton);
-        HomeButton.setOnClickListener(this);
-
-        //create ListView where find results will be displayed
-        ArrayAdapter adapter = new ArrayAdapter<String>(this,R.layout.activity_mentee_search_results,mobileArray );
-        ListView listView= (ListView) findViewById(R.id.listview);
-        listView.setAdapter(adapter);*/
-
-        //ListView resource: http://androidexample.com/Create_A_Simple_Listview_-_Android_Example/index.php?view=article_discription&aid=65&aaid=90
-        //get list view from XML file
-        /*listView = (ListView) findViewById(R.id.listview);
-
-        //define array values to show in ListView, fill with request results that hae been parsed
-        String[] values = new String[]{"Android List View", "Adapter Implementation", "Simple List View in Android",
-                "Create List View in Android", "Android Example", "List View soURCE cODE", "List View array adapter",
-                "Android Example List View"};
-
-        //define new adapter. First Parameter: Context, Second Parameter: Layout for the row, Third Parameter: ID of the
-        //TextView to which the data is written(ex android.R.id.text1), Fouth Parameter:the array of data
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1,
-                (TextView) findViewById(R.id.name), values);
-
-
-        //Assign adapter to ListView
-        listView.setAdapter(adapter);
-
-        //ListView Item Click Listener
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //ListView Clicked item index
-                int itemPosition = position;
-
-                //ListView Clicked item value
-                String itemValue = (String) listView.getItemAtPosition(position);
-
-                //show alert
-                Toast.makeText(getApplicationContext(), "Position :" + itemPosition + " ListItem : " + itemValue, Toast.LENGTH_LONG).show();
-
-            }
-        });*/
+        //final TextView mTextView = (TextView) findViewById(R.id.searchResults);
+        //mTextView.setText("Response is: ");
     }
 
 
@@ -158,11 +117,10 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
 
         return super.onOptionsItemSelected(item);
     }
-
     public void getDBItems() {
 
         //create new ListView to display data
-        final TextView mTextView = (TextView) findViewById(R.id.searchResults);
+        final TextView mTextView = (TextView) findViewById(R.id.stuff);
 
         //define our url
         Uri.Builder uri = new Uri.Builder();
@@ -171,13 +129,16 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
         uri.path("data/");
         final String url = uri.build().toString();
 
+
+
         // Request a json response from the provided URL.
-        JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET, url, null,
+        JsonObjectRequest jsonRequest = new JsonObjectRequest (Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         // Display the response string (items of the DB)
-                        mTextView.setText("Response is: " + response);
+                        mTextView.setText("Response is: " + response.toString());
+
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -210,6 +171,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
     }
+
 
     private void HomeButtonClick() {
         startActivity(new Intent(MenteeSearchResultsActivity.this, StudentMainActivity.class));

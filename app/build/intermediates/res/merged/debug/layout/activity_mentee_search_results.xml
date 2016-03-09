@@ -16,9 +16,15 @@
         android:layout_height="wrap_content"
         android:id="@+id/searchResults"
         android:textStyle="bold"
-        android:textSize="25dp"/>
-
-    <ListView
+        android:textSize="25dp"
+        />
+    <TextView
+        android:text="Search Results"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/stuff"
+        />
+    <!--<ListView
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/listview"
         android:layout_width="match_parent"
@@ -60,13 +66,13 @@
             android:layout_alignBottom="@+id/name"
             />
     </ListView>
-
+    -->
+    <!--
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/HomeButton"
         android:text="Return to Main Menu"
-        android:layout_below="@+id/listview"
         android:layout_centerHorizontal="true" />
-
+        -->
 </RelativeLayout>
