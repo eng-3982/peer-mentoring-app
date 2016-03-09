@@ -21,4 +21,8 @@
     <string name="title_activity_admin_add_mentor_confirmation">AdminAddMentorConfirmationActivity
     </string>
     <string name="title_activity_admin_manage_connections">AdminManageConnectionsActivity</string>
+    <string name="title_activity_admin_manage_mentors">Admin Manage Mentors Activity</string>
+    <string name="title_activity_admin_manage_mentors_options">Admin Manage Mentors Options
+        Activity
+    </string>
 </resources>

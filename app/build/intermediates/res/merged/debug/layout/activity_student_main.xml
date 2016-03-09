@@ -10,7 +10,7 @@
     tools:context="com.example.emiliedoyle.peer_mentoring_app.StudentMainActivity">
 
     <TextView
-        android:text="Hello Student! Welome to the \n Peer Mentor Matching App!"
+        android:text="Hello Student! Welcome to the \n Peer Mentor Matching App!"
         android:layout_width="wrap_content"
         android:layout_height="75dp"
         android:id="@+id/text1"

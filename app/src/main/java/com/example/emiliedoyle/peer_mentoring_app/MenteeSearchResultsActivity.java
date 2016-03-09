@@ -75,6 +75,11 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
     private RequestQueue queue;
     private String url;
 
+    String[] user;
+    String[] name;
+    String[] value;
+    String[] nameAndValue;
+
     //declare listview
     ListView listView;
 
@@ -90,6 +95,33 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
 
         setContentView(R.layout.activity_mentee_search_results);
         queue = Volley.newRequestQueue(this);
+        //url = "https://pma.piconepress.com/data";
+        //getDBItems();
+        //getDBandAuthenticate();
+        HomeButton = (Button) findViewById(R.id.HomeButton);
+        HomeButton.setOnClickListener(this);
+/*
+        //create ListView where find results will be displayed
+        ArrayAdapter adapter = new ArrayAdapter<String>(this,R.layout.activity_mentee_search_results,mobileArray );
+        ListView listView= (ListView) findViewById(R.id.listview);
+        listView.setAdapter(adapter);*/
+
+        //ListView resource: http://androidexample.com/Create_A_Simple_Listview_-_Android_Example/index.php?view=article_discription&aid=65&aaid=90
+        //get list view from XML file
+        /*listView = (ListView) findViewById(R.id.listview);
+
+        //define array values to show in ListView, fill with request results that hae been parsed
+        String[] values = new String[]{"Android List View", "Adapter Implementation", "Simple List View in Android",
+                "Create List View in Android", "Android Example", "List View soURCE cODE", "List View array adapter",
+                "Android Example List View"};
+
+        //define new adapter. First Parameter: Context, Second Parameter: Layout for the row, Third Parameter: ID of the
+        //TextView to which the data is written(ex android.R.id.text1), Fouth Parameter:the array of data
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1,
+                (TextView) findViewById(R.id.name), values);
+*/
+
 
 
         getDBItems();
@@ -141,8 +173,46 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
                         // Display the response string (items of the DB)
                         //mTextView.setText("Response is: " + response);
                         try {
-                        String result = response.getString("name");
+                            String result = response.getString("name"); //must substitute in a name
                             mTextView.setText("Response is: " + result);
+                           /*
+                            for (int i=0; i<response.length(); i++){
+                                JSONObject person= response.getJSONOject(i); //response or result, result would be parsed? iterator?
+                                user[i] = person.getString("user");
+                                name[i] = person.getString("name");
+                                value[i] = person.getString("value");
+                                nameAndValue[i]= name[i] + "    " + value[i];
+
+                            }*/
+/*
+                            Iterator<?> keys= response.keys();
+                            int i=0;
+                            while(keys.hasNext()){
+                                String key = (String)keys.next();
+                                if(response.get(key) instanceof JSONObject){
+                                    JSONObject person= response.getJSONObject(key);
+                                    user[i] = person.getString("user");
+                                    //name[i] = person.getString("name");
+                                    //value[i] = person.getString("value");
+                                    //nameAndValue[i]= name[i] + "    " + value[i];
+                                    //user[i] = key;
+                                }*/
+
+                            // maybe converting it to a string is the issue?resolve as JSON then convert to string
+                            // http://stackoverflow.com/questions/22687771/how-to-convert-jsonobjects-to-jsonarray
+/*
+                            JSONArray arr= response.getJSONArray("name");
+                            for (int i=0; i<arr.length(); i++){
+                                JSONObject o = arr.getJSONObject(i);
+                                user[i] = o.getString("user");
+                                name[i] = o.getString("name");
+                                value[i] = o.getString("value");
+                                nameAndValue[i]= name[i].toString() + "    " + value[i].toString();//not sure if toString is necessary or implied in getString
+                                System.out.println(o); //example purpose
+                            }
+                            mTextView.setText("Response is now: "+ nameAndValue);
+
+                        }*/
                         }
 
                         catch (JSONException e) {

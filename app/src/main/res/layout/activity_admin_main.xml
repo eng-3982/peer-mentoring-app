@@ -47,23 +47,21 @@
         android:text="Find a Mentor"
         android:onClick="findAMentor"
         />
-    <!-- the add a mentor button will be changed to update profile for the regular users-->
+
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/AddMentorButton"
+        android:id="@+id/ManageMentorsButton"
         android:layout_below="@+id/FindButton"
-        android:text="Add a Mentor"
-
+        android:text="Manage Mentors"
         />
 
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/ManageConnectionsButton"
-        android:layout_below="@+id/AddMentorButton"
+        android:layout_below="@+id/ManageMentorsButton"
         android:text="Manage Connections"
-
         />
 
 </RelativeLayout>

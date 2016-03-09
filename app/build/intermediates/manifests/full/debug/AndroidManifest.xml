@@ -17,7 +17,8 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.example.emiliedoyle.peer_mentoring_app.LoginActivity"
-            android:label="@string/title_activity_login" >
+            android:label="@string/title_activity_login"
+            android:theme="@android:style/Theme.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -78,6 +79,31 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name="com.example.emiliedoyle.peer_mentoring_app.AdminMainActivity"
+            android:label="@string/title_activity_admin_main" >
+        </activity>
+        <activity
+            android:name="com.example.emiliedoyle.peer_mentoring_app.AdminAddMentorActivity"
+            android:label="@string/title_activity_admin_add_mentor" >
+        </activity>
+        <activity
+            android:name="com.example.emiliedoyle.peer_mentoring_app.AdminAddMentorConfirmationActivity"
+            android:label="@string/title_activity_admin_add_mentor_confirmation" >
+        </activity>
+        <activity
+            android:name="com.example.emiliedoyle.peer_mentoring_app.AdminManageConnectionsActivity"
+            android:label="@string/title_activity_admin_manage_connections" >
+        </activity>
+        <activity
+            android:name="com.example.emiliedoyle.peer_mentoring_app.AdminManageMentorsActivity"
+            android:label="@string/title_activity_admin_manage_mentors" >
+        </activity>
+        <activity
+            android:name="com.example.emiliedoyle.peer_mentoring_app.AdminManageMentorsOptionsActivity"
+            android:label="@string/title_activity_admin_manage_mentors_options" >
+        </activity>
     </application>
 
 </manifest>
