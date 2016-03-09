@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.emiliedoyle.peer_mentoring_app" >
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
 
@@ -68,11 +68,30 @@
             android:name=".MenteeYourMatchesActivity"
             android:label="@string/title_activity_mentee_your_matches" >
         </activity>
-        <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
-             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <!--
+             ATTENTION: This was auto-generated to add Google Play services to your project for
+             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".AdminMainActivity"
+            android:label="@string/title_activity_admin_main" >
+        </activity>
+        <activity
+            android:name=".AdminAddMentorActivity"
+            android:label="@string/title_activity_admin_add_mentor" >
+        </activity>
+        <activity
+            android:name=".AdminAddMentorConfirmationActivity"
+            android:label="@string/title_activity_admin_add_mentor_confirmation" >
+        </activity>
+        <activity
+            android:name=".AdminManageConnectionsActivity"
+            android:label="@string/title_activity_admin_manage_connections" >
+        </activity>
     </application>
 
 </manifest>
