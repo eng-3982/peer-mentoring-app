@@ -8,24 +8,26 @@ import android.view.MenuItem;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 
 
 public class AdminMainActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button FindButton;
-    Button AddMentorButton;
+    Button ManageMentorsButton;
     Button ManageConnectionsButton;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_admin_main);
         FindButton=(Button)findViewById(R.id.FindButton);
         FindButton.setOnClickListener(this);
-        AddMentorButton=(Button)findViewById(R.id.AddMentorButton);
-        AddMentorButton.setOnClickListener(this);
+        ManageMentorsButton=(Button)findViewById(R.id.ManageMentorsButton);
+        ManageMentorsButton.setOnClickListener(this);
         ManageConnectionsButton=(Button)findViewById(R.id.ManageConnectionsButton);
         ManageConnectionsButton.setOnClickListener(this);
     }
@@ -59,8 +61,8 @@ public class AdminMainActivity extends AppCompatActivity implements View.OnClick
 
     // specifically for when button02 is clicked to switch activty from
     // main activity to the manage profile activity
-    private void AddMentorButtonClick(){
-        startActivity(new Intent(AdminMainActivity.this, MenteeManageProfileActivity.class));}
+    private void ManageMentorsButtonClick(){
+        startActivity(new Intent(AdminMainActivity.this, AdminManageMentorsOptionsActivity.class));}
 
     // specifically for when button03 is clicked to switch activity from
     // main activity for your connections
@@ -75,8 +77,8 @@ public class AdminMainActivity extends AppCompatActivity implements View.OnClick
             case R.id.FindButton:
                 FindButtonClick();
                 break;
-            case R.id.AddMentorButton:
-                AddMentorButtonClick();
+            case R.id.ManageMentorsButton:
+                ManageMentorsButtonClick();
                 break;
             case R.id.ManageConnectionsButton:
                 ManageConnectionsButtonClick();

@@ -250,6 +250,15 @@
     <string name="common_open_on_phone">Open on phone</string>
     <string name="hello_world">Hello world!</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="title_activity_admin_add_mentor">AdminAddMentorActivity</string>
+    <string name="title_activity_admin_add_mentor_confirmation">AdminAddMentorConfirmationActivity
+    </string>
+    <string name="title_activity_admin_main">AdminMainActivity</string>
+    <string name="title_activity_admin_manage_connections">AdminManageConnectionsActivity</string>
+    <string name="title_activity_admin_manage_mentors">Admin Manage Mentors Activity</string>
+    <string name="title_activity_admin_manage_mentors_options">Admin Manage Mentors Options
+        Activity
+    </string>
     <string name="title_activity_find">FindActivity</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_mentee_find_options">MenteeFindOptionsActivity</string>
