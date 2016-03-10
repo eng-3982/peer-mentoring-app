@@ -58,6 +58,9 @@ public class MenteeFindOptionsActivity extends AppCompatActivity implements View
     // specifically for the button07 click, which will use a new Intent
     // in order to switch to the 'your matches' activity
     private void YourMatchesButtonClick() {
+
+
+        
         startActivity(new Intent(MenteeFindOptionsActivity.this, MenteeYourMatchesActivity.class));}
 
     // specifically for button08 click, which will use a new Intent

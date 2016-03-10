@@ -1,6 +1,7 @@
 package com.example.emiliedoyle.peer_mentoring_app;
 
 // import necessary items for design, menu and connection between views
+import android.util.Log;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,6 +13,7 @@ import android.view.MenuItem;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
+import android.webkit.CookieManager;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,6 +24,8 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.ServerError;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.HttpClientStack;
+import com.android.volley.toolbox.HttpStack;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 //import com.google.android.gms.appindexing.Action;
@@ -32,6 +36,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.util.Base64;
 
+import java.net.CookieHandler;
+import java.net.CookiePolicy;
+import java.net.CookieStore;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -104,7 +111,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         if(response.trim().equals("success")){
                             openProfile();
                             Toast.makeText(LoginActivity.this, "Welcome", Toast.LENGTH_LONG).show();
-                            //do something
+                            Log.w("cookie", response);
                         }else{
                             Toast.makeText(LoginActivity.this, response, Toast.LENGTH_LONG).show();
 
@@ -194,7 +201,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private void email_register_buttonClick(){
         startActivity(new Intent(LoginActivity.this, MenteeRegisterActivity.class));
     }
-
     //  when a click occurs, this uses a switch statement that takes in
     // the ID of the item clicked and the cases are the optional buttons
     // at which point, it will activate the corresponding button's click
@@ -205,6 +211,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.email_sign_in_button:
                 //button00Click();
                 userLogin();
+
                 break;
             case R.id.email_register_button:
                 //button000Click();
