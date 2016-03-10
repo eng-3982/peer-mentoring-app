@@ -96,28 +96,28 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
         HomeButton = (Button) findViewById(R.id.HomeButton);
         HomeButton.setOnClickListener(this);
         //get from xml.
-        listView= (ListView) findViewById(R.id.listview);
+        //listView= (ListView) findViewById(R.id.listview);
         String[] nameArray= new String[]{"Raquel", "Emilie"}; //test for listview
         //create ListView where find results will be displayed
-        ArrayAdapter<String>adapter= new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,nameArray );
+        //ArrayAdapter<String>adapter= new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,nameArray );
         //assign adapter to listView
-        listView.setAdapter(adapter);
+        //listView.setAdapter(adapter);
         //listView item Click listener
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        //listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+           // @Override
+            //public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 //listView clicked item index
-                int itemPosition= position;
+              //  int itemPosition= position;
 
                 //listView clicked item value
-                String itemValue=(String)listView.getItemAtPosition(position);
+                //String itemValue=(String)listView.getItemAtPosition(position);
 
                 //show alert
-                Toast.makeText(getApplicationContext(), "Position:"+ itemPosition+ "ListItem:" +itemValue, Toast.LENGTH_LONG).show();
-            }
-        });
+                //Toast.makeText(getApplicationContext(), "Position:"+ itemPosition+ "ListItem:" +itemValue, Toast.LENGTH_LONG).show();
+          //  }
+        //});
 
         //ListView resource: http://androidexample.com/Create_A_Simple_Listview_-_Android_Example/index.php?view=article_discription&aid=65&aaid=90
         //define new adapter. First Parameter: Context, Second Parameter: Layout for the row, Third Parameter: ID of the
@@ -126,7 +126,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
        // ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simpleexpandable_list_item_1,
        //         (TextView) findViewById(R.id.name), nameArray);
 
-        getDBItems();
+        //getDBItems();
         //final TextView mTextView = (TextView) findViewById(R.id.searchResults);
         //mTextView.setText("Response is: ");
     }
@@ -153,7 +153,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
 
         return super.onOptionsItemSelected(item);
     }
-    public void getDBItems() {
+   /* public void getDBItems() {
 
         //create new ListView to display data
         final TextView mTextView = (TextView) findViewById(R.id.stuff);
@@ -232,7 +232,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
-    }
+    }*/
 
 
     private void HomeButtonClick() {

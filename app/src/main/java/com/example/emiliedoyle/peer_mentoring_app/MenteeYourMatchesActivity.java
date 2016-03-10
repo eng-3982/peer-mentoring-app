@@ -22,7 +22,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import java.util.Arrays;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -33,7 +33,10 @@ public class MenteeYourMatchesActivity extends AppCompatActivity implements View
 
     // declare button to return to main menu
     Button HomeButton;
-    String[] mobileArray={"Android", "iphone"};
+
+    private ListView mainListView;
+    private ArrayAdapter<String> listAdapter;
+
 
     // standard onCreate, with added button linking between java and XML
     // and the setting of the onClickListener
@@ -43,11 +46,15 @@ public class MenteeYourMatchesActivity extends AppCompatActivity implements View
         setContentView(R.layout.activity_mentee_your_matches);
         HomeButton = (Button) findViewById(R.id.HomeButton);
         HomeButton.setOnClickListener(this);
-//listview http://www.vogella.com/tutorials/AndroidListView/article.html
-        ArrayAdapter adapter = new ArrayAdapter<String>(this, R.layout.activity_listview,mobileArray);
 
-        ListView listView=(ListView) findViewById(R.id.mobile_list);
-        listView.setAdapter(adapter);
+// DEMO THAT WORKS! PRAISE THE LORD! http://windrealm.org/tutorials/android/android-listview.php
+        mainListView=(ListView) findViewById(R.id.mainListView);
+        String[] planets= new String[]{"Mercury","Venus","Earth"};
+        ArrayList<String> planetList= new ArrayList<String>();
+        planetList.addAll(Arrays.asList(planets));
+        listAdapter= new ArrayAdapter<String>(this, R.layout.simplerow, planetList);
+        listAdapter.add("Ceres");
+        mainListView.setAdapter(listAdapter);
 
     }
 

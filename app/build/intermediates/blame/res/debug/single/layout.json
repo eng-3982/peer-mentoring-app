@@ -80,10 +80,6 @@
         "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/layout/abc_list_menu_item_layout.xml"
     },
     {
-        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/layout/activity_listview.xml",
-        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/layout/activity_listview.xml"
-    },
-    {
         "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/layout/abc_action_mode_close_item_material.xml",
         "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/layout/abc_action_mode_close_item_material.xml"
     },
@@ -150,6 +146,10 @@
     {
         "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view_list_item.xml",
         "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/layout/abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/layout/simplerow.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/layout/simplerow.xml"
     },
     {
         "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/layout/abc_screen_toolbar.xml",

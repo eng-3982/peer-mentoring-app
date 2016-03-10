@@ -1,19 +1,11 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:orientation="vertical"
-    tools:context="com.example.emiliedoyle.peer_mentoring_app.MenteeYourMatchesActivity">
-
-
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/mobile_list">
-
-    </ListView>
-    <!--
+    tools:context="com.example.emiliedoyle.peer_mentoring_app.MenteeYourMatchesActivity"
+    android:weightSum="1">
     <TextView
         android:text="Your Matches"
         android:textColor="#9e64d8"
@@ -22,11 +14,12 @@
         android:id="@+id/yourMatches"
         android:textStyle="bold"
         android:textSize="25dp"/>
+
     <ListView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/listview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="367dp"
+        android:layout_height="372dp"
+        android:id="@+id/mainListView"
+        android:layout_weight="0.82"
         android:columnWidth="90dp"
         android:numColumns="auto_fit"
         android:verticalSpacing="10dp"
@@ -34,28 +27,16 @@
         android:stretchMode="columnWidth"
         android:gravity="center"
         android:divider="#9e64d8">
-        <TextView
-            android:layout_width="250dp"
-            android:layout_height="50dip"
-            android:id= "@+id/name"
-            android:layout_alignParentTop="true"
-            android:gravity="center_vertical"
-            android:layout_marginRight="26dip"
-            android:contentDescription="Name"
-            android:text="Name"
-            android:textColor="#9e64d8"
-            android:layout_gravity="center_horizontal"
-            android:textSize="30sp"
-            />
+
     </ListView>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/HomeButton"
         android:text="Return to Main Menu"
-        android:layout_below="@+id/matchesvOLLEY"
-        android:layout_centerHorizontal="true" />
--->
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal" />
 
 
 </LinearLayout>

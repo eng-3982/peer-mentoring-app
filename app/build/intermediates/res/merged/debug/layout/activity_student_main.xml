@@ -18,52 +18,50 @@
         android:textColor="#9e64d8"
         android:textStyle="bold"
         android:gravity="center_horizontal"
-        />
+        android:layout_above="@+id/text2"
+        android:layout_alignParentTop="true" />
 
     <TextView
-        android:text="Please select one of the options below:"
+        android:text="Please select one of the following options:"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
         android:id="@+id/text2"
         android:textSize="18dp"
-        android:layout_below="@+id/pm"
-        android:textColor="#000000"
-        android:layout_centerHorizontal="true"
+        android:textColor="#FFFFFF"
         android:textStyle="bold"
-        android:gravity="bottom"/>
-
-    <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="150dp"
-        android:id="@+id/pm"
-        android:layout_below="@+id/text1"
-        android:src="@drawable/pm"/>
+        android:gravity="bottom"
+        android:layout_above="@+id/FindButton"
+        android:layout_alignRight="@+id/text1"
+        android:layout_alignEnd="@+id/text1" />
 
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/FindButton"
-        android:layout_below="@+id/text2"
         android:text="Find a Mentor"
         android:onClick="findAMentor"
-        />
+        android:layout_above="@+id/ManageProfileButton"
+        android:layout_alignRight="@+id/text2"
+        android:layout_alignEnd="@+id/text2" />
     <!-- the add a mentor button will be changed to update profile for the regular users-->
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/ManageProfileButton"
-        android:layout_below="@+id/FindButton"
         android:text="Manage Profile"
         android:onClick="manageMentors"
-        />
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/YourConnectionsButton"
-        android:layout_below="@+id/ManageProfileButton"
         android:text="Your Connections"
         android:onClick="manageMentors"
-        />
+        android:layout_below="@+id/ManageProfileButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
