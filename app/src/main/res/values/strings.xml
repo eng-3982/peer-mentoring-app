@@ -25,5 +25,7 @@
     <string name="title_activity_admin_manage_mentors_options">Admin Manage Mentors Options
         Activity
     </string>
+    <string name="title_activity_mentee_search_by_attribute">MenteeSearchByAttributeActivity
+    </string>
 
 </resources>
