@@ -34,7 +34,7 @@ public class MenteeYourConnectionsActivity extends AppCompatActivity implements 
         HomeButton.setOnClickListener(this);
 
         // DEMO THAT WORKS! PRAISE THE LORD! http://windrealm.org/tutorials/android/android-listview.php
-        mainListView=(ListView) findViewById(R.id.mainListView1);
+        mainListView=(ListView) findViewById(R.id.mainListView);
         String[] planets= new String[]{"DANNNN","cluuuir","Raquel","Emdoy"};
         ArrayList<String> planetList= new ArrayList<String>();
         planetList.addAll(Arrays.asList(planets));

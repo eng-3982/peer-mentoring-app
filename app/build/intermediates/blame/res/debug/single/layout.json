@@ -204,6 +204,10 @@
         "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/layout/abc_search_view.xml"
     },
     {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/layout/activity_mentee_search_by_attribute.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/layout/activity_mentee_search_by_attribute.xml"
+    },
+    {
         "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/layout/notification_template_media.xml",
         "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/layout/notification_template_media.xml"
     },

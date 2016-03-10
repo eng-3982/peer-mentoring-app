@@ -1,16 +1,24 @@
 package com.example.emiliedoyle.peer_mentoring_app;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
-public class MenteeSearchByAttributeActivity extends AppCompatActivity {
+public class MenteeSearchByAttributeActivity extends AppCompatActivity implements View.OnClickListener {
+
+    Button SearchButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mentee_search_by_attribute);
+        SearchButton=(Button) findViewById(R.id.SearchButton);
+        SearchButton.setOnClickListener(this);
+
     }
 
     @Override
@@ -33,5 +41,18 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void SearchButtonClick(){
+        startActivity(new Intent(MenteeSearchByAttributeActivity.this, MenteeSearchResultsActivity.class));
+    }
+
+    @Override
+    public void onClick(View v){
+        switch(v.getId()){
+            case R.id.SearchButton:
+                SearchButtonClick();
+                break;
+        }
     }
 }

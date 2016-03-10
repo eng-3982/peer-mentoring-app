@@ -11,7 +11,7 @@
     tools:context="com.example.emiliedoyle.peer_mentoring_app.MenteeSearchResultsActivity">
 
 
-    <!-- <TextView
+     <TextView
          android:text="Search Results"
          android:textColor="#9e64d8"
          android:layout_width="wrap_content"
@@ -20,46 +20,26 @@
          android:textStyle="bold"
          android:textSize="25dp"
          />
-     <TextView
-         android:text="Search Results"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_below="@+id/searchResults"
-         android:id="@+id/stuff"
-         />
-     <ListView
-         xmlns:android="http://schemas.android.com/apk/res/android"
-         android:id="@+id/listview"
-         android:layout_width="match_parent"
-         android:layout_height="match_parent"
-         android:columnWidth="90dp"
-         android:numColumns="auto_fit"
-         android:verticalSpacing="10dp"
-         android:horizontalSpacing="10dp"
-         android:stretchMode="columnWidth"
-         android:gravity="center"
-         android:divider="#9e64d8">
-         <TextView
-             android:layout_width="250dp"
-             android:layout_height="50dip"
-             android:id= "@+id/name"
-             android:layout_alignParentTop="true"
-             android:gravity="center_vertical"
-             android:layout_marginRight="26dip"
-             android:contentDescription="Name"
-             android:text="Name"
-             android:textColor="#9e64d8"
-             android:layout_gravity="center_horizontal"
-             android:textSize="30sp"
-             />
-     </ListView>
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="387dp"
+        android:id="@+id/mainListView"
+        android:columnWidth="90dp"
+        android:numColumns="auto_fit"
+        android:verticalSpacing="10dp"
+        android:horizontalSpacing="10dp"
+        android:stretchMode="columnWidth"
+        android:gravity="center"
+        android:divider="#9e64d8"
+        android:layout_weight="0.78">
 
+    </ListView>
      <Button
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:layout_below="@+id/stuff"
          android:id="@+id/HomeButton"
          android:text="Return to Main Menu"
-         android:layout_centerHorizontal="true" />-->
+         android:gravity="center_horizontal"/>-->
 
 </LinearLayout>

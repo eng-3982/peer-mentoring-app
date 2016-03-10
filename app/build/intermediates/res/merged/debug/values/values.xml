@@ -267,6 +267,8 @@
     <string name="title_activity_mentee_request_mentor_notification">
         MenteeRequestMentorNotificationActivity
     </string>
+    <string name="title_activity_mentee_search_by_attribute">MenteeSearchByAttributeActivity
+    </string>
     <string name="title_activity_mentee_search_results">MenteeSearchResultsActivity</string>
     <string name="title_activity_mentee_your_connections">MenteeYourConnectionsActivity</string>
     <string name="title_activity_mentee_your_matches">MenteeYourMatchesActivity</string>

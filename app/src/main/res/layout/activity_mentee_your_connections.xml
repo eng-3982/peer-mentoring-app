@@ -19,7 +19,7 @@
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="387dp"
-        android:id="@+id/mainListView1"
+        android:id="@+id/mainListView"
         android:columnWidth="90dp"
         android:numColumns="auto_fit"
         android:verticalSpacing="10dp"

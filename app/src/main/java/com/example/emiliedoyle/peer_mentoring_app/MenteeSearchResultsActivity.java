@@ -64,6 +64,8 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -75,10 +77,11 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
     private RequestQueue queue;
     private String url;
 
+    private ListView mainListView;
+    private ArrayAdapter<String> listAdapter;
 
     String[] name = new String[50];
-    //declare listview
-    ListView listView;
+
 
     EditText txtInput;
     // declare button
@@ -95,40 +98,16 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
         //getDBandAuthenticate();
         HomeButton = (Button) findViewById(R.id.HomeButton);
         HomeButton.setOnClickListener(this);
-        //get from xml.
-        //listView= (ListView) findViewById(R.id.listview);
-        String[] nameArray= new String[]{"Raquel", "Emilie"}; //test for listview
-        //create ListView where find results will be displayed
-        //ArrayAdapter<String>adapter= new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,nameArray );
-        //assign adapter to listView
-        //listView.setAdapter(adapter);
-        //listView item Click listener
-        //listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-           // @Override
-            //public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        // DEMO THAT WORKS! PRAISE THE LORD! http://windrealm.org/tutorials/android/android-listview.php
+        mainListView=(ListView) findViewById(R.id.mainListView);
+        String[] planets= new String[]{"DANNNN","cluuuir","Raquel","Emdoy"};
+        ArrayList<String> planetList= new ArrayList<String>();
+        planetList.addAll(Arrays.asList(planets));
+        listAdapter= new ArrayAdapter<String>(this, R.layout.simplerow, planetList);
+        //listAdapter.add("Ceres");
+        mainListView.setAdapter(listAdapter);
 
-                //listView clicked item index
-              //  int itemPosition= position;
-
-                //listView clicked item value
-                //String itemValue=(String)listView.getItemAtPosition(position);
-
-                //show alert
-                //Toast.makeText(getApplicationContext(), "Position:"+ itemPosition+ "ListItem:" +itemValue, Toast.LENGTH_LONG).show();
-          //  }
-        //});
-
-        //ListView resource: http://androidexample.com/Create_A_Simple_Listview_-_Android_Example/index.php?view=article_discription&aid=65&aaid=90
-        //define new adapter. First Parameter: Context, Second Parameter: Layout for the row, Third Parameter: ID of the
-        //TextView to which the data is written(ex android.R.id.text1), Fouth Parameter:the array of data
-
-       // ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simpleexpandable_list_item_1,
-       //         (TextView) findViewById(R.id.name), nameArray);
-
-        //getDBItems();
-        //final TextView mTextView = (TextView) findViewById(R.id.searchResults);
-        //mTextView.setText("Response is: ");
     }
 
 

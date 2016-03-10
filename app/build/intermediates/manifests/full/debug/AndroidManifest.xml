@@ -103,6 +103,10 @@
             android:name="com.example.emiliedoyle.peer_mentoring_app.AdminManageMentorsOptionsActivity"
             android:label="@string/title_activity_admin_manage_mentors_options" >
         </activity>
+        <activity
+            android:name="com.example.emiliedoyle.peer_mentoring_app.MenteeSearchByAttributeActivity"
+            android:label="@string/title_activity_mentee_search_by_attribute" >
+        </activity>
     </application>
 
 </manifest>
