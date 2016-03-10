@@ -9,13 +9,20 @@ import android.view.MenuItem;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import java.util.Arrays;
+import java.util.ArrayList;
+import android.widget.ListView;
 
 // declare class, need to implement on click listener in order to switch views/activities
 public class MenteeYourConnectionsActivity extends AppCompatActivity implements View.OnClickListener {
 
     // declare button to return to main menu
     Button HomeButton;
+
+    private ListView mainListView;
+    private ArrayAdapter<String> listAdapter;
 
     // standard onCreate,with added linking of buttons from xml and java
     // and setting the on click listener to change activities/views
@@ -25,6 +32,15 @@ public class MenteeYourConnectionsActivity extends AppCompatActivity implements 
         setContentView(R.layout.activity_mentee_your_connections);
         HomeButton=(Button)findViewById(R.id.HomeButton);
         HomeButton.setOnClickListener(this);
+
+        // DEMO THAT WORKS! PRAISE THE LORD! http://windrealm.org/tutorials/android/android-listview.php
+        mainListView=(ListView) findViewById(R.id.mainListView);
+        String[] planets= new String[]{"DANNNN","cluuuir","Raquel","Emdoy"};
+        ArrayList<String> planetList= new ArrayList<String>();
+        planetList.addAll(Arrays.asList(planets));
+        listAdapter= new ArrayAdapter<String>(this, R.layout.simplerow, planetList);
+        //listAdapter.add("Ceres");
+        mainListView.setAdapter(listAdapter);
     }
 
     // standard

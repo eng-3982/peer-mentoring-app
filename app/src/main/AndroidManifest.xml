@@ -8,23 +8,20 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/Theme.AppCompat">
+        android:theme="@style/Theme.AppCompat" >
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"
             android:theme="@style/Theme.AppCompat">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-
-            </intent-filter>
         </activity>
-
-
         <activity
             android:name=".StudentMainActivity"
             android:label="@string/title_activity_student_main" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
             <!--
             <intent-filter>
                 <action android:name="com.example.emiliedoyle.peer_mentoring_app.StudentMainActivity" />
@@ -92,13 +89,17 @@
             android:name=".AdminManageConnectionsActivity"
             android:label="@string/title_activity_admin_manage_connections" >
         </activity>
-        <activity
+        <!--<activity
             android:name=".AdminManageMentorsActivity"
             android:label="@string/title_activity_admin_manage_mentors" >
-        </activity>
+        </activity>-->
         <activity
             android:name=".AdminManageMentorsOptionsActivity"
             android:label="@string/title_activity_admin_manage_mentors_options" >
+        </activity>
+        <activity
+            android:name=".MenteeSearchByAttributeActivity"
+            android:label="@string/title_activity_mentee_search_by_attribute" >
         </activity>
     </application>
 

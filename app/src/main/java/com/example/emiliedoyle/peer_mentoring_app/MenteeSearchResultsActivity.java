@@ -64,6 +64,8 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -75,13 +77,11 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
     private RequestQueue queue;
     private String url;
 
-    String[] user;
-    String[] name = new String[50];
-    String[] value;
-    String[] nameAndValue;
+    private ListView mainListView;
+    private ArrayAdapter<String> listAdapter;
 
-    //declare listview
-    ListView listView;
+    String[] name = new String[50];
+
 
     EditText txtInput;
     // declare button
@@ -90,43 +90,24 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //HomeButton = (Button) findViewById(R.id.HomeButton);
-        //HomeButton.setOnClickListener(this);
+        setContentView(R.layout.activity_mentee_search_results); //needed for listView
 
-        setContentView(R.layout.activity_mentee_search_results);
         queue = Volley.newRequestQueue(this);
         //url = "https://pma.piconepress.com/data";
         //getDBItems();
         //getDBandAuthenticate();
         HomeButton = (Button) findViewById(R.id.HomeButton);
         HomeButton.setOnClickListener(this);
-/*
-        //create ListView where find results will be displayed
-        ArrayAdapter adapter = new ArrayAdapter<String>(this,R.layout.activity_mentee_search_results,mobileArray );
-        ListView listView= (ListView) findViewById(R.id.listview);
-        listView.setAdapter(adapter);*/
 
-        //ListView resource: http://androidexample.com/Create_A_Simple_Listview_-_Android_Example/index.php?view=article_discription&aid=65&aaid=90
-        //get list view from XML file
-        /*listView = (ListView) findViewById(R.id.listview);
+        // DEMO THAT WORKS! PRAISE THE LORD! http://windrealm.org/tutorials/android/android-listview.php
+        mainListView=(ListView) findViewById(R.id.mainListView);
+        String[] planets= new String[]{"DANNNN","cluuuir","Raquel","Emdoy"};
+        ArrayList<String> planetList= new ArrayList<String>();
+        planetList.addAll(Arrays.asList(planets));
+        listAdapter= new ArrayAdapter<String>(this, R.layout.simplerow, planetList);
+        //listAdapter.add("Ceres");
+        mainListView.setAdapter(listAdapter);
 
-        //define array values to show in ListView, fill with request results that hae been parsed
-        String[] values = new String[]{"Android List View", "Adapter Implementation", "Simple List View in Android",
-                "Create List View in Android", "Android Example", "List View soURCE cODE", "List View array adapter",
-                "Android Example List View"};
-
-        //define new adapter. First Parameter: Context, Second Parameter: Layout for the row, Third Parameter: ID of the
-        //TextView to which the data is written(ex android.R.id.text1), Fouth Parameter:the array of data
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1,
-                (TextView) findViewById(R.id.name), values);
-*/
-
-
-
-        getDBItems();
-        //final TextView mTextView = (TextView) findViewById(R.id.searchResults);
-        //mTextView.setText("Response is: ");
     }
 
 
@@ -151,7 +132,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
 
         return super.onOptionsItemSelected(item);
     }
-    public void getDBItems() {
+   /* public void getDBItems() {
 
         //create new ListView to display data
         final TextView mTextView = (TextView) findViewById(R.id.stuff);
@@ -173,6 +154,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
                         // Display the response string (items of the DB)
                         //mTextView.setText("Response is: " + response);
                         try {
+
                             //String result = response.getString("name"); //must substitute in a name
                             //mTextView.setText("Response is: " + result);
                             Iterator<?> keys= response.keys();
@@ -189,6 +171,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
                                 }
                             }
                             mTextView.setText("ll" + name[0] + name[1] + name[2]);
+
                         }
 
 
@@ -228,7 +211,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
-    }
+    }*/
 
 
     private void HomeButtonClick() {
