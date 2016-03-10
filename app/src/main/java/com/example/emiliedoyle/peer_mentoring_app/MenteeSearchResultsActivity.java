@@ -75,11 +75,8 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
     private RequestQueue queue;
     private String url;
 
-    String[] user;
-    String[] name = new String[50];
-    String[] value;
-    String[] nameAndValue;
 
+    String[] name = new String[50];
     //declare listview
     ListView listView;
 
@@ -90,39 +87,44 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //HomeButton = (Button) findViewById(R.id.HomeButton);
-        //HomeButton.setOnClickListener(this);
+        setContentView(R.layout.activity_mentee_search_results); //needed for listView
 
-        setContentView(R.layout.activity_mentee_search_results);
         queue = Volley.newRequestQueue(this);
         //url = "https://pma.piconepress.com/data";
         //getDBItems();
         //getDBandAuthenticate();
         HomeButton = (Button) findViewById(R.id.HomeButton);
         HomeButton.setOnClickListener(this);
-/*
+        //get from xml.
+        listView= (ListView) findViewById(R.id.listview);
+        String[] nameArray= new String[]{"Raquel", "Emilie"}; //test for listview
         //create ListView where find results will be displayed
-        ArrayAdapter adapter = new ArrayAdapter<String>(this,R.layout.activity_mentee_search_results,mobileArray );
-        ListView listView= (ListView) findViewById(R.id.listview);
-        listView.setAdapter(adapter);*/
+        ArrayAdapter<String>adapter= new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,nameArray );
+        //assign adapter to listView
+        listView.setAdapter(adapter);
+        //listView item Click listener
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                //listView clicked item index
+                int itemPosition= position;
+
+                //listView clicked item value
+                String itemValue=(String)listView.getItemAtPosition(position);
+
+                //show alert
+                Toast.makeText(getApplicationContext(), "Position:"+ itemPosition+ "ListItem:" +itemValue, Toast.LENGTH_LONG).show();
+            }
+        });
 
         //ListView resource: http://androidexample.com/Create_A_Simple_Listview_-_Android_Example/index.php?view=article_discription&aid=65&aaid=90
-        //get list view from XML file
-        /*listView = (ListView) findViewById(R.id.listview);
-
-        //define array values to show in ListView, fill with request results that hae been parsed
-        String[] values = new String[]{"Android List View", "Adapter Implementation", "Simple List View in Android",
-                "Create List View in Android", "Android Example", "List View soURCE cODE", "List View array adapter",
-                "Android Example List View"};
-
         //define new adapter. First Parameter: Context, Second Parameter: Layout for the row, Third Parameter: ID of the
         //TextView to which the data is written(ex android.R.id.text1), Fouth Parameter:the array of data
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1,
-                (TextView) findViewById(R.id.name), values);
-*/
-
-
+       // ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simpleexpandable_list_item_1,
+       //         (TextView) findViewById(R.id.name), nameArray);
 
         getDBItems();
         //final TextView mTextView = (TextView) findViewById(R.id.searchResults);
