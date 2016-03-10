@@ -2,5 +2,9 @@
     {
         "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4/ic_launcher.png",
         "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\ic_launcher.png",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     }
 ]
