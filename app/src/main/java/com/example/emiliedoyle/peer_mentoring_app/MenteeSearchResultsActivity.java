@@ -184,35 +184,37 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
                                 nameAndValue[i]= name[i] + "    " + value[i];
 
                             }*/
-/*
-                            Iterator<?> keys= response.keys();
-                            int i=0;
-                            while(keys.hasNext()){
-                                String key = (String)keys.next();
-                                if(response.get(key) instanceof JSONObject){
-                                    JSONObject person= response.getJSONObject(key);
-                                    user[i] = person.getString("user");
-                                    //name[i] = person.getString("name");
+
+                            Iterator<?> keys = response.keys();
+                            int i = 0;
+                            while (keys.hasNext()) {
+                                String key = (String) keys.next();
+                                if (response.get(key) instanceof JSONObject) {
+                                    JSONObject person = response.getJSONObject(key);
+                                    //user[i] = person.getString("user");
+                                    name[i] = person.getString("name");
                                     //value[i] = person.getString("value");
                                     //nameAndValue[i]= name[i] + "    " + value[i];
                                     //user[i] = key;
-                                }*/
+                                    i++;
+                                }
 
-                            // maybe converting it to a string is the issue?resolve as JSON then convert to string
-                            // http://stackoverflow.com/questions/22687771/how-to-convert-jsonobjects-to-jsonarray
+                                // maybe converting it to a string is the issue?resolve as JSON then convert to string
+                                // http://stackoverflow.com/questions/22687771/how-to-convert-jsonobjects-to-jsonarray
 /*
                             JSONArray arr= response.getJSONArray("name");
                             for (int i=0; i<arr.length(); i++){
                                 JSONObject o = arr.getJSONObject(i);
-                                user[i] = o.getString("user");
+                                //user[i] = o.getString("user");
                                 name[i] = o.getString("name");
-                                value[i] = o.getString("value");
-                                nameAndValue[i]= name[i].toString() + "    " + value[i].toString();//not sure if toString is necessary or implied in getString
-                                System.out.println(o); //example purpose
+                                //value[i] = o.getString("value");
+                                //nameAndValue[i]= name[i].toString() + "    " + value[i].toString();//not sure if toString is necessary or implied in getString
+                                //System.out.println(o); //example purpose
                             }
-                            mTextView.setText("Response is now: "+ nameAndValue);
+                            mTextView.setText("Response is now: "+ name);
 
-                        }*/
+                       */
+                            }
                         }
 
                         catch (JSONException e) {
