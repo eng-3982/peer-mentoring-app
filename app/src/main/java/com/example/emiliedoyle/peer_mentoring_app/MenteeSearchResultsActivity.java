@@ -140,7 +140,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
         uri.authority("pma.piconepress.com");
         uri.path("data/");
         final String url = uri.build().toString();
-        //Toast.makeText(MenteeSearchResultsActivity.this, url , Toast.LENGTH_LONG).show();// debugging if url is okay still
+        // Toast.makeText(MenteeSearchResultsActivity.this, url , Toast.LENGTH_LONG).show();// debugging if url is okay still
 
 
         // Request a json response from the provided URL.
@@ -152,8 +152,8 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
                         //mTextView.setText("Response is: " + response);
                         try {
 
-                            //String result = response.getString("name"); //must substitute in a name
-                            //mTextView.setText("Response is: " + result);
+                            String result = response.getString("name"); //must substitute in a name
+                            mTextView.setText("Response is: " + result);
                             Iterator<?> keys= response.keys();
                             int i=0;
 
@@ -167,7 +167,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
                                     i++;
                                 }
                             }
-                            //mTextView.setText("ll" + name[0] + name[1] + name[2]);
+                            mTextView.setText("ll" + name[0] + name[1] + name[2]);
 
                         }
 
@@ -181,7 +181,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
             @Override
             //if there is an error, print it!
             public void onErrorResponse(VolleyError error) {
-                mTextView.setText(error.toString());
+               mTextView.setText(error.toString());
             }
         }) {
             @Override
@@ -208,7 +208,6 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
     }
-
 
     private void HomeButtonClick() {
         startActivity(new Intent(MenteeSearchResultsActivity.this, StudentMainActivity.class));
