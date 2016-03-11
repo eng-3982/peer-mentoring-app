@@ -109,6 +109,10 @@
             android:name="com.example.emiliedoyle.peer_mentoring_app.MenteeSearchByAttributeActivity"
             android:label="@string/title_activity_mentee_search_by_attribute" >
         </activity>
+        <activity
+            android:name="com.example.emiliedoyle.peer_mentoring_app.MenteeUpdatedProfileMessageActivity"
+            android:label="@string/title_activity_mentee_updated_profile_message" >
+        </activity>
     </application>
 
 </manifest>

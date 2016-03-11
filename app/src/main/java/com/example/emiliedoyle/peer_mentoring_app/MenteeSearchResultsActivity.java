@@ -82,20 +82,19 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
 
     String[] name = new String[50];
 
-
-    EditText txtInput;
     // declare button
     Button HomeButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_mentee_search_results); //needed for listView
-/*
+
         queue = Volley.newRequestQueue(this);
-        url = "https://pma.piconepress.com/data";
+        //url = "https://pma.piconepress.com/data";
         //getDBItems();
-        //getDBandAuthenticate();
+
         HomeButton = (Button) findViewById(R.id.HomeButton);
         HomeButton.setOnClickListener(this);
 
@@ -104,9 +103,8 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
         String[] planets= new String[]{"DANNNN","cluuuir","Raquel","Emdoy"};
         ArrayList<String> planetList= new ArrayList<String>();
         planetList.addAll(Arrays.asList(planets));
-        listAdapter= new ArrayAdapter<String>(this, R.layout.simplerow, planetList);
-        //listAdapter.add("Ceres");
-        mainListView.setAdapter(listAdapter);*/
+        listAdapter= new ArrayAdapter<String>(this, R.layout.simplerow, planetList);//listAdapter.add("Ceres");
+        mainListView.setAdapter(listAdapter);
 
     }
 
@@ -143,7 +141,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
         uri.authority("pma.piconepress.com");
         uri.path("data/");
         final String url = uri.build().toString();
-
+        //Toast.makeText(MenteeSearchResultsActivity.this, url , Toast.LENGTH_LONG).show();// debugging if url is okay still
 
 
         // Request a json response from the provided URL.
@@ -170,7 +168,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
                                     i++;
                                 }
                             }
-                            mTextView.setText("ll" + name[0] + name[1] + name[2]);
+                            //mTextView.setText("ll" + name[0] + name[1] + name[2]);
 
                         }
 
@@ -179,7 +177,6 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
                             mTextView.setText("THAT DON'T WORK");
 
                         }
-
                     }
                 }, new Response.ErrorListener() {
             @Override

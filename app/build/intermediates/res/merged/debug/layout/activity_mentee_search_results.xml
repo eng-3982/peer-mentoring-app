@@ -20,6 +20,15 @@
          android:textStyle="bold"
          android:textSize="25dp"
          />
+    <TextView
+        android:text="Results"
+        android:textColor="#9e64d8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/stuff"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        />
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="387dp"
@@ -35,11 +44,11 @@
 
     </ListView>
      <Button
-         android:layout_width="wrap_content"
+         android:layout_width="fill_parent"
          android:layout_height="wrap_content"
          android:layout_below="@+id/stuff"
          android:id="@+id/HomeButton"
          android:text="Return to Main Menu"
-         android:gravity="center_horizontal"/>-->
+         android:gravity="center"/>-->
 
 </LinearLayout>
