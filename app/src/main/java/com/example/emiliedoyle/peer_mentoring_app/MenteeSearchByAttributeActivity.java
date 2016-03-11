@@ -92,6 +92,7 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
+                        Toast.makeText(MenteeSearchByAttributeActivity.this, "This iz a Response" , Toast.LENGTH_LONG).show();
                         // Display the response string (items of the DB)
                         //mTextView.setText("Response is: " + response);
                         /*try {
@@ -161,7 +162,6 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
             case R.id.checkBox:
                 if (checked)
                     major = "Engineering";
-                Toast.makeText(MenteeSearchByAttributeActivity.this, major , Toast.LENGTH_LONG).show();
                 break;
             case R.id.checkBox2:
                 if (checked)
@@ -192,7 +192,7 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
         switch(v.getId()){
             case R.id.SearchButton:
                 //onCheckboxClicked();
-                getDBMatches();
+                //getDBMatches();
                 SearchButtonClick();
                 break;
         }

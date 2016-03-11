@@ -91,7 +91,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mentee_search_results); //needed for listView
-
+/*
         queue = Volley.newRequestQueue(this);
         url = "https://pma.piconepress.com/data";
         //getDBItems();
@@ -106,7 +106,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
         planetList.addAll(Arrays.asList(planets));
         listAdapter= new ArrayAdapter<String>(this, R.layout.simplerow, planetList);
         //listAdapter.add("Ceres");
-        mainListView.setAdapter(listAdapter);
+        mainListView.setAdapter(listAdapter);*/
 
     }
 
