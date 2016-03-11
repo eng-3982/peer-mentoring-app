@@ -27,5 +27,8 @@
     </string>
     <string name="title_activity_mentee_search_by_attribute">MenteeSearchByAttributeActivity
     </string>
+    <string name="title_activity_mentee_updated_profile_message">
+        MenteeUpdatedProfileMessageActivity
+    </string>
 
 </resources>

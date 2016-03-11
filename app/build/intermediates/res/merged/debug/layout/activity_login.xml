@@ -53,13 +53,13 @@
         android:id="@+id/editTextPassword" />
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Login"
         android:id="@+id/email_sign_in_button" />
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Register"
         android:id="@+id/email_register_button" />

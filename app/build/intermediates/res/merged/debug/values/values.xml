@@ -270,6 +270,9 @@
     <string name="title_activity_mentee_search_by_attribute">MenteeSearchByAttributeActivity
     </string>
     <string name="title_activity_mentee_search_results">MenteeSearchResultsActivity</string>
+    <string name="title_activity_mentee_updated_profile_message">
+        MenteeUpdatedProfileMessageActivity
+    </string>
     <string name="title_activity_mentee_your_connections">MenteeYourConnectionsActivity</string>
     <string name="title_activity_mentee_your_matches">MenteeYourMatchesActivity</string>
     <string name="title_activity_mentor_profile">MentorProfileActivity</string>
