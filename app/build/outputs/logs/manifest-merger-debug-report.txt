@@ -1,8 +1,12 @@
 -- Merging decision tree log ---
 manifest
+<<<<<<< HEAD
 ADDED from /Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/AndroidManifest.xml:2:1-110:12
 	xmlns:android
 		ADDED from /Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/AndroidManifest.xml:2:11-69
+=======
+ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:2:1-110:12
+>>>>>>> d403c12a9adc117755cce7ee09200fe64c4baa2f
 	package
 		ADDED from /Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/AndroidManifest.xml:3:5-57
 		INJECTED from /Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/AndroidManifest.xml
@@ -18,6 +22,7 @@ ADDED from /Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/m
 	android:name
 		ADDED from /Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/AndroidManifest.xml:5:22-64
 application
+<<<<<<< HEAD
 ADDED from /Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/AndroidManifest.xml:7:5-108:19
 MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.0.1] /Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/AndroidManifest.xml:22:5-20
@@ -27,6 +32,17 @@ MERGED from [com.google.android.gms:play-services-basement:8.1.0] /Users/emilied
 MERGED from [com.android.support:support-v4:23.0.1] /Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/AndroidManifest.xml:22:5-20
 	android:label
 		ADDED from /Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/AndroidManifest.xml:10:9-41
+=======
+ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:7:5-108:19
+MERGED from [com.android.support:appcompat-v7:23.0.1] C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.0.1] C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\AndroidManifest.xml:22:5-20
+MERGED from [com.mcxiaoke.volley:library-aar:1.0.0] C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\build\intermediates\exploded-aar\com.mcxiaoke.volley\library-aar\1.0.0\AndroidManifest.xml:5:5-19
+MERGED from [com.google.android.gms:play-services-appindexing:8.1.0] C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.1.0\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:23.0.1] C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\AndroidManifest.xml:22:5-20
+	android:label
+		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:10:9-41
+>>>>>>> d403c12a9adc117755cce7ee09200fe64c4baa2f
 	android:allowBackup
 		ADDED from /Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/AndroidManifest.xml:8:9-35
 	android:icon
@@ -159,7 +175,17 @@ ADDED from /Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/m
 	android:label
 		ADDED from /Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/AndroidManifest.xml:106:13-82
 	android:name
+<<<<<<< HEAD
 		ADDED from /Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/AndroidManifest.xml:105:13-64
+=======
+		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:101:13-60
+activity#com.example.emiliedoyle.peer_mentoring_app.MenteeUpdatedProfileMessageActivity
+ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:104:9-107:20
+	android:label
+		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:106:13-82
+	android:name
+		ADDED from C:\Users\Rachel.DESKTOP-TIK572D\Documents\PeerMentoringApplication\peer-mentoring-app\app\src\main\AndroidManifest.xml:105:13-64
+>>>>>>> d403c12a9adc117755cce7ee09200fe64c4baa2f
 uses-sdk
 INJECTED from /Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/AndroidManifest.xml:20:5-43

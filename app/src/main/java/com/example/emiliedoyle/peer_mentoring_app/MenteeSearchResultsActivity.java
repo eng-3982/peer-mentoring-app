@@ -88,11 +88,12 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mentee_search_results);
+
+        setContentView(R.layout.activity_mentee_search_results); //needed for listView
 
         queue = Volley.newRequestQueue(this);
         //url = "https://pma.piconepress.com/data";
-        getDBItems();
+        //getDBItems();
 
         HomeButton = (Button) findViewById(R.id.HomeButton);
         HomeButton.setOnClickListener(this);
@@ -102,7 +103,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
         String[] planets= new String[]{"DANNNN","cluuuir","Raquel","Emdoy"};
         ArrayList<String> planetList= new ArrayList<String>();
         planetList.addAll(Arrays.asList(planets));
-        listAdapter= new ArrayAdapter<String>(this, R.layout.simplerow, planetList);
+        listAdapter= new ArrayAdapter<String>(this, R.layout.simplerow, planetList);//listAdapter.add("Ceres");
         mainListView.setAdapter(listAdapter);
 
     }
