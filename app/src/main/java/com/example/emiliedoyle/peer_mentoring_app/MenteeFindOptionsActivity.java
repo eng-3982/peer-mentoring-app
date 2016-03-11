@@ -2,14 +2,33 @@ package com.example.emiliedoyle.peer_mentoring_app;
 
 // import necessary items for design, menu and connection between views
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 // declare class, need to implement on click listener in order to switch views/activities
 public class MenteeFindOptionsActivity extends AppCompatActivity implements View.OnClickListener {
@@ -17,6 +36,7 @@ public class MenteeFindOptionsActivity extends AppCompatActivity implements View
     // declare buttons (by attribute or already matched)
     Button YourMatchesButton;
     Button SearchButton;
+    private RequestQueue queue;
 
     // standard onCreate, with added button functionality, which links
     // the buttons in the java code to that of the XML. it also sets
@@ -29,6 +49,7 @@ public class MenteeFindOptionsActivity extends AppCompatActivity implements View
         YourMatchesButton.setOnClickListener(this);
         SearchButton=(Button)findViewById(R.id.SearchButton);
         SearchButton.setOnClickListener(this);
+
     }
 
     // standard
@@ -67,6 +88,7 @@ public class MenteeFindOptionsActivity extends AppCompatActivity implements View
     // in order to switch to the 'Search' activity
     private void SearchButtonClick() {
         startActivity(new Intent(MenteeFindOptionsActivity.this, MenteeSearchByAttributeActivity.class));}
+
 
     // when click occurs, uses switch case to take ID of item clicked
     // and find which corresponding method should be executed. ADD DEFAULT

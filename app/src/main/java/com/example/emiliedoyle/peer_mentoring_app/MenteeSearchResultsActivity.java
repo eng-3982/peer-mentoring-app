@@ -93,7 +93,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
         setContentView(R.layout.activity_mentee_search_results); //needed for listView
 
         queue = Volley.newRequestQueue(this);
-        //url = "https://pma.piconepress.com/data";
+        url = "https://pma.piconepress.com/data";
         //getDBItems();
         //getDBandAuthenticate();
         HomeButton = (Button) findViewById(R.id.HomeButton);
@@ -132,7 +132,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
 
         return super.onOptionsItemSelected(item);
     }
-   /* public void getDBItems() {
+    public void getDBItems() {
 
         //create new ListView to display data
         final TextView mTextView = (TextView) findViewById(R.id.stuff);
@@ -211,7 +211,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
-    }*/
+    }
 
 
     private void HomeButtonClick() {
