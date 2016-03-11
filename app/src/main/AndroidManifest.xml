@@ -101,6 +101,10 @@
             android:name=".MenteeSearchByAttributeActivity"
             android:label="@string/title_activity_mentee_search_by_attribute" >
         </activity>
+        <activity
+            android:name=".MenteeUpdatedProfileMessageActivity"
+            android:label="@string/title_activity_mentee_updated_profile_message" >
+        </activity>
     </application>
 
 </manifest>

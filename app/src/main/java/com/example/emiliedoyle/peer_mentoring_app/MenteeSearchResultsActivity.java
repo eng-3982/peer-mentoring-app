@@ -82,20 +82,18 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
 
     String[] name = new String[50];
 
-
-    EditText txtInput;
     // declare button
     Button HomeButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mentee_search_results); //needed for listView
+        setContentView(R.layout.activity_mentee_search_results);
 
         queue = Volley.newRequestQueue(this);
         //url = "https://pma.piconepress.com/data";
-        //getDBItems();
-        //getDBandAuthenticate();
+        getDBItems();
+
         HomeButton = (Button) findViewById(R.id.HomeButton);
         HomeButton.setOnClickListener(this);
 
@@ -105,7 +103,6 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
         ArrayList<String> planetList= new ArrayList<String>();
         planetList.addAll(Arrays.asList(planets));
         listAdapter= new ArrayAdapter<String>(this, R.layout.simplerow, planetList);
-        //listAdapter.add("Ceres");
         mainListView.setAdapter(listAdapter);
 
     }
@@ -132,7 +129,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
 
         return super.onOptionsItemSelected(item);
     }
-   /* public void getDBItems() {
+    public void getDBItems() {
 
         //create new ListView to display data
         final TextView mTextView = (TextView) findViewById(R.id.stuff);
@@ -143,7 +140,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
         uri.authority("pma.piconepress.com");
         uri.path("data/");
         final String url = uri.build().toString();
-
+        //Toast.makeText(MenteeSearchResultsActivity.this, url , Toast.LENGTH_LONG).show();// debugging if url is okay still
 
 
         // Request a json response from the provided URL.
@@ -170,7 +167,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
                                     i++;
                                 }
                             }
-                            mTextView.setText("ll" + name[0] + name[1] + name[2]);
+                            //mTextView.setText("ll" + name[0] + name[1] + name[2]);
 
                         }
 
@@ -179,7 +176,6 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
                             mTextView.setText("THAT DON'T WORK");
 
                         }
-
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -211,7 +207,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
-    }*/
+    }
 
 
     private void HomeButtonClick() {

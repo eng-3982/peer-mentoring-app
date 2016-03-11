@@ -80,7 +80,7 @@
         android:layout_marginTop="30dp"
         android:onClick="onCheckboxClicked"/>
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/SearchResultsButton"
         android:layout_below="@+id/CM_box"
