@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import java.util.Arrays;
@@ -35,12 +36,29 @@ public class MenteeYourConnectionsActivity extends AppCompatActivity implements 
 
         // DEMO THAT WORKS! PRAISE THE LORD! http://windrealm.org/tutorials/android/android-listview.php
         mainListView=(ListView) findViewById(R.id.mainListView);
-        String[] planets= new String[]{"DANNNN","cluuuir","Raquel","Emdoy"};
+        String[] planets= new String[]{"Claire A. Durand"};
         ArrayList<String> planetList= new ArrayList<String>();
         planetList.addAll(Arrays.asList(planets));
         listAdapter= new ArrayAdapter<String>(this, R.layout.simplerow, planetList);
         //listAdapter.add("Ceres");
         mainListView.setAdapter(listAdapter);
+        mainListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    case 0:
+                        Intent newActivity = new Intent(MenteeYourConnectionsActivity.this, MentorProfileActivity.class);
+                        startActivity(newActivity);
+                        break;
+                }
+            }
+
+            @SuppressWarnings("unused")
+            public void onClick(View v) {
+            }
+
+            ;
+        });
     }
 
     // standard
