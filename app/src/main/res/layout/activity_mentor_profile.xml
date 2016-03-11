@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Claire Durand"
+        android:text="Claire A. Durand"
         android:textColor="#9e64d8"
         android:textSize="40dp"
         android:id="@+id/mentorName"

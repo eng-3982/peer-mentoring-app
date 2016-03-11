@@ -111,6 +111,7 @@
         "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/layout/notification_template_big_media.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/layout/select_dialog_item_material.xml",
         "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/layout/select_dialog_item_material.xml"
 =======
@@ -118,8 +119,14 @@
         "source": "C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_screen_simple.xml"
     },
     {
+=======
+>>>>>>> 58b12d393b2909d7b614c0d133d5813f27f0c258
         "merged": "C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
         "source": "C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_search_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
+        "source": "C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_screen_simple.xml"
     },
     {
         "merged": "C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_action.xml",
