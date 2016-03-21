@@ -93,7 +93,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
 
         queue = Volley.newRequestQueue(this);
         //url = "https://pma.piconepress.com/data";
-        //getDBItems();
+        getDBItems();
 
         HomeButton = (Button) findViewById(R.id.HomeButton);
         HomeButton.setOnClickListener(this);
@@ -149,7 +149,6 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
     }
     public void getDBItems() {
 
-        //create new ListView to display data
         final TextView mTextView = (TextView) findViewById(R.id.stuff);
 
         //define our url
@@ -162,16 +161,15 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
 
 
         // Request a json response from the provided URL.
-        JsonObjectRequest jsonRequest = new JsonObjectRequest (Request.Method.GET, url, null,
+        JsonObjectRequest jsonRequest = new JsonObjectRequest (Request.Method.GET, url,null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         // Display the response string (items of the DB)
-                        //mTextView.setText("Response is: " + response);
-                        try {
-
+                        mTextView.setText("(1)Response is: " );//+ response);
+                       try {
                             String result = response.getString("name"); //must substitute in a name
-                            mTextView.setText("Response is: " + result);
+                            mTextView.setText("(2)Response is: "); //+ result);
                             Iterator<?> keys= response.keys();
                             int i=0;
 
@@ -199,7 +197,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
             @Override
             //if there is an error, print it!
             public void onErrorResponse(VolleyError error) {
-               mTextView.setText(error.toString());
+               //mTextView.setText(error.toString());
             }
         }) {
             @Override

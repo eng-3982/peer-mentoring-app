@@ -25,24 +25,27 @@
         android:layout_height="wrap_content"
         android:textAlignment="gravity"
         android:id="@+id/text3"
-        android:layout_below="@+id/t1"
         android:textStyle="bold"
         android:textSize="20dp"
+        android:layout_below="@+id/t1"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="44dp" />
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/ViewConnectionsButton"
         android:text="View Your Connections"
-        android:layout_below="@+id/text3"
-        android:layout_centerHorizontal="true" />
+        android:layout_above="@+id/HomeButton"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/HomeButton"
         android:text="Return to Main Menu"
-        android:layout_below="@+id/ViewConnectionsButton"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>

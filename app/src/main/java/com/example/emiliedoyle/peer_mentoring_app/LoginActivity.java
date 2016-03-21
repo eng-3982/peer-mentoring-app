@@ -95,7 +95,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         Uri.Builder uri = new Uri.Builder();
         uri.scheme("https");
         uri.authority("pma.piconepress.com");
-        uri.path("private/");
+        uri.path("login/");
         final String url = uri.build().toString();
 
         EditText un = (EditText)findViewById(R.id.editTextUsername);

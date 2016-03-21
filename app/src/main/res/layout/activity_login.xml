@@ -50,7 +50,13 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editTextPassword" />
+        android:id="@+id/editTextPassword"
+        android:password="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/debug" />
 
     <Button
         android:layout_width="fill_parent"
@@ -63,11 +69,6 @@
         android:layout_height="wrap_content"
         android:text="Register"
         android:id="@+id/email_register_button" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/debug" />
 
     <!--
     <ScrollView

@@ -55,7 +55,8 @@
         android:hint="Password"
         android:textColorHint="#898686"
         android:layout_alignRight="@+id/enterName"
-        android:layout_alignEnd="@+id/enterName" />
+        android:layout_alignEnd="@+id/enterName"
+        android:password="true" />
     <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -66,7 +67,8 @@
         android:hint="Confirm Password"
         android:textColorHint="#898686"
         android:layout_alignRight="@+id/enterName"
-        android:layout_alignEnd="@+id/enterName" />
+        android:layout_alignEnd="@+id/enterName"
+        android:password="true"/>
     <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

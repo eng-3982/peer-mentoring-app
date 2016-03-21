@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:text="Search"
         android:id="@+id/SearchButton"
-        android:layout_below="@+id/checkBox6"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 

@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:text="Your Matches"
         android:id="@+id/YourMatchesButton"
-        android:layout_below="@+id/t1"
+        android:layout_above="@+id/SearchButton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -33,10 +33,10 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Search by Major"
-        android:layout_below="@+id/YourMatchesButton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/SearchButton"/>
+        android:id="@+id/SearchButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>

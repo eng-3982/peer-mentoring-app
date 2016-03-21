@@ -4504,11 +4504,7 @@
                     "endOffset": 34917
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/values/strings.xml",
-=======
-                    "file": "C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\src\\main\\res\\values\\strings.xml",
->>>>>>> d403c12a9adc117755cce7ee09200fe64c4baa2f
                     "position": {
                         "startLine": 29,
                         "startColumn": 4,

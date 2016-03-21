@@ -57,9 +57,9 @@
         android:layout_height="wrap_content"
         android:text="Request Mentor"
         android:id="@+id/requestMentor"
-        android:layout_below="@+id/mentorClassYear"
-        android:layout_alignRight="@+id/mentorEmail"
-        android:layout_alignEnd="@+id/mentorEmail" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 
 </RelativeLayout>
