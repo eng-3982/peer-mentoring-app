@@ -1,5 +1,6 @@
 package com.example.emiliedoyle.peer_mentoring_app;
 
+import android.content.SharedPreferences;
 import android.net.Uri;
 // import necessary items for design, menu and connection between views
 
@@ -40,6 +41,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.HurlStack;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.JsonRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 /*import com.mongodb.BasicDBObject;
@@ -78,6 +80,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
     private String url;
 
     private ListView mainListView;
+    public TextView resultsView;
     private ArrayAdapter<String> listAdapter;
 
     String[] name = new String[50];
@@ -98,8 +101,10 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
         HomeButton = (Button) findViewById(R.id.HomeButton);
         HomeButton.setOnClickListener(this);
 
+        getDBItems();
+
         // DEMO THAT WORKS! PRAISE THE LORD! http://windrealm.org/tutorials/android/android-listview.php
-        mainListView=(ListView) findViewById(R.id.mainListView);
+        /*mainListView=(ListView) findViewById(R.id.mainListView);
         String[] planets= new String[]{"Claire A. Durand","Rachel K. King","Daniel J. Douglas","Emilie C. Doyle"};
         ArrayList<String> planetList= new ArrayList<String>();
         planetList.addAll(Arrays.asList(planets));
@@ -121,7 +126,9 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
             }
 
             ;
-        });
+        });*/
+
+
 
     }
 
@@ -147,8 +154,8 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
 
         return super.onOptionsItemSelected(item);
     }
-    public void getDBItems() {
 
+    public void getDBItems() {
         //create new ListView to display data
         final TextView mTextView = (TextView) findViewById(R.id.stuff);
 
@@ -158,73 +165,51 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
         uri.authority("pma.piconepress.com");
         uri.path("data/");
         final String url = uri.build().toString();
-        //Toast.makeText(MenteeSearchResultsActivity.this, url , Toast.LENGTH_LONG).show();// debugging if url is okay still
+
+        //create new SP object to access callback data
+        SharedPreferences sharedpreferences;
+        sharedpreferences = getSharedPreferences("JSON", MODE_PRIVATE);
+        final SharedPreferences.Editor editor = sharedpreferences.edit();
 
 
-        // Request a json response from the provided URL.
-        JsonObjectRequest jsonRequest = new JsonObjectRequest (Request.Method.GET, url, null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        // Display the response string (items of the DB)
-                        //mTextView.setText("Response is: " + response);
-                        try {
+        VolleyRequest parse = new VolleyRequest();
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        JsonRequest things = parse.getJSON(new VolleyRequest.VolleyCallback() {
+           @Override
+           public void onSuccess(JSONObject result) {
+               if (result != null) {
+                   editor.putString("jsonData", result.toString());
+                   Log.i("SearchResultActivity", "QQQQ" + result.toString());
+                   editor.commit();
+               } else {
+                   editor.putString("jsonData", null);
+                   Log.i("SearchResultActivity", "QQQQ" + "null");
+                   editor.commit();
+               }
+           }
+       },
+                url, "Raquel", "Sloths");
 
-                            //String result = response.getString("name"); //must substitute in a name
-                            //mTextView.setText("Response is: " + result);
-                            Iterator<?> keys= response.keys();
-                            int i=0;
-
-                            while(keys.hasNext()) {
-
-                                String key = (String) keys.next();
-
-                                if (response.get(key) instanceof JSONObject) {
-                                    JSONObject person = response.getJSONObject(key);
-                                    name[i] = person.getString("name");
-                                    i++;
-                                }
-                            }
-                            //mTextView.setText("ll" + name[0] + name[1] + name[2]);
-
-                        }
-
-
-                        catch (JSONException e) {
-                            mTextView.setText("THAT DON'T WORK");
-
-                        }
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            //if there is an error, print it!
-            public void onErrorResponse(VolleyError error) {
-                mTextView.setText(error.toString());
+        String[] response = null;
+        String stuff = (sharedpreferences.getString("jsonData", ""));
+        try {
+            if(stuff != null)
+            {
+                JSONObject jsonData = new JSONObject(stuff);
+                response = parse.parseJSON(jsonData, "name");
             }
-        }) {
-            @Override
-            //OH LOOK AT ME, I'M VOLLEY AND MY HEADER IS WRONG
-            //modifies the header to contain the encoded username and password info. authenticates
-            public Map<String, String> getHeaders() throws AuthFailureError {
-                HashMap<String, String> headers = new HashMap<String, String>();
-                String creds = "eng-3982:isipjuice";
-                String auth = "Basic " + Base64.encodeToString(creds.getBytes(), Base64.NO_WRAP);
-                //headers.put("Content-Type: application/json");
-                headers.put("Authorization", auth);
-                return headers;
-            }
+            else
+                response[0] = "null";
 
-        };
-        // Add the request to the RequestQueue.
-        queue.add(jsonRequest);
+        }
+        catch (JSONException e)
+        {
 
-        //something I needed to do so that there wouldn't be time-outs
-        //we may not need this? who on earth knows.
-        jsonRequest.setRetryPolicy(new DefaultRetryPolicy(
-                27000,
-                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-
+        }
+        //Log.i("MenteeSearchResultsActivity", "QQQQ" + response[0]);
+        /*resultsView=(TextView) findViewById(R.id.stuff);
+        resultsView.setText(response[0]);
+        requestQueue.add(things);*/
     }
 
 

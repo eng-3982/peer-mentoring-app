@@ -2,6 +2,7 @@ package com.example.emiliedoyle.peer_mentoring_app;
 
 // import necessary items for design, menu and connection between views
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,6 +11,7 @@ import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 // declare class, need to implement on click listener in order to switch views/activities
 public class StudentMainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -31,7 +33,9 @@ public class StudentMainActivity extends AppCompatActivity implements View.OnCli
         ManageProfileButton.setOnClickListener(this);
         YourConnectionsButton=(Button)findViewById(R.id.YourConnectionsButton);
         YourConnectionsButton.setOnClickListener(this);
+        SharedPreferences mSettings = getSharedPreferences("Settings", 0);
 
+       // String cookieName = mSettings.getString("Name", "missing");
     }
 
     // standard

@@ -1,6 +1,12 @@
 package com.example.emiliedoyle.peer_mentoring_app;
-
+import com.android.volley.NetworkResponse;
+import com.android.volley.toolbox.JsonRequest;
+import com.example.emiliedoyle.peer_mentoring_app.CookieExample;
 // import necessary items for design, menu and connection between views
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.os.AsyncTask;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -13,7 +19,9 @@ import android.view.MenuItem;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
-import android.webkit.CookieManager;
+//import android.webkit.CookieManager;
+import android.webkit.ValueCallback;
+import android.webkit.WebView;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,10 +44,21 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.util.Base64;
 
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.net.CookieHandler;
+import java.net.CookieManager;
 import java.net.CookiePolicy;
 import java.net.CookieStore;
+import java.net.HttpCookie;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 // declare class, need to implement on click listener in order to switch views/activities
@@ -48,6 +67,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     // which are user input in the XML view (once linked), additionally 2
     // strings which will be the email and password from the database
     // when that is up and running. RN it is hard coded
+
+
+    private final static String URL_STRING = "https://www.pma.piconepress.com/login/";
+
+    //testing shared preferences
+    public static final String MyPREFERENCES = "MyPrefs" ;
+    public static final String Name = "nameKey";
+    public static final String Phone = "phoneKey";
+    public static final String Email = "emailKey";
+    SharedPreferences sharedpreferences;
 
     //define our url
     private EditText editTextUsername;
@@ -68,6 +97,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     // to set the on click listener for changing activities/views. Additionally, we read in
     // the user inputted email and password, but finidng the content of the XML
     // corresponding values and setting that input to the declared edit text & auto complete
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,8 +106,22 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         email_sign_in_button.setOnClickListener(this);
         email_register_button=(Button)findViewById(R.id.email_register_button);
         email_register_button.setOnClickListener(this);
+        String args= "whoa";
 
+        sharedpreferences = getSharedPreferences("Settings", 0);
+        SharedPreferences.Editor editor = sharedpreferences.edit();
 
+        editor.putString("Name", Name);
+        editor.putString("Phone", Phone);
+        editor.putString("Email", Email);
+        editor.commit();
+
+        //testing Cookies functionality
+        String[] stuff = new String[3];
+        stuff[0] = URL_STRING;
+        stuff[1] = "Raquel";
+        stuff[2] = "Sloths";
+        //new CookieExample().execute(stuff);
         //MEH commented this out to get rid of error, probs going to need to bring back
        // Password = (EditText) findViewById(R.id.password);
         //Email = (AutoCompleteTextView) findViewById(R.id.email);
@@ -95,7 +139,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         Uri.Builder uri = new Uri.Builder();
         uri.scheme("https");
         uri.authority("pma.piconepress.com");
-        uri.path("private/");
+        uri.path("login/");
         final String url = uri.build().toString();
 
         EditText un = (EditText)findViewById(R.id.editTextUsername);
@@ -104,56 +148,26 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         EditText pw = (EditText)findViewById(R.id.editTextPassword);
         password = pw.getText().toString();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        if(response.trim().equals("success")){
-                            openProfile();
-                            Toast.makeText(LoginActivity.this, "Welcome", Toast.LENGTH_LONG).show();
-                            Log.w("cookie", response);
-                        }else{
-                            Toast.makeText(LoginActivity.this, response, Toast.LENGTH_LONG).show();
-
-                        }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(LoginActivity.this,error.toString(),Toast.LENGTH_LONG).show();
-                        //mTextView.setText(error.networkResponse.statusCode);
-                    }
-                }){
-            @Override
-            public Map<String, String> getHeaders() throws AuthFailureError {
-                Map<String,String> headers = new HashMap<String,String>();
-                //encode server authorization
-                String creds = "eng-3982:isipjuice";
-                String auth = "Basic " + Base64.encodeToString(creds.getBytes(), Base64.NO_WRAP);
-                headers.put("Authorization", auth);
-                //encode username and password credentials
-                headers.put(KEY_USERNAME,username);
-                headers.put(KEY_PASSWORD,password);
-                return headers;
-            }
-
-           // @Override
-            /*protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> map = new HashMap<String, String>();
-                map.put(KEY_USERNAME, username);
-                map.put(KEY_PASSWORD, password);
-                return map;
-            }*/
-        };
-
+        VolleyRequest volleyRequest = new VolleyRequest();
         //create a new request queue
         RequestQueue requestQueue = Volley.newRequestQueue(this);
-        //do not save volley responses in Cache
-        stringRequest.setShouldCache(false);
         //add the string response to the queue
-        requestQueue.add(stringRequest);
+        JsonRequest things = volleyRequest.postJSON(new VolleyRequest.VolleyCallback() {
+            @Override
+            public void onSuccess(JSONObject result) {
+                if (result != null) {
+                    openProfile();
+                }
+                else if (result == null) {
+                    Toast.makeText(LoginActivity.this, "null", Toast.LENGTH_SHORT).show();
+                }
+            }
+        },
+                url, username, password);
+
+        requestQueue.add(things);
     }
+
     private void openProfile(){
         Intent intent = new Intent(this, StudentMainActivity.class);
         //intent.putExtra(KEY_USERNAME, username);
@@ -205,13 +219,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     // the ID of the item clicked and the cases are the optional buttons
     // at which point, it will activate the corresponding button's click
     // function. ADD DEFAULT?
+
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.email_sign_in_button:
                 //button00Click();
                 userLogin();
-
                 break;
             case R.id.email_register_button:
                 //button000Click();
@@ -221,3 +236,30 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
     }
 }
+
+/*
+public class CustomRequest extends StringRequest
+{
+    public CustomRequest(int method, String url, String stringRequest,
+                         Response.Listener<String> listener, Response.ErrorListener errorListener) {
+        super(method, url, stringRequest, listener, errorListener);
+    }
+
+    private Map<String, String> headers = new HashMap<>();
+
+    public void setCookies(List<String> cookies) {
+        StringBuilder sb = new StringBuilder();
+        for (String cookie : cookies) {
+            sb.append(cookie).append("; ");
+        }
+        //headers.put("Cookie", sb.toString());
+        //Toast.makeText(LoginActivity.this, sb.toString(), Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public Map<String, String> getHeaders() throws AuthFailureError {
+        return headers;
+    }
+
+}*/
+

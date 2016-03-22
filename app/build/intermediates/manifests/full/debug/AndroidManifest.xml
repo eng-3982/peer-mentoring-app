@@ -9,6 +9,7 @@
         android:targetSdkVersion="23" />
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -19,15 +20,16 @@
             android:name="com.example.emiliedoyle.peer_mentoring_app.LoginActivity"
             android:label="@string/title_activity_login"
             android:theme="@style/Theme.AppCompat" >
-        </activity>
-        <activity
-            android:name="com.example.emiliedoyle.peer_mentoring_app.StudentMainActivity"
-            android:label="@string/title_activity_student_main" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.emiliedoyle.peer_mentoring_app.StudentMainActivity"
+            android:label="@string/title_activity_student_main" >
+
             <!--
             <intent-filter>
                 <action android:name="com.example.emiliedoyle.peer_mentoring_app.StudentMainActivity" />
