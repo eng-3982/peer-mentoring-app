@@ -82,7 +82,7 @@ public class MenteeFindOptionsActivity extends AppCompatActivity implements View
 
 
         
-        startActivity(new Intent(MenteeFindOptionsActivity.this, MenteeYourMatchesActivity.class));}
+        startActivity(new Intent(MenteeFindOptionsActivity.this, MenteeSearchResultsActivity.class));}
 
     // specifically for button08 click, which will use a new Intent
     // in order to switch to the 'Search' activity

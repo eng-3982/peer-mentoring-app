@@ -60,33 +60,19 @@
         "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/menu/menu_mentor_profile.xml"
     },
     {
-<<<<<<< HEAD
         "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/menu/menu_admin_manage_mentors.xml",
         "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/menu/menu_admin_manage_mentors.xml"
-=======
-        "merged": "C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_mentee_updated_profile_message.xml",
-        "source": "C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_mentee_updated_profile_message.xml"
->>>>>>> d403c12a9adc117755cce7ee09200fe64c4baa2f
     },
     {
         "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/menu/menu_mentee_search_by_attribute.xml",
         "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/menu/menu_mentee_search_by_attribute.xml"
     },
     {
-<<<<<<< HEAD
         "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/menu/menu_admin_add_mentor.xml",
         "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/menu/menu_admin_add_mentor.xml"
     },
     {
         "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/menu/menu_student_main.xml",
         "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/menu/menu_student_main.xml"
-=======
-        "merged": "C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_mentee_find_options.xml",
-        "source": "C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_mentee_find_options.xml"
-    },
-    {
-        "merged": "C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_mentee_your_connections.xml",
-        "source": "C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_mentee_your_connections.xml"
->>>>>>> d403c12a9adc117755cce7ee09200fe64c4baa2f
     }
 ]

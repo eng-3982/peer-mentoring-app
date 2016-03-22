@@ -20,20 +20,14 @@
          android:textStyle="bold"
          android:textSize="25dp"
          />
-<<<<<<< HEAD
-   <!--
+
     <TextView
-=======
-   <!-- <TextView
->>>>>>> 58b12d393b2909d7b614c0d133d5813f27f0c258
         android:text="Results"
         android:textColor="#9e64d8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/stuff"
-        android:textStyle="bold"
-        android:textSize="25dp"
-        /> -->
+        />
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="387dp"
