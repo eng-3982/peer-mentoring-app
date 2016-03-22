@@ -62,13 +62,17 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Login"
-        android:id="@+id/email_sign_in_button" />
+        android:id="@+id/email_sign_in_button"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/round_corner"/>
 
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Register"
-        android:id="@+id/email_register_button" />
+        android:id="@+id/email_register_button"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/round_corner"/>
 
     <!--
     <ScrollView

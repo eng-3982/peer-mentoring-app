@@ -41,6 +41,8 @@
         android:text="Return to Main Menu"
         android:layout_below="@+id/mainListView"
         android:layout_centerHorizontal="true"
-        android:layout_gravity="center_horizontal"  />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/round_corner"/>
 
 </LinearLayout>

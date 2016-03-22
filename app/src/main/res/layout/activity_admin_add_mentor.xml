@@ -99,7 +99,9 @@
         android:id="@+id/AddMentorButton"
         android:layout_above="@+id/HomeButton"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/round_corner"/>
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -107,6 +109,8 @@
         android:id="@+id/HomeButton"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/round_corner"/>
 
 </RelativeLayout>
