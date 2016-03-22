@@ -24,7 +24,7 @@
         android:text="Please select attributes:"
         android:id="@+id/t2"
         android:layout_below="@+id/t1"
-        android:textColor="#000000"
+        android:textColor="#ffffff"
         android:textSize="25dp"
         android:textStyle="bold"
         android:gravity="center_horizontal"/>
@@ -83,8 +83,12 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/SearchResultsButton"
-        android:layout_below="@+id/CM_box"
         android:text="Search"
-        android:onClick="searchForAMentor"/>
+        android:onClick="searchForAMentor"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/round_corner"/>
 
 </RelativeLayout>

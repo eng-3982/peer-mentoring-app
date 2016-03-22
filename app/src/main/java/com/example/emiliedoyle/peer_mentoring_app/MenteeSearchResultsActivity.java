@@ -96,7 +96,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
 
         queue = Volley.newRequestQueue(this);
         //url = "https://pma.piconepress.com/data";
-        //getDBItems();
+        getDBItems();
 
         HomeButton = (Button) findViewById(R.id.HomeButton);
         HomeButton.setOnClickListener(this);
@@ -157,6 +157,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
 
     public void getDBItems() {
         //create new ListView to display data
+
         final TextView mTextView = (TextView) findViewById(R.id.stuff);
 
         //define our url
@@ -165,7 +166,6 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
         uri.authority("pma.piconepress.com");
         uri.path("data/");
         final String url = uri.build().toString();
-
 
         //create new SP object to access callback data
         SharedPreferences sharedpreferences;

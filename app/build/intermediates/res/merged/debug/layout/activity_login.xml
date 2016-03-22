@@ -50,24 +50,29 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editTextPassword" />
-
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Login"
-        android:id="@+id/email_sign_in_button" />
-
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Register"
-        android:id="@+id/email_register_button" />
+        android:id="@+id/editTextPassword"
+        android:password="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/debug" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:id="@+id/email_sign_in_button"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/round_corner"/>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:id="@+id/email_register_button"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/round_corner"/>
 
     <!--
     <ScrollView

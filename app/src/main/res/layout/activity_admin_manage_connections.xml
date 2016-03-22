@@ -25,7 +25,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/HomeButton"
         android:text="Return to Main Menu"
-        android:layout_below="@+id/text1"
-        />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/round_corner"/>
 
 </RelativeLayout>
