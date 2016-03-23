@@ -172,29 +172,6 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
 
 
         final VolleyRequest parse = new VolleyRequest();
-        /*JsonRequest things = parse.getJSON(new VolleyRequest.VolleyCallback() {
-               @Override
-               public void onSuccess(JSONObject result) {
-                   if (result != null) {
-                       mTextView.setText(result.toString());
-                       editor.putString("jsonData", result.toString());
-                       Log.i("SearchResultActivity", "QQQQR" + result.toString());
-                       editor.commit();
-                   } else {
-                       editor.putString("jsonData", null);
-                       Log.i("SearchResultActivity", "QQQQ" + "null");
-                       editor.commit();
-                   }
-               }
-           },
-                url, "Raquel", "Sloths");
-
-        String[] response = null;
-        sharedpreferences = getSharedPreferences("JSON", MODE_PRIVATE);
-        String stuff = (sharedpreferences.getString("jsonData", ""));*/
-        Map<String, String> postParam= new HashMap<String, String>();
-        postParam.put("Username", username);
-        postParam.put("Password", password);
 
         JSONObject json = new JSONObject();
         try {
@@ -253,26 +230,6 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
-
-        /*try {
-            if(stuff != null)
-            {
-                JSONObject jsonData = new JSONObject(stuff);
-                response = parse.parseJSON(jsonData, "name");
-                Log.i("SearchResultActivity", "RRRR");
-
-            }
-            else {
-                response[0] = "null";
-                Log.i("SearchResultActivity", "SSSS");
-            }
-
-        }
-        catch (JSONException e)
-        {
-            Log.i("SearchResultActivity", "JJJJ" + e.toString());
-
-        }*/
         SharedPreferences sharedPreferences = getSharedPreferences("JSON", 0);
         final String resp = sharedPreferences.getString("Response", "missing");
         mTextView.setText(resp);
