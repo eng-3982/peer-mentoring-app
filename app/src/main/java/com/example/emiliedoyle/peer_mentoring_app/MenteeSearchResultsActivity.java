@@ -3,7 +3,6 @@ package com.example.emiliedoyle.peer_mentoring_app;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.net.Uri;
-// import necessary items for design, menu and connection between views
 
 import android.database.DataSetObserver;
 import android.preference.PreferenceManager;
@@ -46,17 +45,6 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.JsonRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-/*import com.mongodb.BasicDBObject;
-import com.mongodb.BulkWriteOperation;
-import com.mongodb.BulkWriteResult;
-import com.mongodb.Cursor;
-import com.mongodb.DB;
-import com.mongodb.DBCollection;
-import com.mongodb.DBCursor;
-import com.mongodb.DBObject;
-import com.mongodb.MongoClient;
-import com.mongodb.ParallelScanOptions;
-import com.mongodb.ServerAddress;*/
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -83,6 +71,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
     private ListView mainListView;
     public TextView resultsView;
     private ArrayAdapter<String> listAdapter;
+    //SharedPreferences sharedpreferences;
 
     String[] name = new String[50];
 
@@ -125,7 +114,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
                         //attempt to pass the username or name of the person that was clicked to the mentor profile activity
                         Bundle bundle= new Bundle();
                         bundle.putString("name", planets[position]);
-                        Log.i("before", bundle.getString("name"));
+                        //Log.i("before", bundle.getString("name"));
                         newActivity.putExtras(bundle);
                         startActivity(newActivity);
                         break;
@@ -223,10 +212,14 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
                     @Override
                     public void onResponse(JSONObject response)
                     {
-                        Log.i("VolleyRequest", "PPPP" + response.toString());
-                        mTextView.setText(response.toString());
+                        SharedPreferences sharedpreferences;
+                        sharedpreferences = getSharedPreferences("JSON", 0);
+                        SharedPreferences.Editor editor = sharedpreferences.edit();
+
+                        editor.putString("Response", response.toString());
+                        editor.commit();
                         String[]names= parse.parseJSON(response,"name");
-                        Log.i("VR string", names[0]);
+                        //Log.i("VR string", names[0]);
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -280,6 +273,20 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
             Log.i("SearchResultActivity", "JJJJ" + e.toString());
 
         }*/
+        SharedPreferences sharedPreferences = getSharedPreferences("JSON", 0);
+        final String resp = sharedPreferences.getString("Response", "missing");
+        mTextView.setText(resp);
+        try
+        {
+            JSONObject jsonData = new JSONObject(resp);
+            parse.parseJSON(jsonData, "name");
+        }
+        catch (JSONException e)
+        {
+
+        }
+
+
         queue.add(jsonRequest);
     }
 
