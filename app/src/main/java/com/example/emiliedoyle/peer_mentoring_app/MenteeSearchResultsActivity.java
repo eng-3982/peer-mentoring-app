@@ -1,10 +1,12 @@
 package com.example.emiliedoyle.peer_mentoring_app;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.net.Uri;
 // import necessary items for design, menu and connection between views
 
 import android.database.DataSetObserver;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
@@ -77,7 +79,6 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
 
     // Instantiate the RequestQueue.
     private RequestQueue queue;
-    private String url;
 
     private ListView mainListView;
     public TextView resultsView;
@@ -173,44 +174,90 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
         final SharedPreferences.Editor editor = sharedpreferences.edit();
 
 
+
         VolleyRequest parse = new VolleyRequest();
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        JsonRequest things = parse.getJSON(new VolleyRequest.VolleyCallback() {
-           @Override
-           public void onSuccess(JSONObject result) {
-               if (result != null) {
-                   editor.putString("jsonData", result.toString());
-                   Log.i("SearchResultActivity", "QQQQ" + result.toString());
-                   editor.commit();
-               } else {
-                   editor.putString("jsonData", null);
-                   Log.i("SearchResultActivity", "QQQQ" + "null");
-                   editor.commit();
+        /*JsonRequest things = parse.getJSON(new VolleyRequest.VolleyCallback() {
+               @Override
+               public void onSuccess(JSONObject result) {
+                   if (result != null) {
+                       mTextView.setText(result.toString());
+                       editor.putString("jsonData", result.toString());
+                       Log.i("SearchResultActivity", "QQQQR" + result.toString());
+                       editor.commit();
+                   } else {
+                       editor.putString("jsonData", null);
+                       Log.i("SearchResultActivity", "QQQQ" + "null");
+                       editor.commit();
+                   }
                }
-           }
-       },
+           },
                 url, "Raquel", "Sloths");
 
         String[] response = null;
-        String stuff = (sharedpreferences.getString("jsonData", ""));
-        try {
+        sharedpreferences = getSharedPreferences("JSON", MODE_PRIVATE);
+        String stuff = (sharedpreferences.getString("jsonData", ""));*/
+
+        JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response)
+                    {
+                        Log.i("VolleyRequest", "PPPP"+ response.toString());
+                        mTextView.setText(response.toString());
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            //if there is an error, print it!
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        }) {
+
+            @Override
+            //modifies the header to contain the encoded username and password info. authenticates
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<String, String>();
+                String creds = "eng-3982:isipjuice";
+                String auth = "Basic " + Base64.encodeToString(creds.getBytes(), Base64.NO_WRAP);
+                //headers.put("Content-Type: application/json");
+                headers.put("Authorization", auth);
+                headers.put("username", "Raquel");
+                headers.put("password", "Sloths");
+                headers.put("attribute", "matches");
+                return headers;
+            }
+
+        };
+
+        //something I needed to do so that there wouldn't be time-outs
+        //we may not need this? who on earth knows.
+        jsonRequest.setRetryPolicy(new DefaultRetryPolicy(
+                27000,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
+
+        /*try {
             if(stuff != null)
             {
                 JSONObject jsonData = new JSONObject(stuff);
                 response = parse.parseJSON(jsonData, "name");
+                Log.i("SearchResultActivity", "RRRR");
+
             }
-            else
+            else {
                 response[0] = "null";
+                Log.i("SearchResultActivity", "SSSS");
+            }
 
         }
         catch (JSONException e)
         {
+            Log.i("SearchResultActivity", "JJJJ" + e.toString());
 
-        }
-        //Log.i("MenteeSearchResultsActivity", "QQQQ" + response[0]);
-        /*resultsView=(TextView) findViewById(R.id.stuff);
-        resultsView.setText(response[0]);
-        requestQueue.add(things);*/
+        }*/
+        queue.add(jsonRequest);
     }
 
     private void HomeButtonClick() {

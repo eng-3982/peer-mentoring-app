@@ -54,7 +54,6 @@ public class VolleyRequest {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Log.i("VolleyRequest", "QQQQ:  " + error.toString());
                         //mTextView.setText(error.networkResponse.statusCode);
                     }
                 }) {
@@ -84,7 +83,7 @@ public class VolleyRequest {
                     {
                         callback.onSuccess(JSONGetResponse);
                         JSONGetResponse = response;
-                        Log.i("SearchResultActivity", "QQQQ" + response.toString());
+                        //Log.i("SearchResultActivity", "QQQQ" + response.toString());
 
                     }
                 }, new Response.ErrorListener() {
@@ -106,6 +105,7 @@ public class VolleyRequest {
                 headers.put("Authorization", auth);
                 headers.put("username", uname);
                 headers.put("password", pw);
+
                 return headers;
             }
 
@@ -118,8 +118,6 @@ public class VolleyRequest {
                 27000,
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-        Log.i("SearchResultActivity", "QQQQ" + "this just does not work");
-
         return jsonRequest;
     }
 

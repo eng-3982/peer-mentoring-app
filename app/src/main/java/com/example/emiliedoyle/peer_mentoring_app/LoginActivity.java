@@ -161,6 +161,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 else if (result == null) {
                     Toast.makeText(LoginActivity.this, "null", Toast.LENGTH_SHORT).show();
                 }
+                else
+                    Toast.makeText(LoginActivity.this, "Authentication Failed. Please try again.", Toast.LENGTH_SHORT).show();
+
             }
         },
                 url, username, password);
