@@ -68,11 +68,13 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //somehow set majors to be accessible to be used in SearchButtonClic
-                SharedPreferences sharedpref=getSharedPreferences("Attribute",0);
-                SharedPreferences.Editor editor= sharedpref.edit();
-                editor.putString("Major", majors[position]);
-                editor.commit();
-                Log.i("stuff", majors[position]);
+                //SharedPreferences sharedpref=getSharedPreferences("Attribute",0);
+                //SharedPreferences.Editor editor= sharedpref.edit();
+                //editor.putString("Major", majors[position]);
+                //editor.commit();
+                //Log.i("stuff", majors[position]);
+
+
             }
             
             @SuppressWarnings("unused")
@@ -109,15 +111,15 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
     }
 
     private void SearchButtonClick(){
-       SharedPreferences sharedpref= getSharedPreferences("Attribute",0);
-        final String major= sharedpref.getString("Major", "missing");
-        Log.i("stuff2", major);
+      // SharedPreferences sharedpref= getSharedPreferences("Attribute",0);
+      //  final String major= sharedpref.getString("Major", "missing");
+      //  Log.i("stuff2", major);
         Intent newActivity= new Intent(MenteeSearchByAttributeActivity.this, MenteeSearchResultsActivity.class);
-        //attempt to pass the username or name of the person that was clicked to the mentor profile activity
-        Bundle majorBundle= new Bundle();
-        majorBundle.putString("major", major);
-        Log.i("before", majorBundle.getString("major"));
-        newActivity.putExtras(majorBundle);
+        // attempt to pass the username or name of the person that was clicked to the mentor profile activity
+      //  Bundle majorBundle= new Bundle();
+      //  majorBundle.putString("major", major);
+      //  Log.i("before", majorBundle.getString("major"));
+      //  newActivity.putExtras(majorBundle);
         startActivity(newActivity);
     }
     public String getDBItems(String majorAttr) {
@@ -274,6 +276,32 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
     public void onCheckboxClicked(View view) {
         // Is the view now checked?
         boolean checked = ((CheckBox) view).isChecked();
+        switch(view.getId()) {
+             case R.id.checkBox:
+                 if (checked)
+                     major = "Engineering";
+                 break;
+             case R.id.checkBox2:
+                 if (checked)
+                     major = "Business";
+                 break;
+             case R.id.checkBox3:
+                 if (checked)
+                     major = "Liberal Arts";
+                 break;
+             case R.id.checkBox4:
+                 if (checked)
+                     major = "Fine Arts";
+                 break;
+             case R.id.checkBox5:
+                 if (checked)
+                     major = "Science";
+                 break;
+             case R.id.checkBox6:
+                 if (checked)
+                     major = "Other";
+                 break;
+         }
     }
 
     @Override
@@ -282,7 +310,7 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
         switch(v.getId()){
             case R.id.SearchButton:
                 onCheckboxClicked(v);
-                //getDBMatches();
+
                 SearchButtonClick();
                 break;
         }
