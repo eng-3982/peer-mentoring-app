@@ -165,13 +165,12 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
         Uri.Builder uri = new Uri.Builder();
         uri.scheme("https");
         uri.authority("pma.piconepress.com");
-        uri.path("data/");
+        uri.path("query/search/");
+        //uri.path("query/match/");
         final String url = uri.build().toString();
-
-        //create new SP object to access callback data
-        SharedPreferences sharedpreferences;
-        sharedpreferences = getSharedPreferences("JSON", MODE_PRIVATE);
-        final SharedPreferences.Editor editor = sharedpreferences.edit();
+        SharedPreferences mSettings = getSharedPreferences("Login", 0);
+        final String username = mSettings.getString("Username", "missing");
+        final String password = mSettings.getString("Password", "missing");
 
 
 
@@ -196,8 +195,22 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
         String[] response = null;
         sharedpreferences = getSharedPreferences("JSON", MODE_PRIVATE);
         String stuff = (sharedpreferences.getString("jsonData", ""));*/
+        Map<String, String> postParam= new HashMap<String, String>();
+        postParam.put("Username", username);
+        postParam.put("Password", password);
 
-        JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET, url, null,
+        JSONObject json = new JSONObject();
+        try {
+            //json.put("name", username);
+            json.put("gender", "f");
+            Log.i("BLAH", json.toString());
+
+        }
+        catch (JSONException e)
+        {
+
+        }
+        JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.POST, url, json,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response)
@@ -220,11 +233,12 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
                 HashMap<String, String> headers = new HashMap<String, String>();
                 String creds = "eng-3982:isipjuice";
                 String auth = "Basic " + Base64.encodeToString(creds.getBytes(), Base64.NO_WRAP);
-                //headers.put("Content-Type: application/json");
+                headers.put("Content-Type", "application/json");
                 headers.put("Authorization", auth);
-                headers.put("username", "Raquel");
-                headers.put("password", "Sloths");
-                headers.put("attribute", "matches");
+                headers.put("username", username);
+                headers.put("password", password);
+                /*
+                headers.put("attribute", "matches");*/
                 return headers;
             }
 
