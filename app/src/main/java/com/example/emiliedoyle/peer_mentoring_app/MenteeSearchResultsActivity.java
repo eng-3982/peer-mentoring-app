@@ -97,16 +97,21 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
 
         queue = Volley.newRequestQueue(this);
         //url = "https://pma.piconepress.com/data";
-        getDBItems();
+        //getDBItems();
 
         HomeButton = (Button) findViewById(R.id.HomeButton);
         HomeButton.setOnClickListener(this);
-
+/*
+        Bundle bundle2=getIntent().getExtras();
+        String selectedMajor= bundle2.getString("major");
+        Log.i("afterSelectedMajor",bundle2.getString("major"));
+        Log.i("passed major", selectedMajor);
+*/
         getDBItems();
 
         // DEMO THAT WORKS! PRAISE THE LORD! http://windrealm.org/tutorials/android/android-listview.php
-        /*mainListView=(ListView) findViewById(R.id.mainListView);
-        String[] planets= new String[]{"Claire A. Durand","Rachel K. King","Daniel J. Douglas","Emilie C. Doyle"};
+        mainListView=(ListView) findViewById(R.id.mainListView);
+        final String[] planets= new String[]{"Claire A. Durand","Rachel K. King","Daniel J. Douglas","Emilie C. Doyle"};
         ArrayList<String> planetList= new ArrayList<String>();
         planetList.addAll(Arrays.asList(planets));
         listAdapter= new ArrayAdapter<String>(this, R.layout.simplerow, planetList);//listAdapter.add("Ceres");
@@ -115,8 +120,13 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
-                    case 0:
+                    default:
                         Intent newActivity = new Intent(MenteeSearchResultsActivity.this, MentorProfileActivity.class);
+                        //attempt to pass the username or name of the person that was clicked to the mentor profile activity
+                        Bundle bundle= new Bundle();
+                        bundle.putString("name", planets[position]);
+                        Log.i("before", bundle.getString("name"));
+                        newActivity.putExtras(bundle);
                         startActivity(newActivity);
                         break;
                 }
@@ -127,9 +137,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
             }
 
             ;
-        });*/
-
-
+        });
 
     }
 
@@ -174,7 +182,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
 
 
 
-        VolleyRequest parse = new VolleyRequest();
+        final VolleyRequest parse = new VolleyRequest();
         /*JsonRequest things = parse.getJSON(new VolleyRequest.VolleyCallback() {
                @Override
                public void onSuccess(JSONObject result) {
@@ -215,9 +223,10 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
                     @Override
                     public void onResponse(JSONObject response)
                     {
-                        Log.i("VolleyRequest", "PPPP"+ response.toString());
+                        Log.i("VolleyRequest", "PPPP" + response.toString());
                         mTextView.setText(response.toString());
-
+                        String[]names= parse.parseJSON(response,"name");
+                        Log.i("VR string", names[0]);
                     }
                 }, new Response.ErrorListener() {
             @Override

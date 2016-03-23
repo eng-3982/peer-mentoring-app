@@ -4,6 +4,7 @@ package com.example.emiliedoyle.peer_mentoring_app;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.app.Activity;
@@ -36,7 +37,7 @@ public class MenteeYourConnectionsActivity extends AppCompatActivity implements 
 
         // DEMO THAT WORKS! PRAISE THE LORD! http://windrealm.org/tutorials/android/android-listview.php
         mainListView=(ListView) findViewById(R.id.mainListView);
-        String[] planets= new String[]{"Claire A. Durand"};
+        final String[] planets= new String[]{"Claire A. Durand"};
         ArrayList<String> planetList= new ArrayList<String>();
         planetList.addAll(Arrays.asList(planets));
         listAdapter= new ArrayAdapter<String>(this, R.layout.simplerow, planetList);
@@ -48,6 +49,10 @@ public class MenteeYourConnectionsActivity extends AppCompatActivity implements 
                 switch (position) {
                     case 0:
                         Intent newActivity = new Intent(MenteeYourConnectionsActivity.this, MentorProfileActivity.class);
+                        Bundle bundle= new Bundle();
+                        bundle.putString("name", planets[position]);
+                        Log.i("before", bundle.getString("name"));
+                        newActivity.putExtras(bundle);
                         startActivity(newActivity);
                         break;
                 }

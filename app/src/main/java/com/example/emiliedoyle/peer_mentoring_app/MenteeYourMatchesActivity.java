@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.app.Activity;
@@ -49,7 +50,7 @@ public class MenteeYourMatchesActivity extends AppCompatActivity implements View
 
 // DEMO THAT WORKS! PRAISE THE LORD! http://windrealm.org/tutorials/android/android-listview.php
         mainListView=(ListView) findViewById(R.id.mainListView);
-        String[] planets= new String[]{"Claire A. Durand","Rachel K. King","Daniel J. Douglas","Emilie C. Doyle"};
+        final String[] planets= new String[]{"Claire A. Durand","Rachel K. King","Daniel J. Douglas","Emilie C. Doyle"};
         ArrayList<String> planetList= new ArrayList<String>();
         planetList.addAll(Arrays.asList(planets));
         listAdapter= new ArrayAdapter<String>(this, R.layout.simplerow, planetList);
@@ -59,8 +60,12 @@ public class MenteeYourMatchesActivity extends AppCompatActivity implements View
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
-                    case 0:
+                    default:
                         Intent newActivity = new Intent(MenteeYourMatchesActivity.this, MentorProfileActivity.class);
+                        Bundle bundle= new Bundle();
+                        bundle.putString("name", planets[position]);
+                        Log.i("before", bundle.getString("name"));
+                        newActivity.putExtras(bundle);
                         startActivity(newActivity);
                         break;
                 }
