@@ -52,7 +52,7 @@ public class MentorProfileActivity extends AppCompatActivity implements View.OnC
         String selectedName= bundle.getString("name");
 
         String items = getUserProfile(selectedName);
-        final String[] info = items.replace("{", "").replace("name", "").replace("[", "").replace("]", "").replace("\"", "").replace("}", "").replace(":", "").split(",");
+        final String[] info = items.replace("{", "").replace("name", "").replace("[", "").replace("]", "").replace("\"", "").replace("}", "").split(",");
 
         Log.i("QQQQ", Arrays.toString(info));
         //Log.i("passed" , selectedName);
@@ -65,9 +65,11 @@ public class MentorProfileActivity extends AppCompatActivity implements View.OnC
         Uri.Builder uri = new Uri.Builder();
         uri.scheme("https");
         uri.authority("pma.piconepress.com");
-        uri.path("data/" + name.substring(0, 1).toLowerCase() + name.substring(1));
+        uri.path("data/" + name.substring(0, 1).toLowerCase() + name.substring(1)+"/");
+
         //uri.path("query/match/");
         final String url = uri.build().toString();
+            Log.i("URLLLL", url);
         SharedPreferences mSettings = getSharedPreferences("Login", 0);
         final String username = mSettings.getString("Username", "missing");
         final String password = mSettings.getString("Password", "missing");
@@ -96,7 +98,7 @@ public class MentorProfileActivity extends AppCompatActivity implements View.OnC
                             SharedPreferences.Editor editor = ProfPref.edit();
                             editor.putString("ProfileResponse", response.toString());
                             editor.commit();
-                            Log.i("stuff", "stuff");
+                            Log.i("stuff", response.toString());
                         }
 
                         //mTextView.setText("it's null yo");
@@ -135,22 +137,10 @@ public class MentorProfileActivity extends AppCompatActivity implements View.OnC
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
+
             SharedPreferences ProfPref = getSharedPreferences("Profile", 0);
-        final String resp = ProfPref.getString("ProfileResponse", "missing");
-
-        //mTextView.setText(resp);
-        /*try
-        {
-            JSONObject jsonData = new JSONObject(resp);
-            stuff = parse.parseJSON(jsonData, "name");
-            return jsonData;
-
-        }
-        catch (JSONException e)
-        {
-            jsonData
-        }*/
-
+            final String resp = ProfPref.getString("ProfileResponse", "missing");
+            Log.i("HALP", resp);
 
         queue.add(jsonRequest);
             return resp;
