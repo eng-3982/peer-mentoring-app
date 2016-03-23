@@ -19,7 +19,7 @@
         android:textSize="25dp"
         android:textStyle="bold"
         android:gravity="center_horizontal"/>
-
+<!--
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="387dp"
@@ -33,22 +33,7 @@
         android:divider="#9e64d8"
         android:layout_weight="0.78">
     </ListView>
-
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Search"
-        android:id="@+id/SearchButton"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/round_corner"
-        android:layout_gravity="bottom" />
-
-
-
-    <!--
+-->
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -105,6 +90,16 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:onClick="onCheckboxClicked"/>
-        -->
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:id="@+id/SearchButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/round_corner"
+        android:layout_gravity="bottom" />
 
 </LinearLayout>
