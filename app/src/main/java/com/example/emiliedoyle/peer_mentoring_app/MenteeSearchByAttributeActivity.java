@@ -9,8 +9,11 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +29,8 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -34,6 +39,9 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
 
     Button SearchButton;
     private RequestQueue queue;
+    private ListView mainListView;
+    public TextView resultsView;
+    private ArrayAdapter<String> listAdapter;
 
     public static final String KEY_MAJOR="major";
     public String major;
@@ -47,7 +55,38 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
         //create request queue
         queue = Volley.newRequestQueue(this);
 
+        mainListView=(ListView) findViewById(R.id.mainListView);
+        final String[] majors= new String[]{"Engineering","Science", "Fine Art","Art", "Acting","Liberal Arts","Other","Business","Sports"};
+        ArrayList<String> majorList= new ArrayList<String>();
+        majorList.addAll(Arrays.asList(majors));
+        listAdapter= new ArrayAdapter<String>(this, R.layout.checkboxrow, majorList);//listAdapter.add("Ceres");
+        mainListView.setAdapter(listAdapter);
+        mainListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    default:
+
+
+                       /* Intent newActivity = new Intent(MenteeSearchByAttributeActivity.this, MenteeSearchResultsActivity.class);
+                        //attempt to pass the username or name of the person that was clicked to the mentor profile activity
+                        Bundle majorBundle= new Bundle();
+                        majorBundle.putString("major", majors[position]);
+                        //Log.i("before", bundle.getString("major"));
+                        newActivity.putExtras(majorBundle);
+                        //startActivity(newActivity);*/
+                        break;
+                }
+            }
+            @SuppressWarnings("unused")
+            public void onClick(View v) {
+            }
+
+            ;
+        });
+
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -164,7 +203,7 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
         boolean checked = ((CheckBox) view).isChecked();
 
         // Check which checkbox was clicked
-        switch(view.getId()) {
+       /* switch(view.getId()) {
             case R.id.checkBox:
                 if (checked)
                     major = "Engineering";
@@ -189,7 +228,7 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
                 if (checked)
                     major = "Other";
                 break;
-        }
+        }*/
     }
 
     @Override
@@ -199,7 +238,7 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
             case R.id.SearchButton:
                 //onCheckboxClicked(v);
                 //getDBMatches();
-                SearchButtonClick();
+                //SearchButtonClick();
                 break;
         }
     }
