@@ -281,7 +281,7 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
 
         switch(v.getId()){
             case R.id.SearchButton:
-                //onCheckboxClicked(v);
+                onCheckboxClicked(v);
                 //getDBMatches();
                 SearchButtonClick();
                 break;
