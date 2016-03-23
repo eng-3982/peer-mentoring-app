@@ -72,7 +72,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
     public TextView resultsView;
     private ArrayAdapter<String> listAdapter;
     //SharedPreferences sharedpreferences;
-
+    public String listClick;
     String[] name = new String[50];
 
     // declare button
@@ -81,7 +81,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        //resultsView = (TextView) findViewById(R.id.stuff);
         setContentView(R.layout.activity_mentee_search_results); //needed for listView
 
         queue = Volley.newRequestQueue(this);
@@ -92,15 +92,25 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
         HomeButton.setOnClickListener(this);
 
         Bundle majorBundle=getIntent().getExtras();
-        String selectedMajor= majorBundle.getString("major");
-        Log.i("afterSelectedMajor",majorBundle.getString("major"));
-        Log.i("passed major", selectedMajor);
+        //String selectedMajor= majorBundle.getString("major");
+        //Log.i("afterSelectedMajor",majorBundle.getString("major"));
+        //Log.i("passed major", selectedMajor);
 
-        getDBItems();
+        String items = getDBItems();
+        Log.i("items",items);
+        //resultsView.setText(items);
+        final String[] planets = items.replace("{", "").replace("name", "").replace("[", "").replace("]", "").replace("\"", "").replace("}", "").replace(":", "").split(",");
+        for(int i = 0; i < planets.length; i++)
+        {
+            planets[i] = planets[i].substring(0, 1).toUpperCase() + planets[i].substring(1);
+
+        }
+
+        Log.i("ary", Arrays.toString(planets));
 
         // DEMO THAT WORKS! PRAISE THE LORD! http://windrealm.org/tutorials/android/android-listview.php
         mainListView=(ListView) findViewById(R.id.mainListView);
-        final String[] planets= new String[]{"Claire A. Durand","Rachel K. King","Daniel J. Douglas","Emilie C. Doyle"};
+        //final String[] planets= new String[]{"Claire A. Durand","Rachel K. King","Daniel J. Douglas","Emilie C. Doyle"};
         ArrayList<String> planetList= new ArrayList<String>();
         planetList.addAll(Arrays.asList(planets));
         listAdapter= new ArrayAdapter<String>(this, R.layout.simplerow, planetList);//listAdapter.add("Ceres");
@@ -153,12 +163,8 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
         return super.onOptionsItemSelected(item);
     }
 
-    public void getDBItems() {
-        //create new ListView to display data
+    public String getDBItems() {
 
-        final TextView mTextView = (TextView) findViewById(R.id.stuff);
-
-        //define our url
         Uri.Builder uri = new Uri.Builder();
         uri.scheme("https");
         uri.authority("pma.piconepress.com");
@@ -169,16 +175,10 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
         final String username = mSettings.getString("Username", "missing");
         final String password = mSettings.getString("Password", "missing");
 
-
-
-        final VolleyRequest parse = new VolleyRequest();
-
         JSONObject json = new JSONObject();
         try {
             //json.put("name", username);
             json.put("gender", "f");
-            Log.i("BLAH", json.toString());
-
         }
         catch (JSONException e)
         {
@@ -189,19 +189,22 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
                     @Override
                     public void onResponse(JSONObject response)
                     {
-                        SharedPreferences sharedpreferences;
-                        sharedpreferences = getSharedPreferences("JSON", 0);
-                        SharedPreferences.Editor editor = sharedpreferences.edit();
-
-                        editor.putString("Response", response.toString());
-                        editor.commit();
-                        String[]names= parse.parseJSON(response,"name");
-                        //Log.i("VR string", names[0]);
+                        if(response != null) {
+                            Log.i("RRRR", response.toString());
+                            SharedPreferences sharedpreferences;
+                            sharedpreferences = getSharedPreferences("JSON", 0);
+                            SharedPreferences.Editor editor = sharedpreferences.edit();
+                            editor.putString("Response", response.toString());
+                            editor.commit();
+                        }
+                        else
+                            Log.i("BLAH", "null ");
                     }
                 }, new Response.ErrorListener() {
             @Override
             //if there is an error, print it!
             public void onErrorResponse(VolleyError error) {
+                Log.i("BLAH", error.toString());
 
             }
         }) {
@@ -216,15 +219,11 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
                 headers.put("Authorization", auth);
                 headers.put("username", username);
                 headers.put("password", password);
-                /*
-                headers.put("attribute", "matches");*/
                 return headers;
             }
 
         };
 
-        //something I needed to do so that there wouldn't be time-outs
-        //we may not need this? who on earth knows.
         jsonRequest.setRetryPolicy(new DefaultRetryPolicy(
                 27000,
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
@@ -232,19 +231,8 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
 
         SharedPreferences sharedPreferences = getSharedPreferences("JSON", 0);
         final String resp = sharedPreferences.getString("Response", "missing");
-        mTextView.setText(resp);
-        try
-        {
-            JSONObject jsonData = new JSONObject(resp);
-            parse.parseJSON(jsonData, "name");
-        }
-        catch (JSONException e)
-        {
-
-        }
-
-
         queue.add(jsonRequest);
+        return resp;
     }
 
     private void HomeButtonClick() {
