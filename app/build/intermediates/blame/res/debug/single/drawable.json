@@ -1,9 +1,5 @@
 [
     {
-        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/drawable/white.png",
-        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/drawable/white.png"
-    },
-    {
         "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_dark.xml",
         "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
     },
@@ -58,6 +54,10 @@
     {
         "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_full_material.xml",
         "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable/abc_ratingbar_full_material.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/drawable/white.jpg",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/drawable/white.jpg"
     },
     {
         "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/drawable/abc_btn_borderless_material.xml",
