@@ -149,10 +149,9 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
                     {
                         if(response != null) {
                             Log.i("RRRR", response.toString());
-                            SharedPreferences sharedpreferences;
-                            sharedpreferences = getSharedPreferences("JSON", 0);
-                            SharedPreferences.Editor editor = sharedpreferences.edit();
-                            editor.putString("Response", response.toString());
+                            SharedPreferences attribute = getSharedPreferences("Attribute", 0);
+                            SharedPreferences.Editor editor = attribute.edit();
+                            editor.putString("matches", response.toString());
                             editor.commit();
                         }
                         else
@@ -187,8 +186,8 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
-        SharedPreferences sharedPreferences = getSharedPreferences("JSON", 0);
-        final String resp = sharedPreferences.getString("Response", "missing");
+        SharedPreferences attribute = getSharedPreferences("Attribute", 0);
+        final String resp = attribute.getString("matches", "missing");
         queue.add(jsonRequest);
         return resp;
     }
