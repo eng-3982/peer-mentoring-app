@@ -106,25 +106,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         email_sign_in_button.setOnClickListener(this);
         email_register_button=(Button)findViewById(R.id.email_register_button);
         email_register_button.setOnClickListener(this);
-        String args= "whoa";
 
-        sharedpreferences = getSharedPreferences("Settings", 0);
-        SharedPreferences.Editor editor = sharedpreferences.edit();
 
-        editor.putString("Name", Name);
-        editor.putString("Phone", Phone);
-        editor.putString("Email", Email);
-        editor.commit();
 
-        //testing Cookies functionality
-        String[] stuff = new String[3];
-        stuff[0] = URL_STRING;
-        stuff[1] = "Raquel";
-        stuff[2] = "Sloths";
-        //new CookieExample().execute(stuff);
-        //MEH commented this out to get rid of error, probs going to need to bring back
-       // Password = (EditText) findViewById(R.id.password);
-        //Email = (AutoCompleteTextView) findViewById(R.id.email);
     }
 
     /************
@@ -147,6 +131,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         EditText pw = (EditText)findViewById(R.id.editTextPassword);
         password = pw.getText().toString();
+
+        sharedpreferences = getSharedPreferences("Login", 0);
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+
+        editor.putString("Username", username);
+        editor.putString("Password", password);
+        editor.commit();
+
 
         VolleyRequest volleyRequest = new VolleyRequest();
         //create a new request queue

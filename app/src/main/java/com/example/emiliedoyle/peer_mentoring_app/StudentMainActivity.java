@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.app.Activity;
@@ -33,9 +34,11 @@ public class StudentMainActivity extends AppCompatActivity implements View.OnCli
         ManageProfileButton.setOnClickListener(this);
         YourConnectionsButton=(Button)findViewById(R.id.YourConnectionsButton);
         YourConnectionsButton.setOnClickListener(this);
-        SharedPreferences mSettings = getSharedPreferences("Settings", 0);
-
-       // String cookieName = mSettings.getString("Name", "missing");
+        SharedPreferences mSettings = getSharedPreferences("Login", 0);
+        String username = mSettings.getString("Username", "missing");
+        String password = mSettings.getString("Password", "missing");
+        //Toast.makeText(StudentMainActivity.this, cookieName, Toast.LENGTH_LONG).show();
+        //Log.i("COOKIE", cookieName);
     }
 
     // standard
