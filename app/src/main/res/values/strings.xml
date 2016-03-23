@@ -30,5 +30,8 @@
     <string name="title_activity_mentee_updated_profile_message">
         Mentee Updated Profile Message Activity
     </string>
+    <string name="title_activity_mentee_attribute_search_result">
+        MenteeAttributeSearchResultActivity
+    </string>
 
 </resources>

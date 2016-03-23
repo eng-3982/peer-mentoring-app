@@ -44,10 +44,10 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
     private ListView mainListView;
     public TextView resultsView;
     private ArrayAdapter<String> listAdapter;
-    String Major="Nothing was checked :(";
+    public String Major="Nothing was checked :(";
 
     public static final String KEY_MAJOR="major";
-    public String major;
+    public String major = "Other";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,7 +57,7 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
 
         //create request queue
         queue = Volley.newRequestQueue(this);
-
+        /*
         mainListView=(ListView) findViewById(R.id.mainListView);
         final String[] majors= new String[]{"Engineering","Science", "Fine Art","Art", "Acting","Liberal Arts","Other","Business","Sports"};
         ArrayList<String> majorList= new ArrayList<String>();
@@ -82,7 +82,7 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
             }
 
             ;
-        });
+        });*/
 
     }
 
@@ -111,168 +111,14 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
     }
 
     private void SearchButtonClick(){
-      // SharedPreferences sharedpref= getSharedPreferences("Attribute",0);
-      //  final String major= sharedpref.getString("Major", "missing");
-      //  Log.i("stuff2", major);
-        Intent newActivity= new Intent(MenteeSearchByAttributeActivity.this, MenteeSearchResultsActivity.class);
-        // attempt to pass the username or name of the person that was clicked to the mentor profile activity
-      //  Bundle majorBundle= new Bundle();
-      //  majorBundle.putString("major", major);
-      //  Log.i("before", majorBundle.getString("major"));
-      //  newActivity.putExtras(majorBundle);
+        SharedPreferences attribute = getSharedPreferences("Attribute", 0);
+        SharedPreferences.Editor editor = attribute.edit();
+        editor.putString("matches", major);
+        editor.commit();
+        Intent newActivity= new Intent(MenteeSearchByAttributeActivity.this, MenteeAttributeSearchResultActivity.class);
         startActivity(newActivity);
     }
-    public String getDBItems(String majorAttr) {
 
-        Uri.Builder uri = new Uri.Builder();
-        uri.scheme("https");
-        uri.authority("pma.piconepress.com");
-        uri.path("query/search/");
-        //uri.path("query/match/");
-        final String url = uri.build().toString();
-        SharedPreferences mSettings = getSharedPreferences("Login", 0);
-        final String username = mSettings.getString("Username", "missing");
-        final String password = mSettings.getString("Password", "missing");
-
-        JSONObject json = new JSONObject();
-        try {
-
-            json.put("major", majorAttr);
-
-        }
-        catch (JSONException e)
-        {
-
-        }
-        JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.POST, url, json,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response)
-                    {
-                        if(response != null) {
-                            Log.i("RRRR", response.toString());
-                            SharedPreferences attribute = getSharedPreferences("Attribute", 0);
-                            SharedPreferences.Editor editor = attribute.edit();
-                            editor.putString("matches", response.toString());
-                            editor.commit();
-                        }
-                        else
-                            Log.i("BLAH", "null ");
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            //if there is an error, print it!
-            public void onErrorResponse(VolleyError error) {
-                Log.i("BLAH", error.toString());
-
-            }
-        }) {
-
-            @Override
-            //modifies the header to contain the encoded username and password info. authenticates
-            public Map<String, String> getHeaders() throws AuthFailureError {
-                HashMap<String, String> headers = new HashMap<String, String>();
-                String creds = "eng-3982:isipjuice";
-                String auth = "Basic " + Base64.encodeToString(creds.getBytes(), Base64.NO_WRAP);
-                headers.put("Content-Type", "application/json");
-                headers.put("Authorization", auth);
-                headers.put("username", username);
-                headers.put("password", password);
-                return headers;
-            }
-
-        };
-
-        jsonRequest.setRetryPolicy(new DefaultRetryPolicy(
-                27000,
-                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-
-        SharedPreferences attribute = getSharedPreferences("Attribute", 0);
-        final String resp = attribute.getString("matches", "missing");
-        queue.add(jsonRequest);
-        return resp;
-    }
-    public void getDBMatches() {
-
-        //create new ListView to display data
-        final TextView mTextView = (TextView) findViewById(R.id.stuff);
-
-        //define our url
-        Uri.Builder uri = new Uri.Builder();
-        uri.scheme("https");
-        uri.authority("pma.piconepress.com");
-        uri.path("data/");
-        final String url = uri.build().toString();
-
-
-
-        // Request a json response from the provided URL.
-        JsonObjectRequest jsonRequest = new JsonObjectRequest (Request.Method.POST, url, null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Toast.makeText(MenteeSearchByAttributeActivity.this, "This iz a Response" , Toast.LENGTH_LONG).show();
-                        // Display the response string (items of the DB)
-                        //mTextView.setText("Response is: " + response);
-                        /*try {
-
-                            //String result = response.getString("name"); //must substitute in a name
-                            //mTextView.setText("Response is: " + result);
-                            Iterator<?> keys= response.keys();
-                            int i=0;
-
-                            while(keys.hasNext()) {
-
-                                String key = (String) keys.next();
-
-                                if (response.get(key) instanceof JSONObject) {
-                                    JSONObject person = response.getJSONObject(key);
-                                    //name[i] = person.getString("name");
-                                    i++;
-                                }
-                            }
-
-                        }
-                        //if there is a problem with the JSON exchance
-                        catch (JSONException e) {
-                            mTextView.setText("THAT DON'T WORK");
-
-                        }*/
-
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            //if there is an error, print it!
-            public void onErrorResponse(VolleyError error) {
-                mTextView.setText(error.toString());
-            }
-        }) {
-            @Override
-            //OH LOOK AT ME, I'M VOLLEY AND MY HEADER IS WRONG
-            //modifies the header to contain the encoded username and password info. authenticates
-            public Map<String, String> getHeaders() throws AuthFailureError {
-                HashMap<String, String> headers = new HashMap<String, String>();
-                String creds = "eng-3982:isipjuice";
-                String auth = "Basic " + Base64.encodeToString(creds.getBytes(), Base64.NO_WRAP);
-                //headers.put("Content-Type: application/json");
-                headers.put("Authorization", auth);
-                headers.put(KEY_MAJOR, major);
-                return headers;
-            }
-
-        };
-        // Add the request to the RequestQueue.
-        queue.add(jsonRequest);
-
-        //something I needed to do so that there wouldn't be time-outs
-        //we may not need this? who on earth knows.
-        jsonRequest.setRetryPolicy(new DefaultRetryPolicy(
-                27000,
-                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-
-    }
     public void onCheckboxClicked(View view) {
         // Is the view now checked?
         boolean checked = ((CheckBox) view).isChecked();
@@ -301,7 +147,11 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
                  if (checked)
                      major = "Other";
                  break;
+            default:
+                major = "Other";
+                break;
          }
+
     }
 
     @Override
@@ -309,9 +159,11 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
 
         switch(v.getId()){
             case R.id.SearchButton:
-                onCheckboxClicked(v);
-
+                //String response = getDBItems(major);
                 SearchButtonClick();
+                break;
+            default:
+                onCheckboxClicked(v);
                 break;
         }
     }

@@ -131,13 +131,6 @@ public class MenteeRegisterActivity extends AppCompatActivity implements View.On
                 return headers;
             }
 
-            // @Override
-            /*protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> map = new HashMap<String, String>();
-                map.put(KEY_USERNAME, username);
-                map.put(KEY_PASSWORD, password);
-                return map;
-            }*/
         };
 
         //create a new request queue
@@ -180,7 +173,6 @@ public class MenteeRegisterActivity extends AppCompatActivity implements View.On
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.menteeRegisterButton:
-                //menteeRegisterButtonClick();
                 addUser();
                 break;
         }

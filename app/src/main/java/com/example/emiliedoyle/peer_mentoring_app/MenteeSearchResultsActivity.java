@@ -99,14 +99,19 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
         String items = getDBItems();
         Log.i("items",items);
         //resultsView.setText(items);
-        final String[] planets = items.replace("{", "").replace("name", "").replace("[", "").replace("]", "").replace("\"", "").replace("}", "").replace(":", "").split(",");
-        for(int i = 0; i < planets.length; i++)
-        {
-            planets[i] = planets[i].substring(0, 1).toUpperCase() + planets[i].substring(1);
 
+
+        final String[] planets = items.replace("{", "").replace(":", " ").replace("name", "").replace("[", "").replace("]", "").replace("\"", "").replace("}", "").split(",");
+        if (planets.length < 1)
+            planets[0] = "No Matches Found";
+        else {
+            for (int i = 0; i < planets.length; i++) {
+                planets[i] = planets[i].substring(0, 1).toUpperCase() + planets[i].substring(1);
+
+            }
         }
 
-        Log.i("ary", Arrays.toString(planets));
+        Log.i("QQQQ", Arrays.toString(planets));
 
         // DEMO THAT WORKS! PRAISE THE LORD! http://windrealm.org/tutorials/android/android-listview.php
         mainListView=(ListView) findViewById(R.id.mainListView);
@@ -168,34 +173,24 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
         Uri.Builder uri = new Uri.Builder();
         uri.scheme("https");
         uri.authority("pma.piconepress.com");
-        uri.path("query/search/");
-        //uri.path("query/match/");
+        //uri.path("query/search/");
+        uri.path("query/match/");
         final String url = uri.build().toString();
         SharedPreferences mSettings = getSharedPreferences("Login", 0);
         final String username = mSettings.getString("Username", "missing");
         final String password = mSettings.getString("Password", "missing");
 
-        JSONObject json = new JSONObject();
-        try {
-            //json.put("name", username);
-            json.put("gender", "f");
-        }
-        catch (JSONException e)
-        {
-
-        }
-        JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.POST, url, json,
+        JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.POST, url, null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response)
                     {
                         if(response != null) {
-                            Log.i("RRRR", response.toString());
-                            SharedPreferences sharedpreferences;
-                            sharedpreferences = getSharedPreferences("JSON", 0);
-                            SharedPreferences.Editor editor = sharedpreferences.edit();
-                            editor.putString("Response", response.toString());
+                            SharedPreferences matches = getSharedPreferences("Matches", 0);
+                            SharedPreferences.Editor editor = matches.edit();
+                            editor.putString("mat", response.toString());
                             editor.commit();
+
                         }
                         else
                             Log.i("BLAH", "null ");
@@ -229,8 +224,9 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
-        SharedPreferences sharedPreferences = getSharedPreferences("JSON", 0);
-        final String resp = sharedPreferences.getString("Response", "missing");
+        SharedPreferences matches = getSharedPreferences("Matches", 0);
+        String resp = matches.getString("mat", "missing");
+        Log.i("XXXX", resp.toString());
         queue.add(jsonRequest);
         return resp;
     }

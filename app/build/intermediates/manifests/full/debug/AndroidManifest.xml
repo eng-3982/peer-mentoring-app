@@ -40,40 +40,31 @@
         </activity>
         <activity
             android:name="com.example.emiliedoyle.peer_mentoring_app.FindActivity"
-            android:label="@string/title_activity_find" >
-        </activity>
+            android:label="@string/title_activity_find" />
         <activity
             android:name="com.example.emiliedoyle.peer_mentoring_app.MenteeManageProfileActivity"
-            android:label="@string/title_activity_mentee_manage_profile" >
-        </activity>
+            android:label="@string/title_activity_mentee_manage_profile" />
         <activity
             android:name="com.example.emiliedoyle.peer_mentoring_app.MenteeYourConnectionsActivity"
-            android:label="@string/title_activity_mentee_your_connections" >
-        </activity>
+            android:label="@string/title_activity_mentee_your_connections" />
         <activity
             android:name="com.example.emiliedoyle.peer_mentoring_app.MenteeSearchResultsActivity"
-            android:label="@string/title_activity_mentee_search_results" >
-        </activity>
+            android:label="@string/title_activity_mentee_search_results" />
         <activity
             android:name="com.example.emiliedoyle.peer_mentoring_app.MenteeRegisterActivity"
-            android:label="@string/title_activity_mentee_register" >
-        </activity>
+            android:label="@string/title_activity_mentee_register" />
         <activity
             android:name="com.example.emiliedoyle.peer_mentoring_app.MentorProfileActivity"
-            android:label="@string/title_activity_mentor_profile" >
-        </activity>
+            android:label="@string/title_activity_mentor_profile" />
         <activity
             android:name="com.example.emiliedoyle.peer_mentoring_app.MenteeRequestMentorNotificationActivity"
-            android:label="@string/title_activity_mentee_request_mentor_notification" >
-        </activity>
+            android:label="@string/title_activity_mentee_request_mentor_notification" />
         <activity
             android:name="com.example.emiliedoyle.peer_mentoring_app.MenteeFindOptionsActivity"
-            android:label="@string/title_activity_mentee_find_options" >
-        </activity>
+            android:label="@string/title_activity_mentee_find_options" />
         <activity
             android:name="com.example.emiliedoyle.peer_mentoring_app.MenteeYourMatchesActivity"
-            android:label="@string/title_activity_mentee_your_matches" >
-        </activity>
+            android:label="@string/title_activity_mentee_your_matches" />
         <!--
              ATTENTION: This was auto-generated to add Google Play services to your project for
              App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -84,20 +75,16 @@
 
         <activity
             android:name="com.example.emiliedoyle.peer_mentoring_app.AdminMainActivity"
-            android:label="@string/title_activity_admin_main" >
-        </activity>
+            android:label="@string/title_activity_admin_main" />
         <activity
             android:name="com.example.emiliedoyle.peer_mentoring_app.AdminAddMentorActivity"
-            android:label="@string/title_activity_admin_add_mentor" >
-        </activity>
+            android:label="@string/title_activity_admin_add_mentor" />
         <activity
             android:name="com.example.emiliedoyle.peer_mentoring_app.AdminAddMentorConfirmationActivity"
-            android:label="@string/title_activity_admin_add_mentor_confirmation" >
-        </activity>
+            android:label="@string/title_activity_admin_add_mentor_confirmation" />
         <activity
             android:name="com.example.emiliedoyle.peer_mentoring_app.AdminManageConnectionsActivity"
-            android:label="@string/title_activity_admin_manage_connections" >
-        </activity>
+            android:label="@string/title_activity_admin_manage_connections" />
         <!--
         <activity
             android:name=".AdminManageMentorsActivity"
@@ -106,16 +93,16 @@
         -->
         <activity
             android:name="com.example.emiliedoyle.peer_mentoring_app.AdminManageMentorsOptionsActivity"
-            android:label="@string/title_activity_admin_manage_mentors_options" >
-        </activity>
+            android:label="@string/title_activity_admin_manage_mentors_options" />
         <activity
             android:name="com.example.emiliedoyle.peer_mentoring_app.MenteeSearchByAttributeActivity"
-            android:label="@string/title_activity_mentee_search_by_attribute" >
-        </activity>
+            android:label="@string/title_activity_mentee_search_by_attribute" />
         <activity
             android:name="com.example.emiliedoyle.peer_mentoring_app.MenteeUpdatedProfileMessageActivity"
-            android:label="@string/title_activity_mentee_updated_profile_message" >
-        </activity>
+            android:label="@string/title_activity_mentee_updated_profile_message" />
+        <activity
+            android:name="com.example.emiliedoyle.peer_mentoring_app.MenteeAttributeSearchResultActivity"
+            android:label="@string/title_activity_mentee_attribute_search_result" />
     </application>
 
 </manifest>
