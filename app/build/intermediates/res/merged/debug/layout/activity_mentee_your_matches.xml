@@ -20,7 +20,7 @@
         android:textSize="25dp"/>
 
     <ListView
-        android:layout_width="367dp"
+        android:layout_width="fill_parent"
         android:layout_height="372dp"
         android:id="@+id/mainListView"
         android:layout_weight="0.82"
