@@ -3,6 +3,7 @@ package com.example.emiliedoyle.peer_mentoring_app;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
@@ -43,6 +44,7 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
     private ListView mainListView;
     public TextView resultsView;
     private ArrayAdapter<String> listAdapter;
+    String Major="Nothing was checked :(";
 
     public static final String KEY_MAJOR="major";
     public String major;
@@ -65,20 +67,14 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
         mainListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                switch (position) {
-                    default:
-
-
-                       /* Intent newActivity = new Intent(MenteeSearchByAttributeActivity.this, MenteeSearchResultsActivity.class);
-                        //attempt to pass the username or name of the person that was clicked to the mentor profile activity
-                        Bundle majorBundle= new Bundle();
-                        majorBundle.putString("major", majors[position]);
-                        //Log.i("before", bundle.getString("major"));
-                        newActivity.putExtras(majorBundle);
-                        //startActivity(newActivity);*/
-                        break;
-                }
+                //somehow set majors to be accessible to be used in SearchButtonClic
+                SharedPreferences sharedpref=getSharedPreferences("Attribute",0);
+                SharedPreferences.Editor editor= sharedpref.edit();
+                editor.putString("Major", majors[position]);
+                editor.commit();
+                Log.i("stuff", majors[position]);
             }
+            
             @SuppressWarnings("unused")
             public void onClick(View v) {
             }
@@ -87,6 +83,7 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
         });
 
     }
+
 
 
     @Override
@@ -112,11 +109,15 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
     }
 
     private void SearchButtonClick(){
+       SharedPreferences sharedpref= getSharedPreferences("Attribute",0);
+        final String major= sharedpref.getString("Major", "missing");
+        Log.i("stuff2", major);
         Intent newActivity= new Intent(MenteeSearchByAttributeActivity.this, MenteeSearchResultsActivity.class);
-       /* Bundle bundle2= new Bundle();
-        bundle2.putString("major", major);
-        Log.i("searchByAttribute", bundle2.getString("major"));
-        newActivity.putExtras(bundle2);*/
+        //attempt to pass the username or name of the person that was clicked to the mentor profile activity
+        Bundle majorBundle= new Bundle();
+        majorBundle.putString("major", major);
+        Log.i("before", majorBundle.getString("major"));
+        newActivity.putExtras(majorBundle);
         startActivity(newActivity);
     }
     public String getDBItems(String majorAttr) {
@@ -274,34 +275,6 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
     public void onCheckboxClicked(View view) {
         // Is the view now checked?
         boolean checked = ((CheckBox) view).isChecked();
-
-        // Check which checkbox was clicked
-       /* switch(view.getId()) {
-            case R.id.checkBox:
-                if (checked)
-                    major = "Engineering";
-                break;
-            case R.id.checkBox2:
-                if (checked)
-                    major = "Business";
-                break;
-            case R.id.checkBox3:
-                if (checked)
-                    major = "Liberal Arts";
-                break;
-            case R.id.checkBox4:
-                if (checked)
-                    major = "Fine Arts";
-                break;
-            case R.id.checkBox5:
-                if (checked)
-                    major = "Science";
-                break;
-            case R.id.checkBox6:
-                if (checked)
-                    major = "Other";
-                break;
-        }*/
     }
 
     @Override
@@ -311,7 +284,7 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
             case R.id.SearchButton:
                 //onCheckboxClicked(v);
                 //getDBMatches();
-                //SearchButtonClick();
+                SearchButtonClick();
                 break;
         }
     }
