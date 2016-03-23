@@ -21,7 +21,7 @@
         android:textSize="25dp"/>
 
     <ListView
-        android:layout_width="367dp"
+        android:layout_width="wrap_content"
         android:layout_height="387dp"
         android:id="@+id/mainListView"
         android:columnWidth="90dp"
@@ -31,7 +31,7 @@
         android:stretchMode="columnWidth"
         android:gravity="center"
         android:divider="#9e64d8"
-        android:layout_weight="0.78">
+        android:layout_weight="0.97">
 
     </ListView>
     <Button
@@ -41,7 +41,6 @@
         android:text="Return to Main Menu"
         android:layout_below="@+id/mainListView"
         android:layout_centerHorizontal="true"
-        android:layout_gravity="center_horizontal"
         android:layout_marginTop="5dp"
         android:background="@drawable/round_corner"/>
 
