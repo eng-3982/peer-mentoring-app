@@ -1,59 +1,211 @@
 [
     {
-        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/menu/menu_login.xml",
-        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/menu/menu_login.xml"
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_mentee_request_mentor_notification.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_mentee_request_mentor_notification.xml"
     },
     {
-        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/menu/menu_mentee_your_connections.xml",
-        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/menu/menu_mentee_your_connections.xml"
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_mentee_search_by_attribute.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_mentee_search_by_attribute.xml"
     },
     {
         "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/menu/menu_admin_manage_mentors_options.xml",
         "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/menu/menu_admin_manage_mentors_options.xml"
     },
     {
-        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/menu/menu_mentee_search_results.xml",
-        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/menu/menu_mentee_search_results.xml"
-    },
-    {
-        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/menu/menu_admin_main.xml",
-        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/menu/menu_admin_main.xml"
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_admin_manage_connections.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_admin_manage_connections.xml"
     },
     {
         "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/menu/menu_find.xml",
         "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/menu/menu_find.xml"
     },
     {
-        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/menu/menu_admin_add_mentor_confirmation.xml",
-        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/menu/menu_admin_add_mentor_confirmation.xml"
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/menu/menu_admin_main.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/menu/menu_admin_main.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/menu/menu_login.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/menu/menu_login.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_mentee_manage_profile.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_mentee_manage_profile.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/menu/menu_mentee_your_connections.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/menu/menu_mentee_your_connections.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_mentee_your_matches.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_mentee_your_matches.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_mentee_find_options.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_mentee_find_options.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_admin_manage_connections.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_admin_manage_connections.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/menu/menu_mentee_search_results.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/menu/menu_mentee_search_results.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_mentee_search_results.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_mentee_search_results.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_admin_manage_mentors_options.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_admin_manage_mentors_options.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_mentee_register.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_mentee_register.xml"
     },
     {
         "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/menu/menu_mentee_request_mentor_notification.xml",
         "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/menu/menu_mentee_request_mentor_notification.xml"
     },
     {
-        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/menu/menu_mentee_your_matches.xml",
-        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/menu/menu_mentee_your_matches.xml"
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_mentee_manage_profile.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_mentee_manage_profile.xml"
     },
     {
         "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/menu/menu_mentee_manage_profile.xml",
         "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/menu/menu_mentee_manage_profile.xml"
     },
     {
-        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/menu/menu_admin_manage_connections.xml",
-        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/menu/menu_admin_manage_connections.xml"
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_mentee_updated_profile_message.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_mentee_updated_profile_message.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_mentor_profile.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_mentor_profile.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_mentee_request_mentor_notification.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_mentee_request_mentor_notification.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_mentee_search_by_attribute.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_mentee_search_by_attribute.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/menu/menu_mentee_your_matches.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/menu/menu_mentee_your_matches.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_admin_manage_mentors.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_admin_manage_mentors.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_admin_manage_mentors_options.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_admin_manage_mentors_options.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_admin_add_mentor_confirmation.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_admin_add_mentor_confirmation.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_student_main.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_student_main.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/menu/menu_admin_add_mentor_confirmation.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/menu/menu_admin_add_mentor_confirmation.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_find.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_find.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_mentee_your_matches.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_mentee_your_matches.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_admin_main.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_admin_main.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_admin_add_mentor_confirmation.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_admin_add_mentor_confirmation.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_mentee_search_results.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_mentee_search_results.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/menu/menu_mentee_find_options.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/menu/menu_mentee_find_options.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_login.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_login.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_admin_manage_mentors.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_admin_manage_mentors.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_student_main.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_student_main.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_mentee_your_connections.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_mentee_your_connections.xml"
     },
     {
         "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/menu/menu_mentee_register.xml",
         "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/menu/menu_mentee_register.xml"
     },
     {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_mentor_profile.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_mentor_profile.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_mentee_find_options.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_mentee_find_options.xml"
+    },
+    {
         "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/menu/menu_mentee_updated_profile_message.xml",
         "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/menu/menu_mentee_updated_profile_message.xml"
     },
     {
-        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/menu/menu_mentee_find_options.xml",
-        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/menu/menu_mentee_find_options.xml"
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/menu/menu_admin_manage_connections.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/menu/menu_admin_manage_connections.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_mentee_your_connections.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_mentee_your_connections.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_mentee_register.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_mentee_register.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/menu/menu_mentee_search_by_attribute.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/menu/menu_mentee_search_by_attribute.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_admin_add_mentor.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_admin_add_mentor.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/menu/menu_admin_add_mentor.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/menu/menu_admin_add_mentor.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_login.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_login.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_mentee_updated_profile_message.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_mentee_updated_profile_message.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_find.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_find.xml"
     },
     {
         "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/menu/menu_mentor_profile.xml",
@@ -64,15 +216,15 @@
         "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/menu/menu_admin_manage_mentors.xml"
     },
     {
-        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/menu/menu_mentee_search_by_attribute.xml",
-        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/menu/menu_mentee_search_by_attribute.xml"
-    },
-    {
-        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/menu/menu_admin_add_mentor.xml",
-        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/menu/menu_admin_add_mentor.xml"
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_admin_add_mentor.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\Rachel.DESKTOP-TIK572D\\Documents\\PeerMentoringApplication\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_admin_add_mentor.xml"
     },
     {
         "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/build/intermediates/res/merged/debug/menu/menu_student_main.xml",
         "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/app/src/main/res/menu/menu_student_main.xml"
+    },
+    {
+        "merged": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_admin_main.xml",
+        "source": "/Users/emiliedoyle/AndroidStudioProjects/peer-mentoring-app/C:\\Users\\emiliedoyle\\AndroidStudioProjects\\peer-mentoring-app\\app\\src\\main\\res\\menu\\menu_admin_main.xml"
     }
 ]
