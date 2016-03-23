@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -71,7 +72,12 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
     }
 
     private void SearchButtonClick(){
-        startActivity(new Intent(MenteeSearchByAttributeActivity.this, MenteeSearchResultsActivity.class));
+        Intent newActivity= new Intent(MenteeSearchByAttributeActivity.this, MenteeSearchResultsActivity.class);
+       /* Bundle bundle2= new Bundle();
+        bundle2.putString("major", major);
+        Log.i("searchByAttribute", bundle2.getString("major"));
+        newActivity.putExtras(bundle2);*/
+        startActivity(newActivity);
     }
     public void getDBMatches() {
 
@@ -191,7 +197,7 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
 
         switch(v.getId()){
             case R.id.SearchButton:
-                //onCheckboxClicked();
+                //onCheckboxClicked(v);
                 //getDBMatches();
                 SearchButtonClick();
                 break;

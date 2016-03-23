@@ -4,6 +4,7 @@ package com.example.emiliedoyle.peer_mentoring_app;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.app.Activity;
@@ -24,6 +25,13 @@ public class MentorProfileActivity extends AppCompatActivity implements View.OnC
         setContentView(R.layout.activity_mentor_profile);
         requestMentorButton=(Button)findViewById(R.id.requestMentor);
         requestMentorButton.setOnClickListener(this);
+        //get the bundle from the previous activity that should hold the name of the person they were trying to select
+        Bundle bundle=getIntent().getExtras();
+        String selectedName= bundle.getString("name");
+        Log.i("after", bundle.getString("name"));
+        Log.i("passed" , selectedName);
+
+        //need to now get the results from the database for that name and parse and then display
     }
 
     // standard
