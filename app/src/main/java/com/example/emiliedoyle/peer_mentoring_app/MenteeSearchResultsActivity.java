@@ -90,12 +90,12 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
 
         HomeButton = (Button) findViewById(R.id.HomeButton);
         HomeButton.setOnClickListener(this);
-/*
-        Bundle bundle2=getIntent().getExtras();
-        String selectedMajor= bundle2.getString("major");
-        Log.i("afterSelectedMajor",bundle2.getString("major"));
+
+        Bundle majorBundle=getIntent().getExtras();
+        String selectedMajor= majorBundle.getString("major");
+        Log.i("afterSelectedMajor",majorBundle.getString("major"));
         Log.i("passed major", selectedMajor);
-*/
+
         getDBItems();
 
         // DEMO THAT WORKS! PRAISE THE LORD! http://windrealm.org/tutorials/android/android-listview.php
