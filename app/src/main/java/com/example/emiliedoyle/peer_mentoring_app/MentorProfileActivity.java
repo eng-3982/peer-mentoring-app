@@ -14,6 +14,7 @@ import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
@@ -55,6 +56,10 @@ public class MentorProfileActivity extends AppCompatActivity implements View.OnC
         final String[] info = items.replace("{", "").replace("name", "").replace("[", "").replace("]", "").replace("\"", "").replace("}", "").split(",");
 
         Log.i("QQQQ", Arrays.toString(info));
+
+        TextView nameText = (TextView) findViewById(R.id.mentorName);
+        TextView majorText = (TextView) findViewById(R.id.mentorName);
+
         //Log.i("passed" , selectedName);
 
         //need to now get the results from the database for that name and parse and then display
@@ -65,7 +70,7 @@ public class MentorProfileActivity extends AppCompatActivity implements View.OnC
         Uri.Builder uri = new Uri.Builder();
         uri.scheme("https");
         uri.authority("pma.piconepress.com");
-        uri.path("data/" + name.substring(0, 1).toLowerCase() + name.substring(1)+"/");
+        uri.path("data/" + name.substring(0, 1).toLowerCase() + name.substring(1) + "/");
 
         //uri.path("query/match/");
         final String url = uri.build().toString();
@@ -74,20 +79,6 @@ public class MentorProfileActivity extends AppCompatActivity implements View.OnC
         final String username = mSettings.getString("Username", "missing");
         final String password = mSettings.getString("Password", "missing");
 
-
-
-        //final VolleyRequest profile = new VolleyRequest();
-
-        JSONObject json = new JSONObject();
-        try {
-            //json.put("name", username);
-            json.put("name", name.substring(0, 1).toLowerCase() + name.substring(1));
-
-        }
-        catch (JSONException e)
-        {
-
-        }
         JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.POST, url, null,
                 new Response.Listener<JSONObject>() {
                     @Override

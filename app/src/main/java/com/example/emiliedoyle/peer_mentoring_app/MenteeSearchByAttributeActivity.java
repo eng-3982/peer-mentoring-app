@@ -1,6 +1,7 @@
 package com.example.emiliedoyle.peer_mentoring_app;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -117,6 +118,78 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
         Log.i("searchByAttribute", bundle2.getString("major"));
         newActivity.putExtras(bundle2);*/
         startActivity(newActivity);
+    }
+    public String getDBItems(String majorAttr) {
+
+        Uri.Builder uri = new Uri.Builder();
+        uri.scheme("https");
+        uri.authority("pma.piconepress.com");
+        uri.path("query/search/");
+        //uri.path("query/match/");
+        final String url = uri.build().toString();
+        SharedPreferences mSettings = getSharedPreferences("Login", 0);
+        final String username = mSettings.getString("Username", "missing");
+        final String password = mSettings.getString("Password", "missing");
+
+        JSONObject json = new JSONObject();
+        try {
+
+            json.put("major", majorAttr);
+
+        }
+        catch (JSONException e)
+        {
+
+        }
+        JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.POST, url, json,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response)
+                    {
+                        if(response != null) {
+                            Log.i("RRRR", response.toString());
+                            SharedPreferences sharedpreferences;
+                            sharedpreferences = getSharedPreferences("JSON", 0);
+                            SharedPreferences.Editor editor = sharedpreferences.edit();
+                            editor.putString("Response", response.toString());
+                            editor.commit();
+                        }
+                        else
+                            Log.i("BLAH", "null ");
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            //if there is an error, print it!
+            public void onErrorResponse(VolleyError error) {
+                Log.i("BLAH", error.toString());
+
+            }
+        }) {
+
+            @Override
+            //modifies the header to contain the encoded username and password info. authenticates
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<String, String>();
+                String creds = "eng-3982:isipjuice";
+                String auth = "Basic " + Base64.encodeToString(creds.getBytes(), Base64.NO_WRAP);
+                headers.put("Content-Type", "application/json");
+                headers.put("Authorization", auth);
+                headers.put("username", username);
+                headers.put("password", password);
+                return headers;
+            }
+
+        };
+
+        jsonRequest.setRetryPolicy(new DefaultRetryPolicy(
+                27000,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
+        SharedPreferences sharedPreferences = getSharedPreferences("JSON", 0);
+        final String resp = sharedPreferences.getString("Response", "missing");
+        queue.add(jsonRequest);
+        return resp;
     }
     public void getDBMatches() {
 
