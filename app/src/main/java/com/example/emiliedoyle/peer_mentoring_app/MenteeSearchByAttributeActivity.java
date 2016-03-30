@@ -15,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CheckedTextView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -64,28 +65,19 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
         majorList.addAll(Arrays.asList(majors));
         listAdapter= new ArrayAdapter<String>(this, R.layout.checkboxrow, majorList);//listAdapter.add("Ceres");
         mainListView.setAdapter(listAdapter);
-        mainListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //somehow set majors to be accessible to be used in SearchButtonClic
-                //SharedPreferences sharedpref=getSharedPreferences("Attribute",0);
-                //SharedPreferences.Editor editor= sharedpref.edit();
-                //editor.putString("Major", majors[position]);
-                //editor.commit();
-                //Log.i("stuff", majors[position]);
-
-
-            }
-            
-            @SuppressWarnings("unused")
-            public void onClick(View v) {
-            }
-
-            ;
-        });
-
+        mainListView.setItemsCanFocus(false);
+        mainListView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+        mainListView.setOnItemClickListener(new CheckBoxClick());
+        /*Log.i("A", "1");
+        ArrayAdapter<String> adapter= new ArrayAdapter<String>(this, R.layout.checkboxrow, majorList);
+        Log.i("AA", "2");
+        mainListView.setAdapter(adapter);
+        Log.i("AAA", "3");
+        mainListView.setItemsCanFocus(false);
+        Log.i("AAAA", "4");
+        mainListView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+        mainListView.setOnItemClickListener(new CheckBoxClick());*/
     }
-
 
 
     @Override
@@ -108,6 +100,20 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public class CheckBoxClick implements AdapterView.OnItemClickListener{
+
+        @Override
+        public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3){
+              Log.i("AAAAA", arg1.toString());
+            CheckedTextView ctv= (CheckedTextView)arg1;
+            if(ctv.isChecked()){
+                Toast.makeText(MenteeSearchByAttributeActivity.this, "now it is unchecked", Toast.LENGTH_SHORT).show();
+            }else{
+                Toast.makeText(MenteeSearchByAttributeActivity.this, "now it is checked", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
     private void SearchButtonClick(){
@@ -276,7 +282,7 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
     public void onCheckboxClicked(View view) {
         // Is the view now checked?
         boolean checked = ((CheckBox) view).isChecked();
-        switch(view.getId()) {
+        /*switch(view.getId()) {
              case R.id.checkBox:
                  if (checked)
                      major = "Engineering";
@@ -301,7 +307,7 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
                  if (checked)
                      major = "Other";
                  break;
-         }
+         }*/
     }
 
     @Override
@@ -309,8 +315,7 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
 
         switch(v.getId()){
             case R.id.SearchButton:
-                onCheckboxClicked(v);
-
+                //onCheckboxClicked(v);
                 SearchButtonClick();
                 break;
         }
