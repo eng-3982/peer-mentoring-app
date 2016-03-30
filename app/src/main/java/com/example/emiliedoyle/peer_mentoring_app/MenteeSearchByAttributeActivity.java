@@ -45,11 +45,14 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
     public TextView resultsView;
     private ArrayAdapter<String> listAdapter;
     public String Major="Nothing was checked :(";
-
+    int i = 0;
     public static final String KEY_MAJOR="major";
-    public String major = "Other";
+    public static final int MAJOR_ARRAY_LEN = 6;
+    public String[] major = new String[MAJOR_ARRAY_LEN];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Arrays.fill(major, null);
+        Log.i("Majorz", Arrays.toString(major));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mentee_search_by_attribute);
         SearchButton=(Button) findViewById(R.id.SearchButton);
@@ -113,8 +116,11 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
     private void SearchButtonClick(){
         SharedPreferences attribute = getSharedPreferences("Attribute", 0);
         SharedPreferences.Editor editor = attribute.edit();
-        editor.putString("matches", major);
+
+        editor.putString("matches", Arrays.toString(major));
+        //Log.i("stringy!", major.toString());
         editor.commit();
+
         Intent newActivity= new Intent(MenteeSearchByAttributeActivity.this, MenteeAttributeSearchResultActivity.class);
         startActivity(newActivity);
     }
@@ -122,35 +128,44 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
     public void onCheckboxClicked(View view) {
         // Is the view now checked?
         boolean checked = ((CheckBox) view).isChecked();
+
         switch(view.getId()) {
              case R.id.checkBox:
-                 if (checked)
-                     major = "Engineering";
+                 if (checked) {
+                     major[0] = "engineering";
+                 }
                  break;
              case R.id.checkBox2:
-                 if (checked)
-                     major = "Business";
+                 if (checked) {
+                     major[1] = "business";
+                 }
                  break;
              case R.id.checkBox3:
-                 if (checked)
-                     major = "Liberal Arts";
+                 if (checked) {
+                     major[2] = "liberal arts";
+                 }
                  break;
              case R.id.checkBox4:
-                 if (checked)
-                     major = "Fine Arts";
+                 if (checked) {
+                     major[3] = "fine arts";
+                 }
                  break;
              case R.id.checkBox5:
-                 if (checked)
-                     major = "Science";
+                 if (checked) {
+                     major[4] = "science";
+                 }
                  break;
              case R.id.checkBox6:
-                 if (checked)
-                     major = "Other";
+                 if (checked) {
+                     major[5] = "other";
+                 }
                  break;
-            default:
-                major = "Other";
-                break;
+            /*default:
+                major[i] = null;
+                break;*/
          }
+
+        Log.i("Majorz", Arrays.toString(major));
 
     }
 

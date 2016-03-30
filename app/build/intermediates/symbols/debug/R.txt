@@ -535,7 +535,7 @@ int id mainListView 0x7f0c0070
 int id media_actions 0x7f0c008a
 int id menteeRegisterButton 0x7f0c0074
 int id mentorClassYear 0x7f0c0082
-int id mentorEmail 0x7f0c0081
+int id mentorGender 0x7f0c0081
 int id mentorMajor 0x7f0c0080
 int id mentorName 0x7f0c007f
 int id middle 0x7f0c001a

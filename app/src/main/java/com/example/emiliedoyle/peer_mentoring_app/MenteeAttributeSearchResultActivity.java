@@ -61,6 +61,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Vector;
 
 public class MenteeAttributeSearchResultActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -74,7 +75,7 @@ public class MenteeAttributeSearchResultActivity extends AppCompatActivity imple
     //SharedPreferences sharedpreferences;
     public String listClick;
     String[] name = new String[50];
-
+    Vector v = new Vector();
     // declare button
     Button HomeButton;
 
@@ -93,17 +94,37 @@ public class MenteeAttributeSearchResultActivity extends AppCompatActivity imple
 
         ////SharedPreferences attribute = getSharedPreferences("Attribute", 0);
         //final String major = attribute.getString("matches", "missing");
-
-        String items = getDBItems("Engineering");
-        Log.i("items",items);
-        //resultsView.setText(items);
-        final String[] planets = items.replace("{", "").replace("name", "").replace("[", "").replace("]", "").replace("\"", "").replace("}", "").replace(":", "").split(",");
-        for(int i = 0; i < planets.length; i++)
+        SharedPreferences attribute = getSharedPreferences("Attribute", 0);
+        final String maj = attribute.getString("matches", "missing");
+        String[] ary = maj.replace("[", "").replace("]", "").replace(" ", "").split(",");
+        Log.i("stringy1", ary[0]);
+        int num_maj = 0;
+        for(int i = 0; i< ary.length; i++)
         {
-            planets[i] = planets[i].substring(0, 1).toUpperCase() + planets[i].substring(1);
-
+            if (!ary[i].equals("null"))
+                num_maj++;
+        }
+        String[] major = new String[num_maj];
+        for(int j = 0; j < num_maj; j++)
+        {
+            if (ary[j]!=null)
+                major[j] = ary[j];
         }
 
+        String items = getDBItems(major);
+        Log.i("stringy", Arrays.toString(major));
+
+        //resultsView.setText(items);
+        final String[] planets = items.replace("{", "").replace("name", "").replace("[", "").replace("]", "").replace("\"", "").replace("}", "").replace(":", "").split(",");
+        if (planets.length > 1) {
+
+            for (int i = 0; i < planets.length; i++) {
+                planets[i] = planets[i].substring(0, 1).toUpperCase() + planets[i].substring(1);
+
+            }
+        }
+        else
+            planets[0] = "No Results Found";
         Log.i("PLANETS", Arrays.toString(planets));
 
         // DEMO THAT WORKS! PRAISE THE LORD! http://windrealm.org/tutorials/android/android-listview.php
@@ -161,7 +182,7 @@ public class MenteeAttributeSearchResultActivity extends AppCompatActivity imple
         return super.onOptionsItemSelected(item);
     }
 
-    public String getDBItems(String major) {
+    public String getDBItems(String[] major) {
 
         Uri.Builder uri = new Uri.Builder();
         uri.scheme("https");
@@ -174,9 +195,16 @@ public class MenteeAttributeSearchResultActivity extends AppCompatActivity imple
         final String password = mSettings.getString("Password", "missing");
 
         JSONObject json = new JSONObject();
+        JSONArray array = new JSONArray();
         try {
             //json.put("name", username);
-            json.put("major", major.substring(0, 1).toLowerCase() + major.substring(1));
+            for(int k = 0; k < major.length; k++)
+            {
+                //json.put("major"+k, major[k].substring(0, 1).toLowerCase() + major[k].substring(1));
+                array.put(major[k]);
+            }
+            json.put("major", array);
+
         }
         catch (JSONException e)
         {

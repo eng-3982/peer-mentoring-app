@@ -27,6 +27,7 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -51,14 +52,59 @@ public class MentorProfileActivity extends AppCompatActivity implements View.OnC
         //get the bundle from the previous activity that should hold the name of the person they were trying to select
         Bundle bundle=getIntent().getExtras();
         String selectedName= bundle.getString("name");
+        selectedName = selectedName.replaceAll("[^a-zA-Z]", "");
+        Log.i("AAA", selectedName);
 
-        String items = getUserProfile(selectedName);
+        String wut = getUserProfile(selectedName);
+        SharedPreferences ProfPref = getSharedPreferences("Profile", 0);
+        String items = ProfPref.getString("ProfileResponse", "missing");
+
+        //THIS IS WHERE OUR PROBLEM IS
+        Log.i("RRR", items);
         final String[] info = items.replace("{", "").replace("name", "").replace("[", "").replace("]", "").replace("\"", "").replace("}", "").split(",");
 
         Log.i("QQQQ", Arrays.toString(info));
 
+        //string to parse into and then set text.
+        String firstname="a";
+        String lastname="b";
+        String major="c";
+        String gender="d";
+        String year="e";
+
+        for(int i=0; i<info.length; i++){
+            String delims="[:]";
+            String[] tokens=info[i].split(delims);
+            switch( tokens[0]){
+                case "first":
+                    firstname= tokens[1].substring(0,1).toUpperCase()+ tokens[1].substring(1);
+                    break;
+                case "last":
+                    lastname= tokens[1].substring(0,1).toUpperCase()+ tokens[1].substring(1);
+                    break;
+                case "year":
+                    year= tokens[1].substring(0,1).toUpperCase()+ tokens[1].substring(1);
+                    break;
+                case "major":
+                    major= tokens[1].substring(0,1).toUpperCase()+ tokens[1].substring(1);
+                    break;
+                case "gender":
+                    gender= tokens[1].toUpperCase();
+                    break;
+            }
+
+        }
+        //associate the textviews in java with the ones in xml
         TextView nameText = (TextView) findViewById(R.id.mentorName);
-        TextView majorText = (TextView) findViewById(R.id.mentorName);
+        TextView majorText = (TextView) findViewById(R.id.mentorMajor);
+        TextView genderText= (TextView) findViewById(R.id.mentorGender);
+        TextView yearText= (TextView) findViewById(R.id.mentorClassYear);
+
+        //set the text views to contain the contents from parsing
+        nameText.setText(firstname + " "+ lastname);
+        majorText.setText("Major: "+major);
+        genderText.setText("Gender: "+gender);
+        yearText.setText("Class Year: "+year);
 
         //Log.i("passed" , selectedName);
 
@@ -89,7 +135,7 @@ public class MentorProfileActivity extends AppCompatActivity implements View.OnC
                             SharedPreferences.Editor editor = ProfPref.edit();
                             editor.putString("ProfileResponse", response.toString());
                             editor.commit();
-                            Log.i("stuff", response.toString());
+                            Log.i("BBB", response.toString());
                         }
 
                         //mTextView.setText("it's null yo");
@@ -130,7 +176,7 @@ public class MentorProfileActivity extends AppCompatActivity implements View.OnC
 
 
             SharedPreferences ProfPref = getSharedPreferences("Profile", 0);
-            final String resp = ProfPref.getString("ProfileResponse", "missing");
+            String resp = ProfPref.getString("ProfileResponse", "missing");
             Log.i("HALP", resp);
 
         queue.add(jsonRequest);

@@ -21,7 +21,7 @@
         android:textSize="25dp"/>
 
     <ListView
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="387dp"
         android:id="@+id/mainListView"
         android:columnWidth="90dp"
