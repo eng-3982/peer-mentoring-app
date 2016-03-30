@@ -15,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CheckedTextView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -60,13 +61,14 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
 
         //create request queue
         queue = Volley.newRequestQueue(this);
-        /*
+
         mainListView=(ListView) findViewById(R.id.mainListView);
         final String[] majors= new String[]{"Engineering","Science", "Fine Art","Art", "Acting","Liberal Arts","Other","Business","Sports"};
         ArrayList<String> majorList= new ArrayList<String>();
         majorList.addAll(Arrays.asList(majors));
         listAdapter= new ArrayAdapter<String>(this, R.layout.checkboxrow, majorList);//listAdapter.add("Ceres");
         mainListView.setAdapter(listAdapter);
+
         mainListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -85,10 +87,9 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
             }
 
             ;
-        });*/
+        });
 
     }
-
 
 
     @Override
@@ -111,6 +112,20 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public class CheckBoxClick implements AdapterView.OnItemClickListener{
+
+        @Override
+        public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3){
+              Log.i("AAAAA", arg1.toString());
+            CheckedTextView ctv= (CheckedTextView)arg1;
+            if(ctv.isChecked()){
+                Toast.makeText(MenteeSearchByAttributeActivity.this, "now it is unchecked", Toast.LENGTH_SHORT).show();
+            }else{
+                Toast.makeText(MenteeSearchByAttributeActivity.this, "now it is checked", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
     private void SearchButtonClick(){
