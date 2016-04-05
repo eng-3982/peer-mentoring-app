@@ -97,7 +97,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
         //Log.i("passed major", selectedMajor);
 
         String items = getDBItems();
-        Log.i("items",items);
+        Log.i("shared",items);
         //resultsView.setText(items);
 
 
@@ -129,6 +129,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
                         //attempt to pass the username or name of the person that was clicked to the mentor profile activity
                         Bundle bundle= new Bundle();
                         bundle.putString("name", planets[position]);
+                        Log.i("QQQQ", planets[position].toString());
                         //Log.i("before", bundle.getString("name"));
                         newActivity.putExtras(bundle);
                         startActivity(newActivity);
@@ -188,7 +189,9 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
                         if(response != null) {
                             SharedPreferences matches = getSharedPreferences("Matches", 0);
                             SharedPreferences.Editor editor = matches.edit();
+                            editor.clear();
                             editor.putString("mat", response.toString());
+                            Log.i("shared", response.toString());
                             editor.commit();
 
                         }
@@ -226,7 +229,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
 
         SharedPreferences matches = getSharedPreferences("Matches", 0);
         String resp = matches.getString("mat", "missing");
-        Log.i("XXXX", resp.toString());
+        Log.i("shared", resp.toString());
         queue.add(jsonRequest);
         return resp;
     }
