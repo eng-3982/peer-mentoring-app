@@ -53,15 +53,15 @@ public class MentorProfileActivity extends AppCompatActivity implements View.OnC
         Bundle bundle=getIntent().getExtras();
         String selectedName= bundle.getString("name");
         selectedName = selectedName.replaceAll("[^a-zA-Z]", "");
-        Log.i("AAA", selectedName);
+        Log.i("QQQQ", selectedName);
 
         String wut = getUserProfile(selectedName);
-        SharedPreferences ProfPref = getSharedPreferences("Profile", 0);
-        String items = ProfPref.getString("ProfileResponse", "missing");
+        SharedPreferences ProfPref = getSharedPreferences("testing", 0);
+        String items = ProfPref.getString("test", "missing");
 
         //THIS IS WHERE OUR PROBLEM IS
-        Log.i("RRR", items);
-        final String[] info = items.replace("{", "").replace("name", "").replace("[", "").replace("]", "").replace("\"", "").replace("}", "").split(",");
+        Log.i("QQQQ prob", wut);
+        final String[] info = wut.replace("{", "").replace("name", "").replace("[", "").replace("]", "").replace("\"", "").replace("}", "").split(",");
 
         Log.i("QQQQ", Arrays.toString(info));
 
@@ -131,13 +131,15 @@ public class MentorProfileActivity extends AppCompatActivity implements View.OnC
                     public void onResponse(JSONObject response)
                     {
                         if(response != null) {
-                            SharedPreferences ProfPref = getSharedPreferences("Profile", 0);
-                            SharedPreferences.Editor editor = ProfPref.edit();
-                            editor.putString("ProfileResponse", response.toString());
+                            SharedPreferences test = getSharedPreferences("testing", 0);
+                            SharedPreferences.Editor editor = test.edit();
+                            editor.clear();
+                            editor.putString("test", response.toString());
                             editor.commit();
                             Log.i("BBB", response.toString());
                         }
-
+                        else
+                            Log.i("BBB", "null");
                         //mTextView.setText("it's null yo");
                         //String[]names= parse.parseJSON(response,"name");
                         //Log.i("VR string", names[0]);
@@ -175,12 +177,17 @@ public class MentorProfileActivity extends AppCompatActivity implements View.OnC
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
 
-            SharedPreferences ProfPref = getSharedPreferences("Profile", 0);
-            String resp = ProfPref.getString("ProfileResponse", "missing");
+            SharedPreferences test = getSharedPreferences("testing", 2);
+            String resp = test.getString("test", "missing");
             Log.i("HALP", resp);
 
         queue.add(jsonRequest);
+
+            resp = test.getString("test", "missing");
+            Log.i("HALP2", resp);
+
             return resp;
+
     }
     // standard
     @Override

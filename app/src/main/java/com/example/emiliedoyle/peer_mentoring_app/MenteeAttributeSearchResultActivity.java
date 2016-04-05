@@ -219,8 +219,9 @@ public class MenteeAttributeSearchResultActivity extends AppCompatActivity imple
 
                             SharedPreferences attr = getSharedPreferences("Attr", 0);
                             SharedPreferences.Editor editor = attr.edit();
+                            editor.clear();
                             editor.putString("people", response.toString());
-                            Log.i("ERIN", response.toString());
+                            Log.i("QQQQ", response.toString());
                             editor.commit();
                         }
                         else

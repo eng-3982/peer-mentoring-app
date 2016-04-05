@@ -116,7 +116,7 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
     private void SearchButtonClick(){
         SharedPreferences attribute = getSharedPreferences("Attribute", 0);
         SharedPreferences.Editor editor = attribute.edit();
-
+        editor.clear();
         editor.putString("matches", Arrays.toString(major));
         //Log.i("stringy!", major.toString());
         editor.commit();
