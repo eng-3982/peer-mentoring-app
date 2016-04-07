@@ -94,9 +94,13 @@ public class MenteeAttributeSearchResultActivity extends AppCompatActivity imple
 
         ////SharedPreferences attribute = getSharedPreferences("Attribute", 0);
         //final String major = attribute.getString("matches", "missing");
-        SharedPreferences attribute = getSharedPreferences("Attribute", 0);
-        final String maj = attribute.getString("matches", "missing");
-        String[] ary = maj.replace("[", "").replace("]", "").replace(" ", "").split(",");
+        //SharedPreferences attribute = getSharedPreferences("Attribute", 0);
+        //final String maj = attribute.getString("matches", "missing");
+        Bundle bundle= getIntent().getExtras();
+        String a= bundle.getString("selectedMajors");
+        Log.i("aaaaa", a);
+        String[] ary = a.replace("[", "").replace("]", "").split(",");
+        //.replace(" ", "")
         Log.i("stringy1", ary[0]);
         int num_maj = 0;
         for(int i = 0; i< ary.length; i++)
@@ -108,13 +112,13 @@ public class MenteeAttributeSearchResultActivity extends AppCompatActivity imple
         for(int j = 0; j < num_maj; j++)
         {
             if (ary[j]!=null)
-                major[j] = ary[j];
+                major[j] = ary[j].toLowerCase(); // the majors are currently in the database in all lower case
         }
 
-        String items = getDBItems(major);
         Log.i("stringy", Arrays.toString(major));
+        String items = getDBItems(major);
+        Log.i("stringy2", items);
 
-        //resultsView.setText(items);
         final String[] planets = items.replace("{", "").replace("name", "").replace("[", "").replace("]", "").replace("\"", "").replace("}", "").replace(":", "").split(",");
         if (planets.length > 1) {
 
@@ -200,8 +204,11 @@ public class MenteeAttributeSearchResultActivity extends AppCompatActivity imple
             //json.put("name", username);
             for(int k = 0; k < major.length; k++)
             {
-                //json.put("major"+k, major[k].substring(0, 1).toLowerCase() + major[k].substring(1));
-                array.put(major[k]);
+                if( major[k]!= "null") {
+                    //json.put("major"+k, major[k].substring(0, 1).toLowerCase() + major[k].substring(1));
+                    Log.i("put major", major[k]);
+                    array.put(major[k]);
+                }
             }
             json.put("major", array);
 

@@ -37,6 +37,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -47,12 +48,9 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
 
     Button SearchButton;
     private RequestQueue queue;
-    //private ListView mainListView;
-    //public TextView resultsView;
-    //private ArrayAdapter<String> listAdapter;
     int i = 0;
     public static final String KEY_MAJOR="major";
-    public static final int MAJOR_ARRAY_LEN = 6;
+    public static final int MAJOR_ARRAY_LEN = 7;
     public String[] major = new String[MAJOR_ARRAY_LEN];
     MyCustomAdapter dataAdapter= null;
 
@@ -68,35 +66,26 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
         //create request queue
         queue = Volley.newRequestQueue(this);
 
-        //mainListView=(ListView) findViewById(R.id.mainListView);
-        // majors[] was moved further down into the country constructor
-        // final String[] majors= new String[]{"Engineering","Science", "Fine Art","Art", "Acting","Liberal Arts","Other","Business","Sports"};
+        // majors[] was moved further down into display listview
 
         displayListView();
-        checkButtonClick();
 }
 
-// START
-    //Resource: http://www.mysamplecode.com/2012/07/android-listview-checkbox-example.html
+    // Resource: http://www.mysamplecode.com/2012/07/android-listview-checkbox-example.html
+    // This class is necessary for the checkbox listview. We need a way to keep track of which checkboxes are checked
+    // and what attribute they correspond to. We also need to be able to dynamically set them, currently based on a
+    // hard coded array of majors, but ideally we would query the database for majors that we have mentors for
     public class Attribute {
 
-        //String code = null;
         String name = null;
         boolean selected = false;
 
-        public Attribute(/*String code,*/ String name, boolean selected) {
+        public Attribute(String name, boolean selected) {
             super();
-            //this.code = code;
             this.name = name;
             this.selected = selected;
         }
-/*
-        public String getCode() {
-            return code;
-        }
-        public void setCode(String code) {
-            this.code = code;
-        }*/
+
         public String getName() {
             return name;
         }
@@ -115,18 +104,19 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
 
     private void displayListView() {
 
-        final String[] majors= new String[]{"Engineering","Science", "Fine Art","Art", "Acting","Liberal Arts","Other","Business","Sports"};
-        //Array list of countries
+        // string array of majors or potentially other attributes ie student athlete, study abroad, etc
+        final String[] majors= new String[]{"Engineering","Science", "Fine Art","Art", "Acting","Liberal Arts","Other","Business","Sports", "Electrical Engineering"};
+        //Array list of attributes
         ArrayList<Attribute> attList = new ArrayList<Attribute>();
 
+        // add the majors to the attribute list
         for(i=0; i<MAJOR_ARRAY_LEN; i++){
             Attribute attribute= new Attribute(majors[i], false);
             attList.add(attribute);
         }
 
         //create an ArrayAdaptar from the String Array
-        dataAdapter = new MyCustomAdapter(this,
-                R.layout.checkboxrow, attList);
+        dataAdapter = new MyCustomAdapter(this, R.layout.checkboxrow, attList);
         ListView listView = (ListView) findViewById(R.id.mainListView);
         // Assign adapter to ListView
         listView.setAdapter(dataAdapter);
@@ -137,19 +127,19 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
                                     int position, long id) {
                 // When clicked, show a toast with the TextView text
                 Attribute attribute = (Attribute) parent.getItemAtPosition(position);
-                Toast.makeText(getApplicationContext(),
+                /*Toast.makeText(getApplicationContext(),
                         "Clicked on Row: " + attribute.getName(),
-                        Toast.LENGTH_LONG).show();
+                        Toast.LENGTH_LONG).show();*/ // for debuggin purposes
             }
         });
 
     }
+
     private class MyCustomAdapter extends ArrayAdapter<Attribute> {
 
         private ArrayList<Attribute> attList;
 
-        public MyCustomAdapter(Context context, int textViewResourceId,
-                               ArrayList<Attribute> attList) {
+        public MyCustomAdapter(Context context, int textViewResourceId, ArrayList<Attribute> attList) {
             super(context, textViewResourceId, attList);
             this.attList = new ArrayList<Attribute>();
             this.attList.addAll(attList);
@@ -167,8 +157,7 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
             Log.v("ConvertView", String.valueOf(position));
 
             if (convertView == null) {
-                LayoutInflater vi = (LayoutInflater)getSystemService(
-                        Context.LAYOUT_INFLATER_SERVICE);
+                LayoutInflater vi = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 convertView = vi.inflate(R.layout.checkboxrow, null);
 
                 holder = new ViewHolder();
@@ -180,10 +169,10 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
                     public void onClick(View v) {
                         CheckBox cb = (CheckBox) v ;
                         Attribute attribute = (Attribute) cb.getTag();
-                        Toast.makeText(getApplicationContext(),
+                        /*Toast.makeText(getApplicationContext(),
                                 "Clicked on Checkbox: " + cb.getText() +
                                         " is " + cb.isChecked(),
-                                Toast.LENGTH_LONG).show();
+                                Toast.LENGTH_LONG).show();*/
                         attribute.setSelected(cb.isChecked());
                     }
                 });
@@ -203,34 +192,6 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
         }
 
     }
-
-    private void checkButtonClick() {
-
-
-        Button myButton = (Button) findViewById(R.id.SearchButton);
-        myButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-                StringBuffer responseText = new StringBuffer();
-                responseText.append("The following were selected...\n");
-
-                ArrayList<Attribute> attList = dataAdapter.attList;
-                for(int i=0;i<attList.size();i++){
-                    Attribute attribute = attList.get(i);
-                    if(attribute.isSelected()){
-                        responseText.append("\n" + attribute.getName());
-                        major[i]=attribute.getName().toString();
-                        Log.i("mAJOR list", major[i]);
-                    }
-                }
-                Toast.makeText(getApplicationContext(),
-                        responseText, Toast.LENGTH_LONG).show();
-            }
-        });
-
-    }
-
-    //END
 
 
     @Override
@@ -257,14 +218,32 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
 
 
     private void SearchButtonClick(){
-        SharedPreferences attribute = getSharedPreferences("Attribute", 0);
-        SharedPreferences.Editor editor = attribute.edit();
-        editor.clear();
-        editor.putString("matches", Arrays.toString(major));
-        //Log.i("stringy!", major.toString());
-        editor.commit();
+        StringBuffer responseText = new StringBuffer();
+        //responseText.append("The following were selected...\n");
 
+        ArrayList<Attribute> attList = dataAdapter.attList;
+        int j=0;
+        for(int i=0;i<attList.size();i++){
+            Attribute attribute = attList.get(i);
+            if(attribute.isSelected()){
+                //responseText.append("\n" + attribute.getName());
+                major[j]=attribute.getName().toString();
+                //Log.i("mAJOR list", major[j]);
+                //Log.i("major num", String.valueOf(j));
+                j++;
+            }
+        }
+
+
+        /*Toast.makeText(getApplicationContext(),
+                responseText, Toast.LENGTH_LONG).show();*/ // for debuggin purposes
+
+        //Log.i("mm", Arrays.toString(major));
         Intent newActivity= new Intent(MenteeSearchByAttributeActivity.this, MenteeAttributeSearchResultActivity.class);
+        Bundle bundle= new Bundle();
+        bundle.putString("selectedMajors", Arrays.toString(Arrays.copyOfRange(major,0,j)));
+        newActivity.putExtras(bundle);
+        //Log.i("mmMm", bundle.getString("selectedMajors"));
         startActivity(newActivity);
     }
 
@@ -276,8 +255,6 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
             case R.id.SearchButton:
                 //String response = getDBItems(major);
                 SearchButtonClick();
-                break;
-            default:
                 break;
         }
     }
