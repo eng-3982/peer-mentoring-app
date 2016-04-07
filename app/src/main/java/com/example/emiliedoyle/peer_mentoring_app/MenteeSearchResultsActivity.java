@@ -111,7 +111,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
             }
         }
 
-        Log.i("QQQQ", Arrays.toString(planets));
+        Log.i("XXXX", Arrays.toString(planets));
 
         // DEMO THAT WORKS! PRAISE THE LORD! http://windrealm.org/tutorials/android/android-listview.php
         mainListView=(ListView) findViewById(R.id.mainListView);
@@ -129,7 +129,7 @@ public class MenteeSearchResultsActivity extends AppCompatActivity implements Vi
                         //attempt to pass the username or name of the person that was clicked to the mentor profile activity
                         Bundle bundle= new Bundle();
                         bundle.putString("name", planets[position]);
-                        Log.i("QQQQ", planets[position].toString());
+                        Log.i("XXXX", planets[position].toString());
                         //Log.i("before", bundle.getString("name"));
                         newActivity.putExtras(bundle);
                         startActivity(newActivity);
