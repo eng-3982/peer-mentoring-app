@@ -1,5 +1,8 @@
 package com.example.emiliedoyle.peer_mentoring_app;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -8,9 +11,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -42,18 +47,19 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
 
     Button SearchButton;
     private RequestQueue queue;
-    private ListView mainListView;
-    public TextView resultsView;
-    private ArrayAdapter<String> listAdapter;
-    public String Major="Nothing was checked :(";
+    //private ListView mainListView;
+    //public TextView resultsView;
+    //private ArrayAdapter<String> listAdapter;
     int i = 0;
     public static final String KEY_MAJOR="major";
     public static final int MAJOR_ARRAY_LEN = 6;
     public String[] major = new String[MAJOR_ARRAY_LEN];
+    MyCustomAdapter dataAdapter= null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Arrays.fill(major, null);
-        Log.i("Majorz", Arrays.toString(major));
+        //Arrays.fill(major, null);
+        //Log.i("Majorz", Arrays.toString(major));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mentee_search_by_attribute);
         SearchButton=(Button) findViewById(R.id.SearchButton);
@@ -62,34 +68,169 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
         //create request queue
         queue = Volley.newRequestQueue(this);
 
-        mainListView=(ListView) findViewById(R.id.mainListView);
+        //mainListView=(ListView) findViewById(R.id.mainListView);
+        // majors[] was moved further down into the country constructor
+        // final String[] majors= new String[]{"Engineering","Science", "Fine Art","Art", "Acting","Liberal Arts","Other","Business","Sports"};
+
+        displayListView();
+        checkButtonClick();
+}
+
+// START
+    //Resource: http://www.mysamplecode.com/2012/07/android-listview-checkbox-example.html
+    public class Attribute {
+
+        //String code = null;
+        String name = null;
+        boolean selected = false;
+
+        public Attribute(/*String code,*/ String name, boolean selected) {
+            super();
+            //this.code = code;
+            this.name = name;
+            this.selected = selected;
+        }
+/*
+        public String getCode() {
+            return code;
+        }
+        public void setCode(String code) {
+            this.code = code;
+        }*/
+        public String getName() {
+            return name;
+        }
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public boolean isSelected() {
+            return selected;
+        }
+        public void setSelected(boolean selected) {
+            this.selected = selected;
+        }
+
+    }
+
+    private void displayListView() {
+
         final String[] majors= new String[]{"Engineering","Science", "Fine Art","Art", "Acting","Liberal Arts","Other","Business","Sports"};
-        ArrayList<String> majorList= new ArrayList<String>();
-        majorList.addAll(Arrays.asList(majors));
-        listAdapter= new ArrayAdapter<String>(this, R.layout.checkboxrow, majorList);//listAdapter.add("Ceres");
-        mainListView.setAdapter(listAdapter);
+        //Array list of countries
+        ArrayList<Attribute> attList = new ArrayList<Attribute>();
 
-        mainListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //somehow set majors to be accessible to be used in SearchButtonClic
-                //SharedPreferences sharedpref=getSharedPreferences("Attribute",0);
-                //SharedPreferences.Editor editor= sharedpref.edit();
-                //editor.putString("Major", majors[position]);
-                //editor.commit();
-                //Log.i("stuff", majors[position]);
+        for(i=0; i<MAJOR_ARRAY_LEN; i++){
+            Attribute attribute= new Attribute(majors[i], false);
+            attList.add(attribute);
+        }
+
+        //create an ArrayAdaptar from the String Array
+        dataAdapter = new MyCustomAdapter(this,
+                R.layout.checkboxrow, attList);
+        ListView listView = (ListView) findViewById(R.id.mainListView);
+        // Assign adapter to ListView
+        listView.setAdapter(dataAdapter);
 
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                // When clicked, show a toast with the TextView text
+                Attribute attribute = (Attribute) parent.getItemAtPosition(position);
+                Toast.makeText(getApplicationContext(),
+                        "Clicked on Row: " + attribute.getName(),
+                        Toast.LENGTH_LONG).show();
             }
-            
-            @SuppressWarnings("unused")
-            public void onClick(View v) {
-            }
-
-            ;
         });
 
     }
+    private class MyCustomAdapter extends ArrayAdapter<Attribute> {
+
+        private ArrayList<Attribute> attList;
+
+        public MyCustomAdapter(Context context, int textViewResourceId,
+                               ArrayList<Attribute> attList) {
+            super(context, textViewResourceId, attList);
+            this.attList = new ArrayList<Attribute>();
+            this.attList.addAll(attList);
+        }
+
+        private class ViewHolder {
+            TextView code;
+            CheckBox name;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+
+            ViewHolder holder = null;
+            Log.v("ConvertView", String.valueOf(position));
+
+            if (convertView == null) {
+                LayoutInflater vi = (LayoutInflater)getSystemService(
+                        Context.LAYOUT_INFLATER_SERVICE);
+                convertView = vi.inflate(R.layout.checkboxrow, null);
+
+                holder = new ViewHolder();
+                holder.code = (TextView) convertView.findViewById(R.id.textView1);
+                holder.name = (CheckBox) convertView.findViewById(R.id.checkBox1);
+                convertView.setTag(holder);
+
+                holder.name.setOnClickListener( new View.OnClickListener() {
+                    public void onClick(View v) {
+                        CheckBox cb = (CheckBox) v ;
+                        Attribute attribute = (Attribute) cb.getTag();
+                        Toast.makeText(getApplicationContext(),
+                                "Clicked on Checkbox: " + cb.getText() +
+                                        " is " + cb.isChecked(),
+                                Toast.LENGTH_LONG).show();
+                        attribute.setSelected(cb.isChecked());
+                    }
+                });
+            }
+            else {
+                holder = (ViewHolder) convertView.getTag();
+            }
+
+            Attribute attribute = attList.get(position);
+            //holder.code.setText(" (" +  country.getCode() + ")");
+            holder.name.setText(attribute.getName());
+            holder.name.setChecked(attribute.isSelected());
+            holder.name.setTag(attribute);
+
+            return convertView;
+
+        }
+
+    }
+
+    private void checkButtonClick() {
+
+
+        Button myButton = (Button) findViewById(R.id.SearchButton);
+        myButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                StringBuffer responseText = new StringBuffer();
+                responseText.append("The following were selected...\n");
+
+                ArrayList<Attribute> attList = dataAdapter.attList;
+                for(int i=0;i<attList.size();i++){
+                    Attribute attribute = attList.get(i);
+                    if(attribute.isSelected()){
+                        responseText.append("\n" + attribute.getName());
+                        major[i]=attribute.getName().toString();
+                        Log.i("mAJOR list", major[i]);
+                    }
+                }
+                Toast.makeText(getApplicationContext(),
+                        responseText, Toast.LENGTH_LONG).show();
+            }
+        });
+
+    }
+
+    //END
 
 
     @Override
@@ -114,19 +255,6 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
         return super.onOptionsItemSelected(item);
     }
 
-    public class CheckBoxClick implements AdapterView.OnItemClickListener{
-
-        @Override
-        public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3){
-              Log.i("AAAAA", arg1.toString());
-            CheckedTextView ctv= (CheckedTextView)arg1;
-            if(ctv.isChecked()){
-                Toast.makeText(MenteeSearchByAttributeActivity.this, "now it is unchecked", Toast.LENGTH_SHORT).show();
-            }else{
-                Toast.makeText(MenteeSearchByAttributeActivity.this, "now it is checked", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
 
     private void SearchButtonClick(){
         SharedPreferences attribute = getSharedPreferences("Attribute", 0);
@@ -140,49 +268,6 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
         startActivity(newActivity);
     }
 
-    public void onCheckboxClicked(View view) {
-        // Is the view now checked?
-        boolean checked = ((CheckBox) view).isChecked();
-
-        switch(view.getId()) {
-             case R.id.checkBox:
-                 if (checked) {
-                     major[0] = "engineering";
-                 }
-                 break;
-             case R.id.checkBox2:
-                 if (checked) {
-                     major[1] = "business";
-                 }
-                 break;
-             case R.id.checkBox3:
-                 if (checked) {
-                     major[2] = "liberal arts";
-                 }
-                 break;
-             case R.id.checkBox4:
-                 if (checked) {
-                     major[3] = "fine arts";
-                 }
-                 break;
-             case R.id.checkBox5:
-                 if (checked) {
-                     major[4] = "science";
-                 }
-                 break;
-             case R.id.checkBox6:
-                 if (checked) {
-                     major[5] = "other";
-                 }
-                 break;
-            /*default:
-                major[i] = null;
-                break;*/
-         }
-
-        Log.i("Majorz", Arrays.toString(major));
-
-    }
 
     @Override
     public void onClick(View v){
@@ -193,7 +278,6 @@ public class MenteeSearchByAttributeActivity extends AppCompatActivity implement
                 SearchButtonClick();
                 break;
             default:
-                onCheckboxClicked(v);
                 break;
         }
     }
