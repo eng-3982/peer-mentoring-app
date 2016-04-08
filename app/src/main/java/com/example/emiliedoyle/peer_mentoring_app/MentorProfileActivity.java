@@ -140,9 +140,6 @@ public class MentorProfileActivity extends AppCompatActivity implements View.OnC
                         }
                         else
                             Log.i("BBB", "null");
-                        //mTextView.setText("it's null yo");
-                        //String[]names= parse.parseJSON(response,"name");
-                        //Log.i("VR string", names[0]);
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -177,11 +174,12 @@ public class MentorProfileActivity extends AppCompatActivity implements View.OnC
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
 
-            SharedPreferences test = getSharedPreferences("testing", 2);
+            SharedPreferences test = getSharedPreferences("testing", 0);
             String resp = test.getString("test", "missing");
             Log.i("HALP", resp);
 
         queue.add(jsonRequest);
+            Log.i("weird", jsonRequest.toString());
 
             resp = test.getString("test", "missing");
             Log.i("HALP2", resp);
